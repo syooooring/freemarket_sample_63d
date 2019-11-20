@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category_name|string|null: false|
+|parent_id|integer|null: false|
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+### Association
+- has_many :items
+- has_many :brands
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+## brandテーブル
+|Column|Type|Options|
+|------|----|-------|
+|brand_name|string|null: false|
+|category_id|integer|null: false|
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :category
