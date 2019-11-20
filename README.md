@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ ## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|family_name|string|null: false|
+|last_name|string|null: false|
+|postal-code|string|null: false|
+|prefectures|string|null: false|
+|city|string|null: false|
+|banti|string|null: false| 
+|building_name|string|
+### Association
+belongs_to :users
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ ## evaluationsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|rater_id|references|
+|rated_id|references|
+|level|integer|
+### Association
+belongs_to :users
