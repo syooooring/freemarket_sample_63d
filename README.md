@@ -1,5 +1,3 @@
-
-
 # README
 
 ## categoryテーブル
@@ -8,13 +6,9 @@
 |category_name|string|null: false|
 |parent_id|integer|null: false|
 
-
-
 ### Association
 - has_many :items
 - has_many :brands
-
-
 
 ## brandテーブル
 |Column|Type|Options|
@@ -22,10 +16,9 @@
 |brand_name|string|null: false|
 |category_id|integer|null: false|
 
-
 ### Association
 - belongs_to :category
-# README
+
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -39,7 +32,6 @@
 ### Association
 belongs_to :users
 
-
  ## evaluationsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -48,7 +40,6 @@ belongs_to :users
 |level|integer|
 ### Association
 belongs_to :users
-
 
 ## goodsテーブル
 |Column|Type|Options|
@@ -114,7 +105,7 @@ belongs_to :users
 |------|----|-------|
 |name|string|null: false|
 |image|text|null: false|
-|size|integer|?|
+|size|integer||
 |state|integer|null: false|
 |delivery_fee|integer|null: false|
 |shipping_method|integer|null: false|
@@ -124,10 +115,7 @@ belongs_to :users
 |inappropriate_item|integer||
 
 ### Association
-- belongs to :user
+- belongs_to :user
 - has_many :comments
 - has_many :goods
- README_yoshida
-- belongs to :category
-
-- belongs to :category
+- belongs_to :category
