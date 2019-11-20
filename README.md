@@ -10,6 +10,7 @@
 - has_many :items
 - has_many :brands
 
+
 ## brandテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -18,6 +19,7 @@
 
 ### Association
 - belongs_to :category
+
 
 ## addressテーブル
 |Column|Type|Options|
@@ -31,6 +33,7 @@
 |building_name|string|
 ### Association
 belongs_to :users
+
 
  ## evaluationsテーブル
 |Column|Type|Options|
