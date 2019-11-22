@@ -117,7 +117,6 @@ a {
 .header{
   width: 100vw;
   height: 100px;
-  border-bottom: solid 1px red;
 
   .main{
     width: 1020px;
@@ -279,8 +278,6 @@ a {
 
 .logout{
 display: flex;
-height: 44pxpx;
-width: 193.75px;
 text-align: center;
   &__new{
    width:106px ;   
@@ -298,7 +295,6 @@ text-align: center;
     } 
   }
   &__rogin{
-  width:76.75px;
   padding:0 0 0 11px;
   box-sizing: border-box;
   text-align: center;
