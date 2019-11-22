@@ -1,64 +1,30 @@
-.header
-  .main
-    .main__top
-      .main__top__left
-        %img.merukari-logo{alt: "Mercari", src: "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg"}/
-      .main__top__right
-        %input.search-form__input{name: "keyword", placeholder: "何かお探しですか？", type: "text", value: ""}
-        %i.icon-search
-          = fa_icon  "search", class: 'icon' 
-    .main__bottom
-      .main__bottom__left
-        .main__bottom__left__category
-          .logo1
-            = fa_icon  "list-ul",class: 'icon1'
-          .category-word
-            %ul 
-              %li カテゴリーから探す
-        .main__bottom__left__brand
-          .logo1
-            = fa_icon  "tags lg",class: 'icon1'
-              
-          .category-word
-            %ul 
-              %li ブランドから探す
+.slick
+  %div
+    = link_to "https://jp-news.mercari.com/2019/11/15/free-campaign2/",target: :_blank do
+      .slider1
+  %div
+    = link_to "https://www.mercari.com/jp/featured/camp/" do
+      .slider2
+  %div
+    .slider3
+      .slider3-contents
+        .slider3-contents__image
+          = image_tag 'https://sozai-good.com/uploads/62581/62581_sample.png', class: "smart-phone-image"
+        .slider3-contents__content
+          .slider3-contents__content--font
+            %p スマホで カンタン
+            %p フリマアプリ
+          .slider3-contents__content--text
+            %p メルカリはスマホカメラからすぐに出品できる
+            %p 購入時も安心な独自システムのアプリです
+          .slider3-contents__content--icon
+            =link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+              = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg', class: "icon-image", width: "170", height: "50"
+            =link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+              = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg', class: "icon-image", width: "170", height: "50"
 
-      .logout
-        .logout__new 
-          .logout__new__text
-            新規完飲登録
-        .logout__rogin
-          .logout__rogin__text
-            ログイン
-
-        -# .main__bottom__right__nice
-        -#   .logo2
-        -#     = fa_icon  "heart-o lg",class: 'icon1'
-        -#   .nice-word
-        -#     %ul 
-        -#       %li いいね！一覧
-        -# .main__bottom__right__information
-        -#   .logo2
-        -#     = fa_icon  "bell-o lg",class: 'icon1'
-        -#   .information-word
-        -#     %ul 
-        -#       %li お知らせ
-        -# .main__bottom__right__list
-        -#   .logo2
-        -#     = fa_icon  "check lg",class: 'icon1'
-        -#   .list-word
-        -#     %ul 
-        -#       %li やることリスト
-        -# .main__bottom__right__my-page
-        -#   .logo2
-        -#     %img.logo-my{alt: "Mercari", src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}/
-        -#   .my-page-word
-        -#     %ul 
-        -#       %li マイページ      
-
-              
-
-
-
-
-   
+.sell-icon
+  = link_to "" do
+    .red-circle
+      %p.text 出品
+      = fa_icon 'camera', class: "camera"
