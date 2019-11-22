@@ -1,3 +1,320 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.slick-slider {
+  position: relative;
+}
+
+
+.prev-arrow {
+  position: absolute;
+  top: 44%;
+  left: 0;
+  z-index: 1;
+  margin-left: 60px;
+  transform: scale(-1, 1);
+}
+
+.next-arrow {
+  position: absolute;
+  top: 44%;
+  right: 0;
+  z-index: 0.5;
+  margin-right: 60px;
+}
+
+
+.slick {
+  width: 1440px;
+}
+
+.slider1 {
+  background-image: url(https://www.pakutaso.com/shared/img/thumb/PAK13_nanohanahirogaru20140407_TP_V.jpg);
+  background-size: auto;
+  height: 390px;
+}
+.slider2 {
+  background-image: url(https://www.pakutaso.com/shared/img/thumb/KM19814307_TP_V.jpg);
+  background-size: auto;
+  height: 390px;
+}
+.slider3 {
+  background-image: url(https://www.pakutaso.com/shared/img/thumb/PAK151217498875_TP_V.jpg);
+  background-size: auto;
+  height: 390px;
+  .slider3-contents {
+    display: flex;
+    position: relative;
+    margin: 0 290px;
+    &__image {
+      position: absolute;
+      right: 0;
+    }
+    &__content {
+      padding: 20px 40px;
+      width: 100%;
+      &--font {
+        font-size: 60px;
+        font-weight: 600;
+        color: rgb(51, 51, 51);
+        margin-bottom: 16px;
+      }
+      &--text {
+        font-size: 18px;
+        margin-bottom: 24px;
+        color: rgb(51, 51, 51);
+      }
+    }
+  }
+}
+
+.icon-image {
+  display: inline-block !important;
+}
+
+img.smart-phone-image {
+  width: 440px;
+  height: 390px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sell-icon {
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+}
+
+.red-circle {
+  background-color: rgb(234, 53, 45);
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  padding-top: 32px;
+  z-index: 1;
+}
+
+.text {
+  text-align: center;
+  font-size: 22px;
+  color: white;
+}
+
+.fa-camera {
+  text-align: center ;
+  font-size: 54px !important;
+  color: white;
+  display: block !important;
+  margin-top: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.header{
+  width: 100vw;
+  height: 100px;
+
+  .main{
+    width: 1020px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top:8px;
+    box-sizing: border-box; 
+    font-family: "游ゴシック体", YuGothic;
+    &__top{
+      height: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      &__left{
+        width: 134px;
+        height: 36px;
+        background-color: white;
+      }
+      &__right{
+        width: 841px;
+        height: 40px;
+        position: relative;
+      }
+      .search-form__input{
+        background-color: rgb(245, 245, 245);
+        font-size: 16px;
+        height: 40px;
+        width: 841px;
+        line-height: 1.4em;
+        position: relative;
+        width: 100%;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(204, 204, 204);
+        border-radius: 4px;
+        padding: 0px 50px 0px 10px;
+        box-sizing: border-box;
+      }
+      .icon-search{
+        height: 40px;
+        width: 40px;
+        font-size: 14px; 
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+     }
+    &__bottom{
+      height: 44px;
+      width: 100%;
+      margin:8px 0 0;
+      display: flex;
+      justify-content: space-between;
+      color: #333333;
+
+      &__left{ 
+        width: 308.45px;
+        height: 44px;
+        background-color: white;
+        display: flex;
+       &__category{
+         display: flex;
+         height: 36px;
+         width: 149.45px;
+         display: flex;
+         font-size: 14px;
+         padding: 0 10px 0 0;
+         font-weight: 600;
+         line-height: 36px;
+       }
+       &__brand{ display: flex;
+        height: 36px;
+        width: 149.45px;
+        display: flex;
+        font-size: 14px;
+        padding: 0 0 10px 0;
+        font-weight: 600;
+        line-height: 36px;
+       }
+      }
+      &__right{
+        width: 520.31px;
+        height: 44px;
+        background-color: white;
+        display: flex;
+        
+        color: #333333;
+        &__nice{
+          width: 127px;
+          height: 44px;
+          display: flex;
+          padding: 0 14px 0 0;
+          font-size: 14px;
+          line-height: 36px;  
+        }
+        .nice-word{
+          width: 84px;
+        }
+        &__information{
+          width: 111px;
+          height: 44px;
+          display: flex;
+          padding: 0 7px;
+          font-size: 14px;
+          line-height: 36px;
+        }
+        &__list{
+          width: 167px;
+          height: 44px;
+          display: flex;
+          padding: 0 14px;
+          font-size: 14px;
+          line-height: 36px;
+        }
+        .list-word{
+          width: 98px;
+        }
+        &__my-page{
+          width: 125.31px;
+          height: 44px;
+          display: flex;
+          padding: 0 0 0 14px;
+          font-size: 14px;
+          line-height: 36px;
+        }
+        .logo-my{
+          margin-right: 10px;
+          width: 32px;
+          border-radius: 50%;
+      }
+        .my-page-word{
+          width: 79.31px;
+        }
+      }
+    }
+  }
+}
+
+.icon{
+  font-size: 14px ; 
+  
+}
+.icon1{
+  font-size: 14px ;
+  
+}
+.logo1{
+  margin: 0 4px 0 0;
+  color: red;
+}
+.logo2{
+  margin: 0 10px 0 0;
+  color: rgb(204, 204, 204);
+}
+
+.logout{
+display: flex;
+text-align: center;
+  &__new{
+   width:106px ;   
+    &__text{
+      background-color: rgb(234, 53, 45);
+      color: rgb(255, 255, 255);
+      display: block;
+      font-size: 14px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(234, 53, 45);
+      border-image: initial;
+      border-radius: 4px;
+      padding: 4px 5px;
+    } 
+  }
+  &__rogin{
+  padding:0 0 0 11px;
+  box-sizing: border-box;
+  text-align: center;
+    &__text{
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 149, 238);
+      display: block;
+      font-size: 14px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(0, 149, 238);
+      border-image: initial;
+      border-radius: 4px;
+      padding: 4px 5px;
+      transition: all 0.3s ease-out 0s;
+      width: 100%;
+    }
+    &__text:hover {
+      background-color: #59b1eb;
+      color: white;
+    }
+  }
+}
