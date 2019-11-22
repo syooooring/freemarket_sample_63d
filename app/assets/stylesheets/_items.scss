@@ -17,7 +17,7 @@
   position: absolute;
   top: 44%;
   right: 0;
-  z-index: 1;
+  z-index: 0.5;
   margin-right: 60px;
 }
 
@@ -62,9 +62,6 @@
         margin-bottom: 24px;
         color: rgb(51, 51, 51);
       }
-      &--icon {
-      
-      }
     }
   }
 }
@@ -83,9 +80,9 @@ a {
 }
 
 .sell-icon {
-  position: absolute;
   bottom: 32px;
   right: 32px;
+  position: fixed;
 }
 
 .red-circle {
@@ -111,11 +108,12 @@ a {
   margin-top: 6px;
 }
 
-
 * {
   box-sizing: border-box;
 }
-  
+
+
+
 .header{
   width: 100vw;
   height: 100px;
@@ -323,3 +321,4 @@ text-align: center;
       color: white;
     }
   }
+}
