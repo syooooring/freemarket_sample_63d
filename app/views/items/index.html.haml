@@ -1,10 +1,30 @@
-.wrapper
-  %main
-    .swiper-container.top-carousel
-      .swiper-wrapper
-        .swiper-slide1
-        .swiper-slide2
-        .swiper-slide3
-      .swiper-button-prev
-      .swiper-button-next
-      .swiper-pagination
+.slick
+  %div
+    = link_to "https://jp-news.mercari.com/2019/11/15/free-campaign2/",target: :_blank do
+      .slider1
+  %div
+    = link_to "https://www.mercari.com/jp/featured/camp/" do
+      .slider2
+  %div
+    .slider3
+      .slider3-contents
+        .slider3-contents__image
+          = image_tag 'https://sozai-good.com/uploads/62581/62581_sample.png', class: "smart-phone-image"
+        .slider3-contents__content
+          .slider3-contents__content--font
+            %p スマホで カンタン
+            %p フリマアプリ
+          .slider3-contents__content--text
+            %p メルカリはスマホカメラからすぐに出品できる
+            %p 購入時も安心な独自システムのアプリです
+          .slider3-contents__content--icon
+            =link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" do
+              = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg', class: "icon-image", width: "170", height: "50"
+            =link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
+              = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg', class: "icon-image", width: "170", height: "50"
+
+.sell-icon
+  = link_to "" do
+    .red-circle
+      %p.text 出品
+      = fa_icon 'camera', class: "camera"
