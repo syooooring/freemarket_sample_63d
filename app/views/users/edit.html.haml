@@ -1,0 +1,54 @@
+%link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+
+.main-all
+  .single-container
+    .single-header
+      %h1
+        = link_to root_path do
+          %img
+    .single-main
+      .login-panel
+        .login-no-account
+          %p　アカウントをお持ちでないかたはこちら
+          %a{href: "https://www.mercari.com/jp/signup/?after_save_callback=%2Fjp%2F"} 新規会員登録
+        .login-form-inner
+          %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
+            .btn-image1
+              = image_tag "f_logo_RGB-Blue_72.png", calss: "facebook-logo"
+              = link_to "https://www.yahoo.co.jp/" , class: "facebook-link" do
+                Facebookでログイン
+          %button#google-login.btn-default.btn-sns.btn-sns-google
+            .btn-image2
+              = image_tag "btn_google_light_pressed_ios@2x.png", class: "google-logo"
+              = link_to "https://www.yahoo.co.jp/" , class: "google-link" do
+                googleでログイン
+        .login-form-inner1
+          .form-group
+            %input.login-input-text.input-default{name: "email", type: "email", placeholder: "メールアドレス"}
+          .form-group
+            %input.login-input-text.input-default{name: "password", type: "password", placeholder: "パスワード"}
+          .form-group          
+            .g-recaptcha.login-captcha
+              %div{:style => "width: 304px; height: 78px;"}
+                %div
+                  %iframe{frameborder: "0", height: "78", name: "a-x6czxoic852l", role: "presentation", sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", scrolling: "no", src: "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=75nbHAdFrusJCwoMVGTXoHoM&size=normal&cb=8by6abyui13", width: "304"}
+                %textarea#g-recaptcha-response.g-recaptcha-response{name: "g-recaptcha-response", style: "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
+            .login-submit
+              .btn-default
+                .btn-red
+                  ログイン
+                = link_to "パスワードをお忘れの方", "c", class: "btn-pass" 
+    .single-footer
+      %nav
+        %ul.clearfix
+          %li
+            = link_to "プライバシーポリシー", "https://www.yahoo.co.jp/"
+          %li
+            = link_to "メルカリ利用規約", "https://www.yahoo.co.jp/" 
+          %li
+            = link_to "特定商取引に関する表記", "https://www.yahoo.co.jp/" 
+      .single-fotter-logo
+        = image_tag "logo_gray.svg", class: "mercari-image"
+
+      %p 
+        %small © 2019 Mercari
