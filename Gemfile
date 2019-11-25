@@ -77,4 +77,6 @@ gem 'haml-rails'
 gem 'mini_magick'
 gem 'jquery-rails'
 gem 'fog-aws'
-
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
