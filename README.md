@@ -116,6 +116,9 @@ belongs_to :users
 |price|integer|null: false|
 |text|text|null: false|
 |inappropriate_item|integer||
+|seller_id|references|null: false, foreign_key: true|
+|buyer_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
