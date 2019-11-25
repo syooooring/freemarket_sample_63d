@@ -1,3 +1,158 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.contents{
+  width: 100%;
+  background-color: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+
+  .header{
+    height: 128px;
+    
+    &__box{
+      height: 49px;
+      width: 183px;
+      margin: 0 auto;
+      padding-top: 40px;
+      &:hover{
+        opacity: 0.75;
+      }
+    }
+  }
+  .main{
+    display: block;
+    width: 700px;
+    height: 430px;
+      
+      margin: 0 auto;
+    &__head{
+      background-color: #fff;
+      height: 100px;
+      font-size: 22px;
+      color: #333;
+      border-bottom: solid 1px #f5f5f5;
+      font-weight: bold;
+      text-align: center;
+      line-height: 100px;
+    }
+    .form{
+      height: 290px;
+      background-color: #fff;
+      &__box{
+        background-color: #fff;
+        height: 170px;
+        padding-top: 40px;
+        margin: 0 178px;
+        
+        .box1{
+          background-color: #ea352d;
+          color: #fff;
+          font-size:14px;
+          height: 50px;
+          line-height: 48px;
+          text-align: center;
+          border-radius: 4px;
+          display: block;
+          cursor: pointer;
+          transition:.3s;
+          padding-right: 25px;
+          text-decoration: none;
+
+          &:hover{
+            opacity: 0.75;
+            transition:.3s;
+          }
+          .boximage{
+            font-size: 20px;
+            float: left;
+            margin-left: 20px;
+            padding-top: 15px;
+          }
+        }
+        .box2{
+          background-color: #385185;
+          color: #fff;
+          font-size:14px;
+          height: 50px;
+          display: block;
+          line-height: 48px;
+          padding-right: 40px;
+          text-align: center;
+          border-radius: 4px;
+          text-decoration: none;
+          margin: 16px 0 0;
+          cursor: pointer;
+          .boximage2{
+            float: left;
+            font-size:30px;
+            margin-left: 20px;
+            padding-top: 10px;
+          }
+        }
+        .box3{
+          background-color: #fff;
+          color: #333;
+          font-size:14px;
+          height: 50px;
+          display: block;
+          line-height: 48px;
+          text-align: center;
+          border:solid 1px #979797;
+          border-radius: 4px;
+          padding-right: 45px;
+          margin: 16px 0px 0 0;
+          cursor: pointer;
+          text-decoration: none;
+          .boximage3{
+            float: left;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    
+  }
+  .footer{
+    width: 456px;
+    height: 230px;
+    padding: 55px 0;
+    margin: 0 auto;
+    &__box{
+      font-size: 12px;
+      color: #333;
+      margin: 0 40px;
+      display: flex;
+      text-decoration: none;
+      justify-content: space-between;
+      li{
+        cursor: pointer;
+        &:hover{
+          opacity: 0.75;
+          text-decoration: underline;
+        }
+      }
+    }
+    &__box2{
+      width: 80px;
+      height: 65px;
+      margin: 50px 0 0 140px;
+      cursor: pointer;
+      &:hover{
+        opacity: 0.75;
+      }
+    }
+    &__box3{
+      text-align: center;
+      margin: 8px 0 0;
+      font-size: 12px;
+      color: #333;
+    }
+  }
+}
+
+a{
+  text-decoration: none;
+  color: #333;
+}
