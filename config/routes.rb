@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit] do
     collection do
       get :logout
+      get :sell
     end
   end
 end
