@@ -1,0 +1,29 @@
+.sell-icon {
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+}
+
+.red-circle {
+  background-color: rgb(234, 53, 45);
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  padding-top: 32px;
+  z-index: 1;
+}
+
+.text {
+  text-align: center;
+  font-size: 22px;
+  color: white;
+}
+
+.fa-camera {
+  text-align: center ;
+  font-size: 54px !important;
+  color: white;
+  display: block !important;
+  margin-top: 6px;
+}
+

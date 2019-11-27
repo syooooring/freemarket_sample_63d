@@ -317,6 +317,7 @@ text-align: center;
     }
   }
 }
+
 .footer {
   &-top {
     background-image: image-url("footer_book.jpeg");
@@ -563,9 +564,7 @@ text-align: center;
   }
 }
 
-* {
-  box-sizing: border-box;
-}
+
 
 a:hover {
   text-decoration: underline;
