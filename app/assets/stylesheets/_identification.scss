@@ -65,7 +65,7 @@
             border-bottom: 1px solid #f5f5f5;
             text-align: center;
           }
-          .indenti-forms {
+          .indenti_forms {
             padding: 64px;
             z-index: 1;
             p {
@@ -108,13 +108,27 @@
                 display: flex;
                 position: relative;
                 .icon-arrow-bottom {     
+                  pointer-events: none;
                   position: absolute;
                   right: 16px;
                   top: 50%;
                   color: #888;
                   -webkit-transform: translate(0, -50%);
                   transform: translate(0, -50%);
-                  
+                }
+                .form-select {
+                  width: 100%;
+                  #prefecture_id {
+                    width: 100%;
+                    margin: 8px 0 0;
+                    height: 48px;
+                    padding: 10px 16px 8px;
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                    background: #fff;
+                    line-height: 1.5;
+                    font-size: 16px;
+                  }
                 }
               }
               .input-default {
@@ -230,26 +244,22 @@
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
+      margin-bottom: 20px;
+      padding: 7px 30px 7px 10px;
+      font-size: 93%;
+      line-height: 1.1em;
+      border-radius: 5px;
+      border: none;
+      background-image: url(.assets/icon_arrow.svg);
+      background-repeat: no-repeat;
+      background-size: 12px 10px;
+      background-position: right 10px center;
+      background-color: #bddfff;
       }
       select::-ms-expand{
       display: none;
       }
-      select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        margin-bottom: 20px;
-        padding: 7px 30px 7px 10px;
-        font-size: 93%;
-        line-height: 1.1em;
-        border-radius: 5px;
-        border: none;
-        background-image: url(.assets/icon_arrow.svg);
-        background-repeat: no-repeat;
-        background-size: 12px 10px;
-        background-position: right 10px center;
-        background-color: #bddfff;
-      }
+      
     }
   }
 }
