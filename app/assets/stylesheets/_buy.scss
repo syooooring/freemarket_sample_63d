@@ -2,11 +2,6 @@
 box-sizing: border-box;
 font-size: 14px;
 font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-line-height: 1;
-
-}
-a{
-  color: #0099e8;
 }
 
 .buy{
@@ -83,10 +78,8 @@ background-color: #f5f5f5;
             padding: 16px 0;
             font-size: 18px;
             text-align: left;
-  
           }  
         }
-      
         &__point{
         height: 48px;
         width: 320px;
@@ -135,15 +128,14 @@ background-color: #f5f5f5;
           text-align: right;
           color: #0099e8;
           margin-top:5px ;
-          
         }
-       }
+      }
     }
 
     &__card{
       height:196.69px;
       width: 100%;
-      border: solid 1px #f5f5f5f;
+      border: solid 1px #f5f5f5;
       padding: 24px 87.5px 40px;
       background-color: #fff;
       &__inner{
@@ -154,36 +146,29 @@ background-color: #f5f5f5;
         &__text{
           margin-top: 8px;
         }
-        &__type{
-
-          
-        }
         .image-visa{
           height: 40px;
           width: 50px;
           }
-        
         &__fix{
           text-align: right;
-          color: #0099e8;
           margin-top:5px ;
-          
         }
       }
     }
   }
 }
+.buy-user-info-fix{
+  color: #0099e8;
+}
 
 .main-footer{
   background-color: #f5f5f5;
-
-
   .footer{
     width: 456px;
     height: 230px;
     padding: 55px 0;
     margin: 0 auto;
-    
     &__box{
       font-size: 12px;
       color: #333;
