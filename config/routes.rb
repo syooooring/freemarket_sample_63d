@@ -7,11 +7,16 @@ Rails.application.routes.draw do
       get :buy1
     end
   end
+
     
   resources :pays, only: [:new]
-
   resources :users, only: [:new, :create, :show, :edit] do
     collection do
+      get :registration
+      get :sms_confirmation
+      get :address
+      get :card
+      get :complete
       get :logout
       get :sell
     end
