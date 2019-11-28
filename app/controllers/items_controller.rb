@@ -6,4 +6,12 @@ class ItemsController < ApplicationController
   def details
   end
   
+
+  def buy
+  end
+
+  def buy1
+  end
+  
+
 end

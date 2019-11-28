@@ -1,9 +1,15 @@
 @import "./reset";
+@import "./icon";
+@import "./header";
+@import "./footer";
 @import "./items";
 @import "./users";
-@import "font-awesome";
-//@import "./users_show";
-@import "./footer";
+@import "./items_details"
+@import "./font-awesome";
+// @import "./users_show";
 @import "slick-theme"; 
 @import "slick";
-@import "./items_details"
+@import "identification";
+@import "logout";
+@import "buy";
+@import "buy1";
