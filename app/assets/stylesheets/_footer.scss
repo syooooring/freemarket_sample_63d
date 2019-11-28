@@ -1,5 +1,8 @@
 
 .footer {
+
+  width: 1440px;
+
   &-top {
     background-image: image-url("footer_book.jpeg");
     background-position: center;
@@ -245,6 +248,7 @@
     font-weight: 400;
   }
 }
+
 a:hover {
   text-decoration: underline;
 }

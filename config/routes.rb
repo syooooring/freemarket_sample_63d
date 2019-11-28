@@ -4,11 +4,10 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show] do
     collection do
       get :buy
-      get :buy1
+      get :buy
+      get :details
     end
-  end
-
-    
+  end    
   resources :pays, only: [:new]
   resources :users, only: [:new, :create, :show, :edit] do
     collection do
