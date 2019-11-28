@@ -20,7 +20,7 @@
           = form_with model: @user, class: 'profile-form', local: true do |f|
             .profile-name
               .profile-image
-                %img{src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgKIFBhPPXWTbAkgXHeVP-T_yJ5IGPxot6pdT0-DSnh3ZJOKtkeg&s", class: "profile-name-image"}
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgKIFBhPPXWTbAkgXHeVP-T_yJ5IGPxot6pdT0-DSnh3ZJOKtkeg&s", class: "profile-name-image"
               = f.text_field :nickname, class: 'profile-name__input'
             .profile-text
               = f.text_area :introduction, class: 'profile-text__input',  placeholder: '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'
