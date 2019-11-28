@@ -1,0 +1,31 @@
+.topper
+  = render "shared/header-login" 
+  
+.indenti-crumbs
+  %ul
+    %li
+      = link_to "メルカリ", "https//www.yahoo.co.jp/"
+      %i.icon-arrow
+        = fa_icon "chevron-right"
+    %li
+      = link_to "マイページ", "https://www.yahoo.co.jp/"
+      %i.icon-arrow
+        = fa_icon "chevron-right"
+    %li
+      %span.indenti-list{itemprop: "title"} 本人情報の登録
+
+.content 
+  .mains
+    = render "shared/sidebar"
+    .my-logout
+      .my-logout__bottom 
+        %button{name: "", type: "submit", class: "logout-btn", value: "ボタン"} ログアウト
+
+
+
+.footer
+  = render "shared/footer"
+
+.sell-icon1
+  = render "shared/sell-icon"  
+  
