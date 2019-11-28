@@ -1,0 +1,275 @@
+.contents{
+  width: 1440px;
+  background-color: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+
+  .header{
+    height: 128px;
+    .fmarket{
+      height: 90px;
+      width: 200px;
+      left: 350px;
+      position: relative;
+    
+      &__box{
+        .logo{
+          margin: 35px 10px 10px;
+          &:hover{
+            opacity: 0.75;
+          }
+        }
+      }
+    }
+    .clearfix_s{
+      width: 500px;
+      height: 40px;
+      position: relative;
+      left: 595px;
+      bottom: 54px;
+      display: flex;
+      background-color: #f5f5f5;
+      .progress-bar1s{
+        position: relative;
+        z-index: 1;
+        .a{
+          font-weight: 400;
+          font-size: 12px;
+          position: relative;
+          color: gray;
+          right: 3px;
+        }
+        &__x{
+          background-color: #ea352d;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          display: inline-block;
+          vertical-align: center;
+          position: absolute;
+          top: 23px;
+          left: 15px;
+        }
+        &__x::after{
+          background-color: #ea352d;
+          height: 2px;
+          width: 109px;
+          position: absolute;
+          z-index: -1;
+          display: inline-block;
+          vertical-align: center;
+          content: '';
+          bottom: 5px;
+        }
+      }
+      .progress-bar2s{
+        font-weight: 600;
+        font-size: 12px;
+        position: relative;
+        z-index: 1;
+        color: #ea352d;
+        left: 43px;
+
+        &__x{
+          background-color: #ea352d;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          position: absolute;
+          display: inline-block;
+          vertical-align: center;
+          top: 23px;
+          left: 30px;
+        }
+        &__x::after{
+          background-color: #ccc;
+          height: 2px;
+          width: 125px;
+          position: absolute;
+          z-index: -1;
+          display: inline-block;
+          vertical-align: center;
+          content: '';
+          bottom: 5px;
+        }
+      }
+      .progress-bar3s{
+        font-weight: 400;
+        font-size: 12px;
+        position: relative;
+        z-index: 1;
+        color: gray;
+        left: 83px;
+
+        &__x{
+          background-color: #ccc;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          position: absolute;
+          display: inline-block;
+          vertical-align: center;
+          top: 23px;
+          left: 42px;
+        }
+        &__x::after{
+          background-color: #ccc;
+          height: 2px;
+          width: 120px;
+          position: absolute;
+          z-index: -1;
+          display: inline-block;
+          vertical-align: center;
+          content: '';
+          bottom: 5px;
+        }
+      }
+      .progress-bar4s{
+        font-weight: 400;
+        font-size: 12px;
+        position: relative;
+        z-index: 1;
+        color: gray;
+        left: 123px;
+
+        &__x{
+          background-color: #ccc;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          position: absolute;
+          display: inline-block;
+          vertical-align: center;
+          top: 23px;
+          left: 25px;
+        }
+        &__x::after{
+          background-color: #ccc;
+          height: 2px;
+          width: 100px;
+          position: absolute;
+          z-index: -1;
+          display: inline-block;
+          vertical-align: center;
+          content: '';
+          bottom: 5px;
+        }
+      }
+      .progress-bar5s{
+        font-weight: 400;
+        font-size: 12px;
+        position: relative;
+        z-index: 1;
+        color: gray;
+        left: 145px;
+
+        .bbb{
+          position: relative;
+          left: 36px;
+        }
+
+        &__x{
+          background-color: #ccc;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          position: absolute;
+          display: inline-block;
+          vertical-align: center;
+          top: 23px;
+          left: 42px;
+        }
+      }
+    }
+  }
+  .singles{
+    width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 100%;
+    &__head{
+      height: 95px;
+      border-bottom: 1px solid #f5f5f5;
+      h1{
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+        line-height: 95px;
+        text-align: center;
+      }
+    }
+  }
+  .singles-box{
+    padding: 40px 40px 64px;
+    .singles-box2{
+      width: 343px;
+      height: 70px;
+      margin: 0 auto;
+
+      li{
+        font-weight: 600;
+        font-size: 14px;
+        list-style: none; 
+      }
+      .input-default{
+        padding: 10px 16px 8px;
+        height: 48px;
+        width: 340px;
+        border-radius: 4px;
+        border:solid 1px #ccc;
+        margin-top: 5px;
+      }
+      .message1{
+        margin-top: 10px;
+        font-size:14px;
+        font-weight: 200;
+        color: #333;
+      }
+    }
+    .button_box{
+      height: 50px;
+      width: 343px;
+      margin: 85px auto 0;
+    
+      button{
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        background-color: #ea352d;
+        border: solid 1px #ea352d;
+        color: #fff;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .message2{
+        margin-top: 5px;
+        font-size:14px;
+        font-weight: 200;
+        color: #333;
+      }
+    }
+    .message3{
+      height: 20px;
+      width: 343px;
+      margin: 32px auto 0;
+      p{
+        margin-left: 140px;
+        margin-top: 80px;
+      
+        a{
+          cursor: pointer;
+          font-size: 14px;
+          color: #0099e8;
+          &:hover{
+            opacity: 0.75;
+            text-decoration: underline;
+          }
+        }
+        i{
+          color: #0099e8;
+          position: relative;
+          top: 1px;
+        }
+      }
+    }
+  }
+}

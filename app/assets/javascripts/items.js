@@ -6,7 +6,6 @@ $(document).on('turbolinks:load', function () {
     nextArrow: '<img src="https://icon-pit.com/wp-content/uploads/2018/10/arrow_icon_414-300x300.png" class="slide-arrow next-arrow", width="31", height="46">'
   });
 
-
   $('.thumbnail').slick({
     infinite: true, //スライドのループ有効化
     arrows: false, //矢印非表示
@@ -23,4 +22,3 @@ $(document).on('turbolinks:load', function () {
     asNavFor: '.thumbnail', //thumbnailクラスのナビゲーション
   });
 });
-
