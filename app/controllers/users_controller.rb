@@ -27,11 +27,18 @@ class UsersController < ApplicationController
   def complete
   end
 
+  def profile
+  end
+
+  def card
+  end
+
   def logout
   end
 
 
   def sell
+
   end
   
   def identification

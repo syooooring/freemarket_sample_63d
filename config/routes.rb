@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       get :buy1
     end
   end
+
+    
+  resources :pays, only: [:new]
   resources :users, only: [:new, :create, :show, :edit] do
     collection do
       get :registration
@@ -18,7 +21,9 @@ Rails.application.routes.draw do
       get :sell
     end
     member do
-      get  :identification
+      get :identification
+      get :profile
+      get :card
     end
   end
 end
