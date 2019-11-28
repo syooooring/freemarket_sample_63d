@@ -1,5 +1,5 @@
 .indenti-header
-  = render "items/header" 
+  = render "shared/header-login" 
   .indenti-wrapper
     .indenti-crumbs
       %ul
@@ -14,11 +14,7 @@
         %li
           %span.indenti-list{itemprop: "title"} 本人情報の登録
     .clearfix
-      .sell-icon
-        = link_to "" do
-          .red-circle
-            %p.text 出品
-            = fa_icon 'camera', class: "camera"
+      = render 'shared/sell-icon'
       .indenti-container
         .indenti-content
           .mypage-indenti
@@ -159,4 +155,4 @@
                     ログアウト
                     %i= fa_icon "chevron-right" 
   .indenti-banner
-    = render "items/footer"
+    = render "shared/footer"
