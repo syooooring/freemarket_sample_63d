@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_040248) do
+ActiveRecord::Schema.define(version: 2019_11_28_032854) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "prefecture_id"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "image", null: false
+    t.integer "size"
+    t.integer "state", null: false
+    t.integer "delivery_fee", null: false
+    t.integer "shipping_method", null: false
+    t.integer "estimated_shipping_date", null: false
+    t.integer "price", null: false
+    t.text "text", null: false
+    t.integer "inappropriate_item"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", null: false
@@ -34,21 +56,6 @@ ActiveRecord::Schema.define(version: 2019_11_25_040248) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-ActiveRecord::Schema.define(version: 2019_11_20_111503) do
-
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "image", null: false
-    t.integer "size"
-    t.integer "state", null: false
-    t.integer "delivery_fee", null: false
-    t.integer "shipping_method", null: false
-    t.integer "estimated_shipping_date", null: false
-    t.integer "price", null: false
-    t.text "text", null: false
-    t.integer "inappropriate_item"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

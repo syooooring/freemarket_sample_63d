@@ -11,5 +11,19 @@ class UsersController < ApplicationController
 
   def edit
   end
-  
+
+  def registration
+  end
+
+  def sms_confirmation
+  end
+
+  def address
+  end
+
+  def card
+  end
+
+  def complete
+  end
 end
