@@ -1,8 +1,11 @@
 @import "./reset";
+@import "./icon";
+@import "./header";
+@import "./footer";
 @import "./items";
 @import "./users";
 @import "./font-awesome";
-//@import "./users_show";
+// @import "./users_show";
 @import "slick-theme"; 
 @import "slick";
 @import "./profile";
@@ -10,3 +13,7 @@
 @import "./clear";
 @import "./pays";
 @import 'font-awesome-sprockets';
+@import "identification";
+@import "logout";
+@import "buy";
+@import "buy1";

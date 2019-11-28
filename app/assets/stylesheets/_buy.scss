@@ -1,115 +1,169 @@
-.contents{
-  width: 100%;
-  background-color: #f5f5f5;
-  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+* {
+box-sizing: border-box;
+font-size: 14px;
+font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+}
 
-  .header{
-    height: 128px;
-    
-    &__box{
-      height: 49px;
-      width: 183px;
-      margin: 0 auto;
-      padding-top: 40px;
-      &:hover{
-        opacity: 0.75;
-      }
-    }
-  }
-  .main{
-    display: block;
-    width: 700px;
-    height: 430px;
-      
-      margin: 0 auto;
-    &__head{
+.buy{
+width: 1440px;
+height: 741.28px;
+background-color: #f5f5f5;
+  &__main{
+  margin: 0 auto;
+  height: 65px;
+  width: 700px;
+    .details {
+      height: 65px;
+      width: 100%;
+      padding: 16px;
+      border: solid 1px #f5f5f5;
       background-color: #fff;
-      height: 100px;
-      font-size: 22px;
-      color: #333;
-      border-bottom: solid 1px #f5f5f5;
-      font-weight: bold;
       text-align: center;
-      line-height: 100px;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: initial;
     }
-    .form{
-      height: 290px;
+    &__pay{ 
+      height: 352px;
+      width: 100%;
+      border: solid 0 1px 0 1px #f5f5f5;
+      padding: 24px 87.5px 0;
       background-color: #fff;
-      &__box{
-        background-color: #fff;
-        height: 170px;
-        padding-top: 40px;
-        margin: 0 178px;
-        
-        .box1{
-          background-color: #ea352d;
-          color: #fff;
-          font-size:14px;
-          height: 50px;
-          line-height: 48px;
+      &__inner{
+        margin: 0 102.5px;
+        &__image{
+          width: px;
+          display: inline-block;
+          display: flex;
+        }
+      
+        .image-item{
+          width: 64px;
+          height: 64px;
+          display: inline-block;
+        }
+        .image-text{
+          width: 256px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .buy-price-1{
+          margin: 8px 0 0 ;
           text-align: center;
-          border-radius: 4px;
-          display: block;
-          cursor: pointer;
-          transition:.3s;
-          padding-right: 25px;
-          text-decoration: none;
+          font-size: 20px;
+          .item-shipping-fee{
+            font-size: 14px;
+            margin: 0 0 0 8px;
+          }
+        }
 
-          &:hover{
-            opacity: 0.75;
-            transition:.3s;
-          }
-          .boximage{
+        &__text{
+          margin-left: 16px; ;
+          display: inline-block;
+          
+        }
+        &__price{
+          display: flex;
+          justify-content:space-between;
+          list-style: none;
+          font-weight: 600;
+          margin-top:5px;
+          .buy-price-2{
+            padding: 16px 0;
+            text-align: center;
             font-size: 20px;
-            float: left;
-            margin-left: 20px;
-            padding-top: 15px;
-          }
+            line-height: 20px;
+            }
+          .buy-text{
+            padding: 16px 0;
+            font-size: 18px;
+            text-align: left;
+          }  
         }
-        .box2{
-          background-color: #385185;
-          color: #fff;
-          font-size:14px;
-          height: 50px;
+        &__point{
+        height: 48px;
+        width: 320px;
+        background-color: #ccc;
+        margin: 2px 0;
+      
+        .buy-point{
+          text-align: center;
+          margin-top: 25px;
+          line-height: 48px;
+         }
+        }
+
+        &__button{
+        }
+        .buy-btn{
+          background-color: #ea352d;
           display: block;
           line-height: 48px;
-          padding-right: 40px;
-          text-align: center;
-          border-radius: 4px;
-          text-decoration: none;
-          margin: 16px 0 0;
-          cursor: pointer;
-          .boximage2{
-            float: left;
-            font-size:30px;
-            margin-left: 20px;
-            padding-top: 10px;
-          }
+          font-size: 14px;
+          width: 320px;
+          color: white;
         }
-        .box3{
-          background-color: #fff;
-          color: #333;
-          font-size:14px;
-          height: 50px;
-          display: block;
-          line-height: 48px;
-          text-align: center;
-          border:solid 1px #979797;
-          border-radius: 4px;
-          padding-right: 45px;
-          margin: 16px 0px 0 0;
-          cursor: pointer;
-          text-decoration: none;
-          .boximage3{
-            float: left;
-            margin-left: 10px;
+       }
+      }
+
+    &__address{
+      height: 167.59px;
+      width: 100%;
+      border: solid 1px #f5f5f5;
+      padding: 24px 87.5px 0;
+      font-size: 12px;
+      background-color: #fff;
+        &__inner{
+          margin: 0 102.5px;
+      
+          &__area{
+          font-weight: bold;
+
+        }
+          &__info{
+            margin-top: 8px;
           }
+
+          &__fix{
+          text-align: right;
+          color: #0099e8;
+          margin-top:5px ;
         }
       }
     }
 
-    
+    &__card{
+      height:196.69px;
+      width: 100%;
+      border: solid 1px #f5f5f5;
+      padding: 24px 87.5px 40px;
+      background-color: #fff;
+      &__inner{
+        margin: 0 102.5px;
+        &__way{
+          font-weight: bold;
+        }
+        &__text{
+          margin-top: 8px;
+        }
+        .image-visa{
+          height: 40px;
+          width: 50px;
+          }
+        &__fix{
+          text-align: right;
+          margin-top:5px ;
+        }
+      }
+    }
   }
+}
+.buy-user-info-fix{
+  color: #0099e8;
+}
+
+.main-footer{
+  background-color: #f5f5f5;
   .footer{
     width: 456px;
     height: 230px;
@@ -146,13 +200,12 @@
       color: #333;
     }
   }
-}
 
-a{
+  a{
   text-decoration: none;
   color: #333;
-}
-.main-all {
+  }
+  .main-all {
   position: relative;
   min-height: 100%;
   background: #f5f5f5;
@@ -342,6 +395,7 @@ a{
             display: block;
             touch-action: manipulation;
             text-decoration: none;
+            
           }
       .single-fotter-logo {
         width: 80px;
@@ -363,5 +417,6 @@ a{
         margin-inline-end: 0px;
       }
     }
+  }
   }
 }

@@ -12,10 +12,21 @@ class UsersController < ApplicationController
   def edit
   end
 
+
   def profile
   end
 
   def card
   end
+
+  def logout
+  end
+
+
+  def sell
+
+  end
   
+  def identification
+  end
 end
