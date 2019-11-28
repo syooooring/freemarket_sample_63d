@@ -11,5 +11,11 @@ class UsersController < ApplicationController
 
   def edit
   end
+
+  def profile
+  end
+
+  def card
+  end
   
 end
