@@ -12,6 +12,9 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def zoom
+  end
+  
   def registration
   end
 
@@ -38,7 +41,6 @@ class UsersController < ApplicationController
 
 
   def sell
-
   end
   
   def identification

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "items#index"
+
   resources :items, only: [:index, :show] do
     collection do
       get :buy
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
       get :identification
       get :profile
       get :card_info
+      get :zoom
     end
   end
 end
