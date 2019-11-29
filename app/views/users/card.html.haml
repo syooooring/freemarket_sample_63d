@@ -1,4 +1,4 @@
-.profile-wrapper
+.card-wrapper
   = render 'items/header'
   .indenti-crumbs
     %ul
@@ -11,20 +11,30 @@
         %i.icon-arrow
           = fa_icon "chevron-right"
       %li
-        %span.indenti-list{itemprop: "title"} プロフィール
+        %span.indenti-list{itemprop: "title"} 支払い方法
   .main-content.clearfix
-    .profile
-      .profile__right
-        %h1.profile__right--top プロフィール
-        .profile__right--bottom
-          = form_with model: @user, class: 'profile-form', local: true do |f|
-            .profile-name
-              .profile-image
-                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgKIFBhPPXWTbAkgXHeVP-T_yJ5IGPxot6pdT0-DSnh3ZJOKtkeg&s", class: "profile-name-image"
-              = f.text_field :nickname, class: 'profile-name__input'
-            .profile-text
-              = f.text_area :introduction, class: 'profile-text__input',  placeholder: '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'
-              = f.submit '変更する', class: 'profile-text__submit'
+    .card
+      .card__right
+        %h2.card__right--title 支払い方法
+        .card__right--content
+          %p.card-index クレジットカード一覧
+          -# .card-button  「カードの登録がないときのビュー」
+          -#   .card-button__tag
+          -#     = link_to '' , class: 'card-button-link' do
+          -#       = fa_icon "credit-card", class: 'card-button-icon'
+          -#       %p.card-button-text クレジットカードを追加する
+          %ul.cards
+            %li.cards__show
+              = form_with model: @user, class: 'cards__show--form', local: true do |f|
+                = image_tag "/assets/mc_vrt_opt_pos_46_1x.png", width: "34", height: "20"
+                %p.card-info ************1975
+                %p.card-info 10 / 21 
+                = f.submit "削除する", class: "card-delete"
+            
+          .card-link
+            = link_to '', class: 'card-link-text' do
+              %p.card-link-font 支払い方法について
+              = fa_icon "chevron-right", class: 'card-link-icon'
     .mains
       .left
         .left__top
