@@ -1,5 +1,5 @@
 .pay-wrapper
-  = render 'items/header'
+  = render 'shared/header-login'
   .indenti-crumbs
     %ul
       %li
@@ -26,20 +26,13 @@
             %span.card-number__necessary 必須
             = f.text_field :card_number, class: "card-number__input", placeholder: "半角数字のみ", "data-input-type": "card", maxlength: "19"
             %ul
-              %li
-                = fa_icon "cc-visa lg"
-              %li.card-number-icon
-                = fa_icon  "cc-mastercard lg"
-              %li.card-number-icon
-                = fa_icon "cc-paypal lg"
-              %li.card-number-icon
-                = fa_icon "cc-jcb lg"
-              %li.card-number-icon
-                = fa_icon "cc-amex lg"
-              %li.card-number-icon
-                = fa_icon "cc-diners-club lg"
-              %li.card-number-icon
-                = fa_icon "cc-discover lg"
+              %li.visa-icon
+              %li.card-number-icon.master-icon
+              %li.card-number-icon.paypal-icon
+              %li.card-number-icon.jcb-icon
+              %li.card-number-icon.amex-icon
+              %li.card-number-icon.club-icon
+              %li.card-number-icon.discover-icon
           .expiration-date
             %p.card-number__text 有効期限
             %span.card-number__necessary 必須
@@ -62,87 +55,8 @@
                 %p.back-side__picture--text カードの裏面をご参照ください。
                 %img{src: "https://4.bp.blogspot.com/-gXCyJrQBDMw/XG4GdCyKUZI/AAAAAAABRrQ/l-hzZXmOh_YnB1gy3lyrnyIFMzBVvu_FwCLcBGAs/s800/creditcard_back.png", class: "back-side__picture--image"}
           = f.submit '追加する', class: 'card-submit'
-    .mains
-      .left
-        .left__top
-          %ul
-            = link_to '' do
-              %p
-                マイページ
-                %i= fa_icon "chevron-right", class: "special"
-            %li
-              お知らせ
-              %i= fa_icon "chevron-right"
-            %li
-              やることリスト
-              %i= fa_icon "chevron-right"
-            %li
-              いいね！一覧
-              %i= fa_icon "chevron-right"
-            %li
-              出品する
-              %i= fa_icon "chevron-right"
-            %li
-              出品した商品・出品中
-              %i= fa_icon "chevron-right"
-            %li
-              出品した商品・取引中
-              %i= fa_icon "chevron-right"
-            %li
-              出品した商品・売却済み
-              %i= fa_icon "chevron-right"
-            %li
-              購入した商品・取引中
-              %i= fa_icon "chevron-right"
-            %li
-              購入した商品・過去の取引
-              %i= fa_icon "chevron-right"
-            %li
-              ニュース一覧
-              %i= fa_icon "chevron-right"
-            %li
-              評価一覧
-              %i= fa_icon "chevron-right"
-            %li
-              ガイド
-              %i= fa_icon "chevron-right"
-            %li
-              お問い合わせ
-              %i= fa_icon "chevron-right"
-        .left__center
-          メルペイ
-          .left__center__box
-            %li
-              売上・振込申請
-              %i= fa_icon "chevron-right"
-            %li
-              ポイント
-              %i= fa_icon "chevron-right"
-        .left__bottom
-          設定
-          .left__bottom__box
-            %li
-              プロフィール
-              %i= fa_icon "chevron-right"
-            %li
-              発送元・お届け先住所変更
-              %i= fa_icon "chevron-right"
-            %li
-              支払い方法
-              %i= fa_icon "chevron-right"
-            %li
-              メール/パスワード
-              %i= fa_icon "chevron-right"
-            %li
-              本人情報
-              %i= fa_icon "chevron-right"
-            %li
-              電話番号の確認
-              %i= fa_icon "chevron-right"
-            %li
-              ログアウト
-              %i= fa_icon "chevron-right"
-  = render 'items/footer'
+    = render 'shared/sidebar'
+  = render 'shared/footer'
 
 .sell-icon
   = link_to "" do

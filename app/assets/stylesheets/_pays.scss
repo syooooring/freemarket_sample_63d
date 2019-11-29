@@ -57,6 +57,34 @@
               margin: 0 0 0 8px;
               vertical-align: middle;
             }
+            .visa-icon::after {
+              content: '\f1f0';
+              font-family:'Font Awesome 5 Brands'
+            }
+            .master-icon::after {
+              content: '\f1f1';
+              font-family:'Font Awesome 5 Brands'
+            }
+            .paypal-icon::after {
+              content: '\f1f4';
+              font-family:'Font Awesome 5 Brands'
+            }
+            .jcb-icon::after {
+              content: '\f24b';
+              font-family:'Font Awesome 5 Brands'
+            }
+            .amex-icon::after {
+              content: '\f1f3';
+              font-family:'Font Awesome 5 Brands'
+            }
+            .club-icon::after {
+              content: '\f24c';
+              font-family:'Font Awesome 5 Brands'
+            }
+            .discover-icon::after {
+              content: '\f1f2';
+              font-family:'Font Awesome 5 Brands'
+            }
           }
         }
         .expiration-date {
@@ -88,15 +116,15 @@
             }
             &--month-icon {
               position: absolute;
-              right: 52px;
-              top: 9px;
+              right: 56px;
+              top: 15px;
               display: inline-block;
               pointer-events: none;
             }
             &--year-icon {
               position: absolute;
               left: 105px;
-              top: 9px;
+              top: 15px;
               pointer-events: none;
             }
           }
