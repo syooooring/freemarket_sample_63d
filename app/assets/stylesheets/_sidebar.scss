@@ -1,0 +1,84 @@
+.left{
+  height: 1000px;
+  width: 280px;
+  float: left;
+  margin: 0 40px 0 0;
+  &__top{
+    background-color: #fff;
+    height: 700px;
+  }
+  &__center {
+    font-weight: bold;
+    margin-top: 40px;
+    &__box {
+      font-weight: normal;
+    }
+  }
+  &__bottom {
+    font-weight: bold;
+    margin-top: 40px;
+    &__box {
+      font-weight: normal;
+    }
+  }
+  //選択中のページの色などが変わる記述
+  // p{
+  //   display: block;
+  //   color: #333;
+  //   min-height: 48px;
+  //   height: 50px;
+  //   position: relative;
+  //   background: #eee;
+  //   font-size: 14px;
+  //   font-weight: bold;
+  //   line-height: 50px;
+  //   .special {
+  //    color: #333;
+  //   }
+  // }
+  li{
+    display: block;
+    line-height: 50px;
+    color: #333;
+    min-height: 48px;
+    height: 50px;
+    position: relative;
+    background: #fff;
+    font-size: 14px;
+    border-top: solid 1px #eee;
+  }
+  i{
+    position: absolute;
+    left: 128px;
+    top: 9px;
+    font-size:15px;
+    color: #ccc;
+  }
+  a {
+    text-decoration: none;
+    transition: background-color .2s;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding-left: 15px;
+    display: flex;
+  }
+  a:hover {
+    text-decoration: none;
+    background-color: #eee;
+  }
+  a::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f054';
+    position: absolute;
+    right: 1.5em;
+    transition: all .2s;
+    color: #ccc;
+    font-size: 17px;
+  }
+  a:hover::after {
+    right: 1.4rem;
+    color: #333;
+  }
+}

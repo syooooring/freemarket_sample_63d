@@ -90,7 +90,7 @@ a {
   width: 160px;
   height: 160px;
   padding-top: 32px;
-  z-index: 1;
+  z-index: 10;
 }
 
 .text {
@@ -115,7 +115,7 @@ a {
 
 
 .header{
-  width: 100vw;
+  width: 1440px;
   height: 100px;
 
   .main{
@@ -184,7 +184,6 @@ a {
        &__category{
          display: flex;
          height: 36px;
-         width: 149.45px;
          display: flex;
          font-size: 14px;
          padding: 0 10px 0 0;
@@ -325,7 +324,7 @@ text-align: center;
     background-image: image-url("footer_book.jpeg");
     background-position: center;
     background-size: 100%;
-    width: 100%;
+    width: 1440px;
     height: 260px;
     &__center {
       width: 750px;
@@ -376,6 +375,7 @@ text-align: center;
     background-color: rgb(34, 34, 34);
     color: #fff;
     padding: 0 20px 10px;
+    width: 1440px;
     a {
       text-decoration: none;
       color: rgb(192, 192, 192);
@@ -416,7 +416,7 @@ text-align: center;
             .twitter {
               max-width: 100%;
               max-height: 100%;
-              width: 30px;
+              width: 50px;
               height: auto;
               margin-right: 16px;
               font-size: 33px;
@@ -425,13 +425,12 @@ text-align: center;
           }
           .sns-facebook {
             display: inline-block;
-            margin-top: 25px;
             .facebook {
               max-width: 100%;
               max-height: 100%;
               width: 30px;
               height: auto;
-              margin-right: 20px;
+              margin: 15px 20px 10px 0;
               font-size: 31px;
               color: #fafafa;
             }
@@ -542,27 +541,29 @@ text-align: center;
       }
     }
   }
-  .under {
-    display: flex;
-    background-color: rgb(34, 34, 34);
-    padding: 10px 210px;
-    &-logo {
-      color: #fafafa;
-      .f_logo {
-        max-width: 130px;
-        max-height: 50px;
-        width: 130px;
-        height: 50px;
-      }
+}
+
+.under {
+  display: flex;
+  background-color: rgb(34, 34, 34);
+  padding: 10px 210px;
+  width: 1440px;
+  &-logo {
+    color: #fafafa;
+    .f_logo {
+      max-width: 130px;
+      max-height: 50px;
+      width: 130px;
+      height: 50px;
     }
-    &-since {
-      color: #fff;
-      font-size: 12px;
-      text-align: center;
-      width: 80%;
-      padding-top: 10px;
-      font-weight: 400;
-    }
+  }
+  &-since {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    width: 80%;
+    padding-top: 10px;
+    font-weight: 400;
   }
 }
 

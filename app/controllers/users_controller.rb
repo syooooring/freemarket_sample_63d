@@ -11,5 +11,8 @@ class UsersController < ApplicationController
 
   def edit
   end
+
+  def zoom
+  end
   
 end
