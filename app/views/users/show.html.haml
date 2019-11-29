@@ -1,22 +1,22 @@
-.users__show__top
-  = render "shared/header-new"
+.users__show
+  .users__show__top
+    = render "shared/header-new"
+    .top-ber
+      %ul.top-ber__box
+        %li
+          =link_to "フリーマーケット",root_path
+        .top-ber__box2
+          %i= fa_icon "chevron-right", class:"arrow"
+        .top-ber__box3
+          マイページ
 
-.sell-icon
-  = link_to "" do
-    .red-circle
-      %p.text 出品
-      = fa_icon 'camera', class: "camera"
+  .sell-icon
+    = link_to "" do
+      .red-circle
+        %p.text 出品
+        = fa_icon 'camera', class: "camera"
 
-.content.clearfix
-  .top-ber
-    %ul.top-ber__box
-      %li
-        =link_to "フリーマーケット",root_path
-      .top-ber__box2
-        %i= fa_icon "chevron-right", class:"arrow"
-      .top-ber__box3
-        マイページ
-  .mains
+  .content.clearfix
     = render "shared/sidebar"
     .right
       .right__up
@@ -187,8 +187,8 @@
               取引中の商品がありません
             %li.bought__text__list--message
               過去の取引がありません
-              
+                
 
 
-.users__show__bottom
-  = render "shared/footer"
+  .users__show__bottom
+    = render "shared/footer"
