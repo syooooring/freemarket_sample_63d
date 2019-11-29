@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show] do
     collection do
       get :buy
-      get :buy
+      get :buy1
       get :details
     end
   end    
