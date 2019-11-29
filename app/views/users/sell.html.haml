@@ -14,11 +14,11 @@
         .sell__inner__upload__img-text
           %h2.sent-left 出品画像
           %h2.sell-right 必須
-
         .sell__inner__upload__img-text2
           %h2.img-text-up 最大10枚までアップロードできます
         .sell__inner__upload__img-file
           .sell__inner__upload__img-file__box
+           
           .sell__inner__upload__img-file__container
             %label
               = f.file_field :image, class: 'hidden', style: "display: none;" 
@@ -27,7 +27,7 @@
                   :preserve
                     ドラッグアンドドロップ
                     またはクリックしてファイルをアップロード
-                    
+
       .sell__inner__content
         .sell__inner__content__item
           %h2.sent-left 商品名
@@ -141,4 +141,3 @@
         = image_tag "fmarket_logo_white.svg" , height: "60", width: "150"
     .footer__box3
       © 2019 Mercari        
- 

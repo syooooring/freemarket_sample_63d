@@ -31,6 +31,8 @@
           margin-top: 5px;
         }
         &__img-file{
+          margin-top: 15px;
+          display: flex;
           &__container{
             height: 160px;
             width: 620px;
@@ -40,8 +42,9 @@
             border: 1px dashed #ccc;
             font-size: 0;
             text-align: center;
-            margin-top: 15px;
+         
           }
+          
       
         
         }
@@ -336,3 +339,6 @@ pointer-events: none;
   cursor: pointer;
 }
 
+.pic{
+  
+}
