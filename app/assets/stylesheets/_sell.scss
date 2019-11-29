@@ -1,0 +1,295 @@
+  .sell-main{
+  background-color: #f5f5f5;
+  width: 1440px;
+  .sell{
+    &__inner{
+    
+      width: 700px;
+      background-color: #fff;
+      margin: 0 auto;
+      &__top{
+        padding: 32px 16px;
+        text-align: center;
+        font-size: 21px;
+        font-weight: bold;
+        border-bottom: solid 1.5px #f5f5f5;
+        .sell-info{
+          font-weight: bold;
+        }
+      }
+      &__upload{
+        height: 300px;
+        width: 100%;
+        background-color: #fff;
+        padding: 40px;
+        border-bottom: solid 1.5px #f5f5f5;
+        &__img-text{
+          display: flex;
+        }
+      }
+      &__content{
+        height: 360px;
+        width: 100%;
+        padding: 40px;
+        border-bottom: solid 1.5px #f5f5f5;
+     
+        &__item{
+          display: flex;
+          margin-top: 8px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__name{
+      
+          .input-default{
+            height: 40px;
+            width: 100%;
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 8px;
+          }
+        }
+        &__description{
+          display: flex;
+          margin-top: 30px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__deteil{
+          .textarea-default{
+            border: 1px solid #ccc;
+            height: 130px;
+            width: 100%;
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 8px;
+          }
+        }
+      }
+
+      &__category{
+      height: 270px;
+      width: 100%;
+      padding: 40px;
+      border-bottom: solid 1.5px #f5f5f5;
+      .category-box{
+      float:right;
+      }
+      &__name{
+       
+        display: flex;
+      }
+
+      &__status{
+        margin-top: 40px;
+        display: flex;
+
+      }
+      }
+
+      &__delivery{
+        height: 385px;
+        width: 100%;
+        padding: 40px;
+        border-bottom: solid 1.5px #f5f5f5;
+        .delivery-box{
+        float:right;
+        }
+        &__fee{
+          display: flex;
+        }
+        &__region{
+          display: flex;
+          margin-top: 40px;
+        }
+
+        &__day{
+          display: flex;
+          margin-top: 40px;
+        }
+      }
+
+      &__price {
+        height: 300px;
+        width: 100%;
+        padding: 40px;
+        border-bottom: solid 1.5px #f5f5f5;
+        &__box{
+          float: right;
+          height: 280px;
+          width: 400px;
+          .sell-price-form{
+            display:flex;
+            margin-top:10px;
+            justify-content: space-between;
+       
+          .price-box-top{
+            display: inline-block;
+            margin-top: 12px;
+          } 
+          .sell-price-input{
+            display: flex;
+            
+          }
+         }
+       } 
+      }
+      &__privacy{
+        height: 330px;
+        width: 100%;
+        padding: 40px;    
+        border-bottom: solid 1.5px #f5f5f5;
+        &__exhibit{
+          margin-top: 40px;
+          position: relative;
+          .sell-back{
+            height: 50px;
+            width: 280px;
+            font-size: 14px;
+            text-align: center;
+            background: #aaa;
+            border: 1px solid #aaa;
+            color: #fff !important;
+            line-height: 20px;
+            padding: 14px;
+            position: absolute;
+            top: 75px;
+            left: 166px;
+           }
+          }
+        }
+        a{
+          color: #0099e8;
+        }
+        }
+      }
+    }
+  
+.sell-right{
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  background: #ea352d;
+  display: inline-block;
+}
+.sent-left{
+  display: inline-block;
+}
+.img-text-left {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.select-sell {
+  width: 400px;
+  #prefecture_id {
+    width: 400px;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+}
+
+
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 20px;
+  padding: 7px 30px 7px 10px;
+  font-size: 93%;
+  line-height: 1.1em;
+  border-radius: 5px;
+  border: none;
+  background-image: url(.assets/icon_arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 10px;
+  background-position: right 10px center;
+  background-color: #bddfff;
+  }
+  select::-ms-expand{
+  display: none;
+  }
+
+.text-inline{
+  display: inline;
+} 
+
+
+.select-sell{
+  position: relative;
+}
+.icon-arrow-sell{
+right: 20px;
+top: 25px;
+z-index: 1;
+position: absolute;
+pointer-events: none;
+
+}
+
+.input-sell{
+  height: 40px;
+  width: 200px;
+  text-align: right;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-left:10px ;
+}
+
+.sell-price-center{
+  height: 72px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0;
+  margin-top:25px ;
+  border-top: solid 1.5px  #f5f5f5;
+  border-bottom: solid 1.5px  #f5f5f5;
+}
+.sell-price-bold{
+  height: 80px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0;
+  .l-left {
+    font-weight: bold;
+  }
+  .l-right {
+  font-size:30px;
+  font-weight: bold;
+  }
+}
+.privacy1{
+  display: flex;
+}
+.privacy2{
+  display: flex;
+}
+
+.exhibit-btn{
+  width: 620px;
+  height: 45px;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+
+
+.qestion-mark{
+  border-radius: 50%;
+  background-color:  #0099e8;
+  color: #fff !important ;
+  padding: 0 3px 0 3px;
+}

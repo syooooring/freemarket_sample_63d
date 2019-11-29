@@ -1,0 +1,158 @@
+.indenti-header
+  = render "shared/header-login" 
+  .indenti-wrapper
+    .indenti-crumbs
+      %ul
+        %li
+          = link_to "メルカリ", "https://www.yahoo.co.jp/"
+          %i.icon-arrow
+            = fa_icon "chevron-right"
+        %li
+          = link_to "マイページ", "https://www.yahoo.co.jp/"
+          %i.icon-arrow
+            = fa_icon "chevron-right"
+        %li
+          %span.indenti-list{itemprop: "title"} 本人情報の登録
+    .clearfix
+      = render 'shared/sell-icon'
+      .indenti-container
+        .indenti-content
+          .mypage-indenti
+            %h2.indenti-chapter 本人情報の登録
+            %form.indenti_forms1
+            = form_with model: @user, class: :indenti_forms ,local: true do |f|
+              %div
+                %p
+                  お客さまの本人情報をご登録ください。
+                  %br>/
+                  登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+                %p.text-right
+                  = link_to "本人確認書類のアップロードについて", "https://www.yahoo.co.jp/"
+                  %i.icon-arrow-right
+                    = fa_icon "chevron-right"
+              %div.indenti-form
+                %label お名前
+                %p Dチーム
+              %div.indenti-form
+                %label お名前カナ
+                %p ディーチーム
+              %div.indenti-form
+                %label 生年月日
+                %p 7/4
+              %div.indenti-form
+                %label 郵便番号
+                %span.form-arbitray 任意
+                %br>/
+                %input.input-default{placeholder: "例) 1234567", type: "text", value: ""}/
+              %div.indenti-form
+                %label 都道府県
+                %span.form-arbitray 任意
+                %div.select-wrap
+                  %i.icon-arrow-bottom 
+                    = fa_icon "chevron-down"
+                  .form-select
+                    = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+
+              %div.indenti-form
+                %label 市区町村
+                %span.form-arbitray 任意
+                %br>/
+                %input.input-default{type: "text", name: "city", placeholder: "例) 横浜市緑区"}
+              %div.indenti-form
+                %label 番地
+                %span.form-arbitray 任意
+                %br>/
+                %input.input-default{type: "text", name: "address1", placeholder: "例) 青山1-1-1"}
+              %div.indenti-form
+                %label 建物名
+                %span.form-arbitray 任意
+                %br/
+                %input.input-default{type: "text", name: "address2", placeholder: "例) 柳ビル103"}
+              %button.btn-indenti{type: "submit"}登録する
+              .indenti-form-text
+                = link_to "本人情報の登録について", "https://www.yahoo.co.jp/"
+                %i.icon-arrow-right
+                  = fa_icon "chevron-right"
+        .indenti-side
+          .mains
+            .left
+              .left__top
+                %ul
+                  = link_to user_path do
+                    %p
+                      マイページ
+                      %i= fa_icon "chevron-right", class: "special"
+                  %li
+                    お知らせ
+                    %i= fa_icon "chevron-right"
+                  %li
+                    やることリスト
+                    %i= fa_icon "chevron-right"
+                  %li
+                    いいね！一覧
+                    %i= fa_icon "chevron-right"
+                  %li
+                    出品する
+                    %i= fa_icon "chevron-right"
+                  %li
+                    出品した商品・出品中
+                    %i= fa_icon "chevron-right"
+                  %li
+                    出品した商品・取引中
+                    %i= fa_icon "chevron-right"
+                  %li
+                    出品した商品・売却済み
+                    %i= fa_icon "chevron-right"
+                  %li
+                    購入した商品・取引中
+                    %i= fa_icon "chevron-right"
+                  %li
+                    購入した商品・過去の取引
+                    %i= fa_icon "chevron-right"
+                  %li
+                    ニュース一覧
+                    %i= fa_icon "chevron-right"
+                  %li
+                    評価一覧
+                    %i= fa_icon "chevron-right"
+                  %li
+                    ガイド
+                    %i= fa_icon "chevron-right"
+                  %li
+                    お問い合わせ
+                    %i= fa_icon "chevron-right"
+              .left__center
+                メルペイ
+                .left__center__box
+                  %li
+                    売上・振込申請
+                    %i= fa_icon "chevron-right"
+                  %li
+                    ポイント
+                    %i= fa_icon "chevron-right"
+              .left__bottom
+                設定
+                .left__bottom__box
+                  %li
+                    プロフィール
+                    %i= fa_icon "chevron-right"
+                  %li
+                    発送元・お届け先住所変更
+                    %i= fa_icon "chevron-right"
+                  %li
+                    支払い方法
+                    %i= fa_icon "chevron-right"
+                  %li
+                    メール/パスワード
+                    %i= fa_icon "chevron-right"
+                  %li
+                    本人情報
+                    %i= fa_icon "chevron-right"
+                  %li
+                    電話番号の確認
+                    %i= fa_icon "chevron-right"
+                  %li
+                    ログアウト
+                    %i= fa_icon "chevron-right" 
+  .indenti-banner
+    = render "shared/footer"

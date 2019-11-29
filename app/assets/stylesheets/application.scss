@@ -1,8 +1,27 @@
 @import "./reset";
+@import "./icon";
+@import "./header";
+@import "./footer";
 @import "./items";
 @import "./users";
+@import "./items_details";
 @import "./font-awesome";
 @import "slick-theme"; 
 @import "slick";
 @import "users_show";
 @import "./sidebar"
+// @import "./users_show";
+@import "slick-theme"; 
+@import "slick";
+@import "./profile";
+@import "./clear";
+@import 'font-awesome-sprockets';
+@import "./users_registration";
+@import "./users_sms_confirmation";
+@import "./users_address";
+@import "./users_card";
+@import "./users_complete";
+@import "identification";
+@import "logout";
+@import "buy";
+@import "buy1";
