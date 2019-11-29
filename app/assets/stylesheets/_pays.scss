@@ -1,0 +1,212 @@
+.pay-wrapper {
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  .pay {
+    float: right;
+    width: 700px;
+    background-color: #fff;
+    &__top {
+      font-size: 24px;
+      padding: 8px 24px;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+    }
+    &__under {
+      padding: 40px 40px 64px;
+      border-top: 1px solid #f5f5f5;
+      &--content {
+        width: 343px;
+        margin: 0 auto;
+        .card-number {
+          &__text {
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-block;
+          }
+          &__necessary {
+            background: #ea352d;
+            margin: 0 0 0 8px;
+            padding: 4px 6px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+          }
+          &__input {
+            display: block;
+            width: 100%;
+            margin: 8px 0 0;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+          &__input:focus {
+            border-color: #0099e8;
+          }
+          ul {
+            li {
+              display: inline-block;
+              vertical-align: middle;
+            }
+            .card-number-icon {
+              display: inline-block;
+              margin: 0 0 0 8px;
+              vertical-align: middle;
+            }
+          }
+        }
+        .expiration-date {
+          margin-top: 32px;
+          &__day {
+            margin-top: 8px;
+            position: relative;
+            .month:focus {
+              border-color: #0099e8;
+            }
+            .year:focus {
+              border-color: #0099e8;
+            }
+            #_card_deadline_2i{
+              width: 130px;
+              height: 48px;
+              padding: 0 16px;
+              font-size: 14px;
+              background-color: white;
+              margin-right: 8px;
+            }
+            #_card_deadline_1i {
+              width: 130px;
+              height: 48px;
+              padding: 0 16px;
+              font-size: 14px;
+              background-color: white;
+              margin: 0 8px 0 9px;
+            }
+            &--month-icon {
+              position: absolute;
+              right: 52px;
+              top: 9px;
+              display: inline-block;
+              pointer-events: none;
+            }
+            &--year-icon {
+              position: absolute;
+              left: 105px;
+              top: 9px;
+              pointer-events: none;
+            }
+          }
+        }
+        .security-code {
+          margin-top: 32px;
+          &__box {
+            width: 100%;
+            margin: 8px 0 0;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+          &__box:focus {
+            border-color: #0099e8;
+          }
+          .back-side {
+            position: relative;
+            margin: 8px 0 0;
+            &__number {
+              text-align: right;
+              color: #0099e8;
+              &--question {
+                background-color: #0099e8;
+                border-radius: 50%;
+                color: white;
+                width: 14px;
+                height: 14px;
+                line-height: 14px;
+                font-size: 12px;
+                text-align: center;
+                display: inline-block;
+              }
+            }
+            &__picture {
+              padding: 16px;
+              background-color: #eee;
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 28px;
+              z-index: 1;
+              border-radius: 6px;
+              color: #333;
+              line-height: 1.5;
+              text-align: center;
+              -webkit-transition: all ease-out .3s;
+              transition: all ease-out .3s;
+              visibility: hidden;
+              opacity: 0;
+              &--image {
+                width: 240px;
+                height: 105px;
+              }
+            }
+            &__picture::before {
+              top: -8px;
+              right: 32px;
+              border-width: 0 8px 8px 8px;
+              border-color: transparent transparent #eee transparent;
+              display: block;
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 0;
+              border-style: solid;
+            }
+            .is-show {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+        }
+        .card-submit {
+          margin-top: 32px;
+          background: #ea352d;
+          color: #fff;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          cursor: pointer;
+          transition: all ease-out .3s;
+        }
+        .card-submit:hover {
+          background: #e62017;
+        }
+      }
+    }
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input {
+  outline: 0;
+  outline-color: initial;
+  outline-style: initial;
+  outline-width: 0px;
+}
+select {
+  outline: 0;
+  outline-color: initial;
+  outline-style: initial;
+  outline-width: 0px;
+}

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     member do
       get :identification
       get :profile
-      get :card
+      get :card_info
     end
   end
 end
