@@ -1,5 +1,6 @@
 .topper
-  = render "header" 
+  =render "header"
+  = render "shared/header-login" 
 .slick
   %div
     = link_to "https://jp-news.mercari.com/2019/11/15/free-campaign2/",target: :_blank do
@@ -24,12 +25,8 @@
               = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg', class: "icon-image", width: "170", height: "50"
             =link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
               = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg', class: "icon-image", width: "170", height: "50"
-
-.sell-icon
-  = link_to "" do
-    .red-circle
-      %p.text 出品
-      = fa_icon 'camera', class: "camera"
+.sell-icon1
+  = render "shared/sell-icon"
 
 .contents
   .contents__category
@@ -410,4 +407,4 @@
 
 
 .footer
-  = render "footer"
+  = render "shared/footer"

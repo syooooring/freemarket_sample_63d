@@ -107,17 +107,11 @@ a {
   margin-top: 6px;
 }
 
-* {
-  box-sizing: border-box;
-
-}
-
-
 
 .header{
   width: 1440px;
   height: 100px;
-
+  background-color: white;
   .main{
     width: 1020px;
     height: 100%;
@@ -184,6 +178,7 @@ a {
        &__category{
          display: flex;
          height: 36px;
+        //  width: 149.45px;
          display: flex;
          font-size: 14px;
          padding: 0 10px 0 0;
@@ -316,8 +311,6 @@ text-align: center;
     }
   }
 }
-
-
 
 .contents{
   font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
@@ -452,8 +445,6 @@ text-align: center;
     }
   }
 }
-
-
 
 .footer {
   &-top {
@@ -702,6 +693,7 @@ text-align: center;
     font-weight: 400;
   }
 }
+
 
 * {
   box-sizing: border-box;

@@ -1,0 +1,265 @@
+.indenti-wrapper {
+  width: 1440px;
+  height: 1430px;
+  background-color: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  .indenti-crumbs {
+    position: relative;
+    border-top: 1px solid #eee;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    background-color: #fff;
+    ul {
+      overflow: visible;
+      width: 1020px;
+      margin: 0 auto;
+      padding: 16px 0;
+      white-space: normal;
+      li {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.2;
+        a {
+          color: #333;
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+          opacity: .7;
+        }
+        i {
+          margin: 0 3px;
+          font-size: 9px;
+          color: #888;
+        }
+      span.indenti-list {
+        font-weight: 600;
+      }
+      }
+    }
+  }
+  .clearfix {
+    .sell-icon {
+      z-index: 2;
+    }
+    content: "";
+    display: block;
+    clear: both;
+    .indenti-container {
+      margin: 40px auto 0;
+      width: 1020px;
+      height: 1020px;
+      .indenti-content {
+        float: right;
+        width: 700px;
+        .mypage-indenti {
+          background-color: #fff;
+          h2 {
+            font-weight: bold;
+          }
+          .indenti-chapter {
+            font-size: 24px;
+            padding: 8px 24px;
+            border-bottom: 1px solid #f5f5f5;
+            text-align: center;
+          }
+          .indenti_forms {
+            padding: 64px;
+            z-index: 1;
+            p {
+              margin: 8px 0 0;
+              line-height: 1.5;
+            }
+            .text-right {
+              text-align: right;
+              margin-bottom: 40px;
+              a {
+                touch-action: manipulation;
+                color: #0099e8;
+                text-decoration: none;             
+              }
+              .icon-arrow-right {
+                color: #0099e8;
+                display: inline-block;
+                font-family: 'icon-font';
+              }
+            }
+            .indenti-form {
+              margin: 40px 0 0;
+              label {
+                font-weight: 600;
+              }
+              p {
+                margin: 8px 0 0;
+                line-height: 1.5;
+              }
+              .form-arbitray {
+                background-color: #ccc;
+                margin: 0 0 0 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
+              .select-wrap {
+                display: flex;
+                position: relative;
+                .icon-arrow-bottom {     
+                  pointer-events: none;
+                  position: absolute;
+                  right: 16px;
+                  top: 50%;
+                  color: #888;
+                  -webkit-transform: translate(0, -50%);
+                  transform: translate(0, -50%);
+                }
+                .form-select {
+                  width: 100%;
+                  #prefecture_id {
+                    width: 100%;
+                    margin: 8px 0 0;
+                    height: 48px;
+                    padding: 10px 16px 8px;
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                    background: #fff;
+                    line-height: 1.5;
+                    font-size: 16px;
+                  }
+                }
+              }
+              .input-default {
+                width: 100%;
+                margin: 8px 0 0;
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+              }
+              .select-default {
+                width: 100%;
+                margin: 8px 0 0;
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;           
+              }
+            }
+            .btn-indenti {
+              margin: 40px 0 0 0;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center;
+            }
+            .indenti-form-text {
+              margin: 40px 0 0;
+              text-align: right;
+              a {
+                touch-action: manipulation;
+                color: #0099e8;
+                text-decoration: none;
+              }
+              .icon-arrow-right {
+                color: #0099e8;
+                display: inline-block;
+                font-family: 'icon-font';
+              }
+            }
+          }
+        }
+      }
+    .left{
+      height: 1000px;
+      width: 280px;
+      float: left;
+      margin: 0 40px 0 0;
+      &__top{
+        background-color: #fff;
+        height: 700px;
+      }
+      &__center {
+        font-weight: bold;
+        margin-top: 40px;
+        &__box {
+          font-weight: normal;
+        }
+      }
+      &__bottom {
+        font-weight: bold;
+        margin-top: 40px;
+        &__box {
+          font-weight: normal;
+        }
+      }
+      p{
+        display: block;
+        padding: 15px;
+        color: #333;
+        min-height: 48px;
+        height: 50px;
+        position: relative;
+        background: #eee;
+        font-size: 14px;
+        font-weight: bold;
+        .special {
+          color: #333
+        }
+      }
+      li{
+        display: block;
+        padding: 15px;
+        color: #333;
+        min-height: 48px;
+        height: 50px;
+        position: relative;
+        background: #fff;
+        font-size: 14px;
+        border-top: solid 1px #eee;
+      }
+      i{
+        position: absolute;
+        left: 128px;
+        top: 9px;
+        font-size:15px;
+        color: #ccc;
+      }
+    }
+    select{
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin-bottom: 20px;
+      padding: 7px 30px 7px 10px;
+      font-size: 93%;
+      line-height: 1.1em;
+      border-radius: 5px;
+      border: none;
+      background-image: url(.assets/icon_arrow.svg);
+      background-repeat: no-repeat;
+      background-size: 12px 10px;
+      background-position: right 10px center;
+      background-color: #bddfff;
+      }
+      select::-ms-expand{
+      display: none;
+      }
+      
+    }
+  }
+}
