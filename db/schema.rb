@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_11_28_032038) do
 
-
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
     t.string "city"
@@ -21,7 +20,16 @@ ActiveRecord::Schema.define(version: 2019_11_28_032038) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
+    t.text "image", null: false
+    t.integer "size"
+    t.integer "state", null: false
+    t.integer "delivery_fee", null: false
+    t.integer "shipping_method", null: false
+    t.integer "estimated_shipping_date", null: false
+    t.integer "price", null: false
+    t.text "text", null: false
+    t.integer "inappropriate_item"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
