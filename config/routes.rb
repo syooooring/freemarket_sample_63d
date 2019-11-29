@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit] do
     member do
       get :profile
-      get :card
+      get :card_info
     end
   end
   resources :pays, only: [:new]
