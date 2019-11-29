@@ -1,52 +1,194 @@
-.content
+.users__show__top
+  = render "shared/header-new"
+
+.sell-icon
+  = link_to "" do
+    .red-circle
+      %p.text 出品
+      = fa_icon 'camera', class: "camera"
+
+.content.clearfix
   .top-ber
     %ul.top-ber__box
       %li
-        =link_to "メルカリ",root_path
+        =link_to "フリーマーケット",root_path
       .top-ber__box2
         %i= fa_icon "chevron-right", class:"arrow"
       .top-ber__box3
         マイページ
   .mains
+    = render "shared/sidebar"
     .right
       .right__up
-      .right__0
-        .tab
-          %li.info
+        .right__up__profil
+          .right__up__profil--user
+            //= image_tag current_user.image, class: "user--image"
+          .right__up__profil--name
+            name
+            //= current_user.name, class: "user--name"
+          .right__up__profil__box
+            .right__up__profil__box--goods
+              評価
+              //= current_user.goods, class: "user--goods"
+            .right__up__profil__box--items
+              出品数
+              //= current_user.items, class: "user--items"
+      .right__middle
+        %ul.tab
+          %li.tab__info.active
             お知らせ
-          %li.list
+          %li.tab__info
             やることリスト
       .right__down
-    .left
-      .left__top
-        %ul
-          = link_to user_path do
-            %p
-              マイページ
-              %i= fa_icon "chevron-right"
-          %li
-            お知らせ
-            %i= fa_icon "chevron-right"
-          %li
-            お知らせ
-            %i= fa_icon "chevron-right"
-          %li
-            お知らせ
-            %i= fa_icon "chevron-right"
-          %li
-            お知らせ
-            %i= fa_icon "chevron-right"
-          %li
-            お知らせ
-            %i= fa_icon "chevron-right"
-          %li
-            お知らせ
-            %i= fa_icon "chevron-right"
-          %li
-            お知らせ
-            %i= fa_icon "chevron-right"
-          %li
-            お知らせ
-            %i= fa_icon "chevron-right"
-      .left__center
-      .left__bottom
+        %ul.right__down__main.show
+          %li.right__down__main__box
+            = link_to "" do
+              .right__down__main__box__inbox
+                .right__down__main__box__inbox__logo
+                  = image_tag "logo_red.svg"
+                .right__down__main__box__inbox__inner
+                  .right__down__main__box__inbox__inner--text
+                    切り替え後
+                  .right__down__main__box__inbox__inner--time
+                    時間
+                .right__down__main__box__inbox--arrow
+                  = fa_icon "chevron-right", class: "right__arrow"
+          %li.right__down__main__box
+            = link_to "" do
+              .right__down__main__box__inbox
+                .right__down__main__box__inbox__logo
+                  = image_tag "logo_red.svg"
+                .right__down__main__box__inbox__inner
+                  .right__down__main__box__inbox__inner--text
+                    切り替え後
+                  .right__down__main__box__inbox__inner--time
+                    時間
+                .right__down__main__box__inbox--arrow
+                  = fa_icon "chevron-right", class: "right__arrow"
+          %li.right__down__main__box
+            = link_to "" do
+              .right__down__main__box__inbox
+                .right__down__main__box__inbox__logo
+                  = image_tag "logo_red.svg"
+                .right__down__main__box__inbox__inner
+                  .right__down__main__box__inbox__inner--text
+                    切り替え後
+                  .right__down__main__box__inbox__inner--time
+                    時間
+                .right__down__main__box__inbox--arrow
+                  = fa_icon "chevron-right", class: "right__arrow"
+          %li.right__down__main__box
+            = link_to "" do
+              .right__down__main__box__inbox
+                .right__down__main__box__inbox__logo
+                  = image_tag "logo_red.svg"
+                .right__down__main__box__inbox__inner
+                  .right__down__main__box__inbox__inner--text
+                    切り替え後
+                  .right__down__main__box__inbox__inner--time
+                    時間
+                .right__down__main__box__inbox--arrow
+                  = fa_icon "chevron-right", class: "right__arrow"
+          %li.right__down__main__box
+            = link_to "" do
+              .right__down__main__box__inbox
+                .right__down__main__box__inbox__logo
+                  = image_tag "logo_red.svg"
+                .right__down__main__box__inbox__inner
+                  .right__down__main__box__inbox__inner--text
+                    切り替え後
+                  .right__down__main__box__inbox__inner--time
+                    時間
+                .right__down__main__box__inbox--arrow
+                  = fa_icon "chevron-right", class: "right__arrow"
+          %li.right__down__main__list
+            .right__down__main__list__box
+              .right__down__main__list__box__inbox
+                = link_to "" do
+                  一覧を見る
+        %ul.right__down__main
+          %li.right__down__main__box
+            = link_to "" do
+              .right__down__main__box__inbox
+                .right__down__main__box__inbox__logo
+                  = image_tag "logo_red.svg"
+                .right__down__main__box__inbox__inner
+                  .right__down__main__box__inbox__inner--text
+                    ニュース
+                  .right__down__main__box__inbox__inner--time
+                    時間
+                .right__down__main__box__inbox--arrow
+                  = fa_icon "chevron-right", class: "right__arrow"
+          %li.right__down__main__box
+            = link_to "" do
+              .right__down__main__box__inbox
+                .right__down__main__box__inbox__logo
+                  = image_tag "logo_red.svg"
+                .right__down__main__box__inbox__inner
+                  .right__down__main__box__inbox__inner--text
+                    ニュース
+                  .right__down__main__box__inbox__inner--time
+                    時間
+                .right__down__main__box__inbox--arrow
+                  = fa_icon "chevron-right", class: "right__arrow"
+          %li.right__down__main__box
+            = link_to "" do
+              .right__down__main__box__inbox
+                .right__down__main__box__inbox__logo
+                  = image_tag "logo_red.svg"
+                .right__down__main__box__inbox__inner
+                  .right__down__main__box__inbox__inner--text
+                    ニュース
+                  .right__down__main__box__inbox__inner--time
+                    時間
+                .right__down__main__box__inbox--arrow
+                  = fa_icon "chevron-right", class: "right__arrow"
+          %li.right__down__main__box
+            = link_to "" do
+              .right__down__main__box__inbox
+                .right__down__main__box__inbox__logo
+                  = image_tag "logo_red.svg"
+                .right__down__main__box__inbox__inner
+                  .right__down__main__box__inbox__inner--text
+                    ニュース
+                  .right__down__main__box__inbox__inner--time
+                    時間
+                .right__down__main__box__inbox--arrow
+                  = fa_icon "chevron-right", class: "right__arrow"
+          %li.right__down__main__box
+            = link_to "" do
+              .right__down__main__box__inbox
+                .right__down__main__box__inbox__logo
+                  = image_tag "logo_red.svg"
+                .right__down__main__box__inbox__inner
+                  .right__down__main__box__inbox__inner--text
+                    ニュース
+                  .right__down__main__box__inbox__inner--time
+                    時間
+                .right__down__main__box__inbox--arrow
+                  = fa_icon "chevron-right", class: "right__arrow"
+          %li.right__down__main__list
+            .right__down__main__list__box
+              .right__down__main__list__box__inbox
+                = link_to "" do
+                  一覧を見る
+      .bought
+        .bought__items
+          購入した商品
+        .bought__status
+          %ul.trader
+            %li.trader__change.movie
+              取引中
+            %li.trader__change
+              過去の取引
+        .bought__text
+          %ul.bought__text__list
+            %li.bought__text__list--message.see
+              取引中の商品がありません
+            %li.bought__text__list--message
+              過去の取引がありません
+              
+
+
+.users__show__bottom
+  = render "shared/footer"

@@ -69,7 +69,6 @@
         }
       }
 
-
       &__content{
         height: 360px;
         width: 100%;
@@ -108,7 +107,7 @@
             margin-top: 8px;
           }
         }
-        
+
       }
 
       &__category{
@@ -262,9 +261,11 @@ select{
   select::-ms-expand{
   display: none;
   }
+
 .text-inline{
   display: inline;
 } 
+
 .select-sell{
   position: relative;
 }
@@ -280,6 +281,7 @@ pointer-events: none;
 .input-sell{
   height: 50px;
   width: 160px;
+
   text-align: right;
   padding: 10px 15px;
   border-radius: 4px;
@@ -318,6 +320,7 @@ pointer-events: none;
 .privacy2{
   display: flex;
 }
+
 .exhibit-btn{
   width: 620px;
   height: 45px;
@@ -325,6 +328,7 @@ pointer-events: none;
   border: 1px solid #ea352d;
   color: #fff;
 }
+
 .qestion-mark{
   border-radius: 50%;
   background-color:  #0099e8;
@@ -339,6 +343,4 @@ pointer-events: none;
   cursor: pointer;
 }
 
-.pic{
-  
-}
+

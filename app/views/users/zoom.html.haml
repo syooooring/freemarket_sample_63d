@@ -1,0 +1,60 @@
+.zoom__top
+  = render "items/header"
+
+.top-ber
+  %ul.top-ber__box
+    %li
+      =link_to "フリーマーケット",root_path
+    .top-ber__box2
+      %i= fa_icon "chevron-right", class:"arrow"
+    .top-ber__box3
+      currant_user.name
+
+.zoom
+  .zoom__right
+    .zoom__right__up
+      .zoom__right__up__profil
+        .zoom__right__up__profil--user
+          //= image_tag current_user.image, class: "user--image"
+        .zoom__right__up__profil--name
+          name
+          //= current_user.name, class: "user--name"
+        .zoom__right__up__profil__box
+          .zoom__right__up__profil__box--goods
+            評価
+            //= current_user.goods, class: "user--goods"
+          .zoom__right__up__profil__box--items
+            出品数
+            //= current_user.items, class: "user--items"
+    .zoom__good
+      .zoom__good__box
+        .zoom__good__box__left
+          .zoom__good__box__left--icon
+          .zoom__good__box__left--number
+            0
+        .zoom__good__box__middle
+          .zoom__good__box__middle--icon
+          .zoom__good__box__middle--number
+            0
+        .zoom__good__box__right
+          .zoom__good__box__right--icon
+          .zoom__good__box__right--number
+            0
+    .zoom__sns
+      .zoom__sns__icon
+        .zoom__sns__icon--fb
+          = image_tag "/assets/f_logo_RGB-Blue_1024.png", class: "zoom__fb"
+        .zoom__sns__icon--tw
+          = image_tag "/assets/Twitter_Logo_WhiteOnBlue.png", class: "zoom__tw"
+        .zoom__sns__icon--line
+          = image_tag "/assets/LINE_APP.png", class: "zoom--line"
+
+.sell-icon
+  = link_to "" do
+    .red-circle
+      %p.text 出品
+      = fa_icon 'camera', class: "camera"
+
+.content.clearfix
+.zoom__bottom
+  = render "items/footer"

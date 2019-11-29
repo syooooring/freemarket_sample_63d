@@ -1,0 +1,74 @@
+.contents
+  .header
+    .fmarket
+      .fmarket__box
+        = link_to root_path do
+          = image_tag "fmarket_logo_red.svg",class: "logo"
+    .clearfix_b
+      .progress-bar1b
+        .a
+          会員情報
+        .progress-bar1b__x
+      .progress-bar2b
+        電話番号認証
+        .progress-bar2b__x
+      .progress-bar3b
+        お届け先住所入力
+        .progress-bar3b__x
+      .progress-bar4b
+        支払い方法
+        .progress-bar4b__x
+      .progress-bar5b
+        .bbb
+          完了
+        .progress-bar5b__x
+  .single
+  = form_with model: @user, class: :single, local: true do |f|
+    .single__head
+      %h1
+        支払い方法
+    .single-box
+      .single-box24
+        %li
+          カード番号
+        .single-box25
+          必須
+        %input.input-default{name: "nickname", placeholder: "半角数字のみ", type: "text", value: ""}/
+      .ic2
+        = fa_icon "cc-visa"
+        = fa_icon "cc-mastercard"
+        = fa_icon "cc-jcb"
+        = fa_icon "cc-amex"
+        = fa_icon "cc-diners-club"
+        = fa_icon "cc-discover"
+      .single-box26
+        %li
+          有効期限
+        .single-box27
+          必須
+        != sprintf(f.date_select(:card_deadline, prompt: "--",order:[:month,:year,:day], use_month_numbers:true, discard_day:true, start_year:Time.now.year-2000, end_year:Time.now.year-2000+10, date_separator:'%s'),'月') + '年'
+        .ic3
+          = fa_icon "chevron-down"
+        .ic4
+          = fa_icon "chevron-down"
+      .single-box28
+        %li
+          セキュリティコード
+        .single-box29
+          必須
+        %input.input-default{name: "Security_code", placeholder: "カード背面4桁もしくは3桁の番号", type: "text", value: ""}/
+      .message4
+        %p
+          %a{:href => "/jp/help_center/article/244/", target: "_blank"}> カード裏面の番号とは？
+      .button_box3
+        %button.btn-default.btn-red{type: "submit"} 次へ進む
+  .footer
+    %ul.footer__box
+      %li= link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      %li= link_to "フリマ利用規約", "https://www.mercari.com/jp/tos/"
+      %li= link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    .footer__box2
+      = link_to root_path do
+        = image_tag "fmarket_logo_white.svg" , height: "60", width: "150"
+    .footer__box3
+      © 2019 Mercari
