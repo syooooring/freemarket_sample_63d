@@ -1,0 +1,254 @@
+
+.footer {
+
+  width: 1440px;
+
+  &-top {
+    background-image: image-url("footer_book.jpeg");
+    background-position: center;
+    background-size: 100%;
+    width: 100%;
+    height: 260px;
+    &__center {
+      width: 750px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      &-left {
+        margin: auto 0;
+        &__text {
+          color: #fafafa;
+          &-upper {
+            font-size: 23px;
+            font-weight: 600;
+          }
+          &-bottom {
+            font-size: 35px;
+            margin-bottom: 10px;
+          }
+        }
+        &__icon {
+          .free-logo {
+            height: 68px;
+            width: 68px;
+            margin-right: 20px;
+            padding-bottom: 7px;
+          }
+          .apple-bar {
+            margin-right: 8px;
+            padding-bottom: 18px;
+
+          }
+          .google-bar {
+            padding-bottom: 8px;
+            max-width: 155px;
+          }
+        }
+      }
+      &-right {
+        .sp {
+          height: 260px;
+          width: 200px;
+          margin-right: 100px;
+        }
+      }
+    }
+  }
+  &-bottom {
+    background-color: rgb(34, 34, 34);
+    color: #fff;
+    padding: 0 20px 10px;
+    a {
+      text-decoration: none;
+      color: rgb(192, 192, 192);
+    }    
+    &__center {
+      width: 1020px;
+      margin: 0 auto;
+      padding-top: 18px;
+      display: flex;
+      &-about {
+        padding-right: 20px;
+        width: 210px;
+        &-title {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        &-contents {
+          font-size: 12px;
+          color: rgb(192, 192, 192);
+          .about-company{
+            margin-top: 15px;
+          }
+          .recrute{
+            margin-top: 15px;
+          }
+          .prerilease{
+            margin-top: 15px;
+          }
+          .blog{
+            margin-top: 15px;
+          }
+          .logo-guidline{
+            margin-top: 15px;
+          }
+          .sns-twitter{
+            display: inline-block;
+            margin-top: 25px;
+            .twitter {
+              max-width: 100%;
+              max-height: 100%;
+              width: 30px;
+              height: auto;
+              margin-right: 16px;
+              font-size: 33px;
+              color: #fafafa;
+            }
+          }
+          .sns-facebook {
+            display: inline-block;
+            margin-top: 25px;
+            .facebook {
+              max-width: 100%;
+              max-height: 100%;
+              width: 30px;
+              height: auto;
+              margin-right: 20px;
+              font-size: 31px;
+              color: #fafafa;
+            }
+          }
+        }
+      }
+      &-help {
+        padding-right: 20px;
+        width: 230px;
+        &-title {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        &-contents {
+          font-size: 12px;
+          color: rgb(192, 192, 192);
+          .mercari-guide {
+            margin-top: 15px;
+            
+          }
+          .raku-ship {
+            margin-top: 15px;
+          }
+          .yuu-ship{
+            margin-top: 15px;
+          }
+          .bigger-ship{
+            margin-top: 15px;
+          }
+          .car-guide {
+            margin-top: 15px;
+          }
+          .safe-secure {
+            margin-top: 15px;
+          }
+          .fake-eradication{
+            margin-top: 15px;
+          }
+          .mercari-box{
+            margin-top: 15px;
+          }
+        }
+      }
+      &-privacy {
+        width: 41%;
+        &-title {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        &-contents {
+          display: flex;
+          &__left {
+            font-size: 12px;
+            color: rgb(192, 192, 192);
+            padding-right: 20px;
+            width: 210px;
+            .privacy-policy {
+              margin-top: 15px;
+            }
+            .mercari-terms{
+              margin-top: 15px;
+            }
+            .suport-terms {
+              margin-top: 15px;
+            }
+            .compliance{
+              margin-top: 15px;
+            }
+          }
+          &__right {
+
+            font-size: 12px;
+            color: rgb(192, 192, 192);
+            width: 44%;
+            .personal-management {
+              margin-top: 15px;
+            }
+            .specific-notation {
+              margin-top: 15px;
+            }
+            .settlement{
+              margin-top: 15px;
+            }
+            .legal{
+              margin-top: 15px;
+            }
+          }
+        }
+      }
+      &-country {
+        margin-left: 20px;
+        &-title {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        &-contents {
+          .japan {
+            margin-top: 15px;
+            font-size: 12px;
+            color: rgb(192, 192, 192);
+          }
+          .united-states {
+            margin-top: 15px;
+            font-size: 12px;
+            color: rgb(192, 192, 192);
+          }
+        }
+      }
+    }
+  }
+  
+}
+.under {
+  display: flex;
+  background-color: rgb(34, 34, 34);
+  padding: 10px 210px;
+  &-logo {
+    color: #fafafa;
+    .f_logo {
+      max-width: 130px;
+      max-height: 50px;
+      width: 130px;
+      height: 50px;
+    }
+  }
+  &-since {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    width: 80%;
+    padding-top: 10px;
+    font-weight: 400;
+  }
+}
+
+a:hover {
+  text-decoration: underline;
+}
