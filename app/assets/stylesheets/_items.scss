@@ -117,7 +117,7 @@ a {
 .header{
   width: 1440px;
   height: 100px;
-
+  background-color: white;
   .main{
     width: 1020px;
     height: 100%;
@@ -540,31 +540,34 @@ text-align: center;
       }
     }
   }
-  .under {
-    display: flex;
-    background-color: rgb(34, 34, 34);
-    padding: 10px 210px;
-    &-logo {
-      color: #fafafa;
-      .f_logo {
-        max-width: 130px;
-        max-height: 50px;
-        width: 130px;
-        height: 50px;
-      }
+}
+.under {
+  display: flex;
+  background-color: rgb(34, 34, 34);
+  padding: 10px 210px;
+  &-logo {
+    color: #fafafa;
+    .f_logo {
+      max-width: 130px;
+      max-height: 50px;
+      width: 130px;
+      height: 50px;
     }
-    &-since {
-      color: #fff;
-      font-size: 12px;
-      text-align: center;
-      width: 80%;
-      padding-top: 10px;
-      font-weight: 400;
-    }
+  }
+  &-since {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    width: 80%;
+    padding-top: 10px;
+    font-weight: 400;
   }
 }
 
 
+* {
+  box-sizing: border-box;
+}
 
 a:hover {
   text-decoration: underline;

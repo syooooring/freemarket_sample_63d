@@ -1,0 +1,151 @@
+.pay-wrapper
+  = render 'items/header'
+  .indenti-crumbs
+    %ul
+      %li
+        = link_to "メルカリ", "https://www.yahoo.co.jp/"
+        %i.icon-arrow
+          = fa_icon "chevron-right"
+      %li
+        = link_to "マイページ", "https://www.yahoo.co.jp/"
+        %i.icon-arrow
+          = fa_icon "chevron-right"
+      %li
+        = link_to "支払い方法", "https://www.yahoo.co.jp/"
+        %i.icon-arrow
+          = fa_icon "chevron-right"
+      %li
+        %span.indenti-list{itemprop: "title"} クレジットカード情報入力
+  .main-content.clearfix
+    .pay
+      %h2.pay__top クレジットカード情報入力
+      = form_with model: @pay, class: 'pay__under', local: true do |f|
+        .pay__under--content
+          .card-number
+            %p.card-number__text カード番号
+            %span.card-number__necessary 必須
+            = f.text_field :card_number, class: "card-number__input", placeholder: "半角数字のみ", "data-input-type": "card", maxlength: "19"
+            %ul
+              %li
+                = fa_icon "cc-visa lg"
+              %li.card-number-icon
+                = fa_icon  "cc-mastercard lg"
+              %li.card-number-icon
+                = fa_icon "cc-paypal lg"
+              %li.card-number-icon
+                = fa_icon "cc-jcb lg"
+              %li.card-number-icon
+                = fa_icon "cc-amex lg"
+              %li.card-number-icon
+                = fa_icon "cc-diners-club lg"
+              %li.card-number-icon
+                = fa_icon "cc-discover lg"
+          .expiration-date
+            %p.card-number__text 有効期限
+            %span.card-number__necessary 必須
+            %br
+            .expiration-date__day
+              != sprintf(f.date_select(:card_deadline, with_css_classes:'expiration-date__day--input', order:[:month,:year,:day], discard_day:true, start_year:Time.now.year-2000, end_year:Time.now.year-2000+10, default: { year: 2019, month: 01, day: 01 }, use_two_digit_numbers: true, date_separator:'%s'),'月') + '年'
+              .expiration-date__day--month-icon
+                = fa_icon 'chevron-down'
+              .expiration-date__day--year-icon
+                = fa_icon 'chevron-down'
+          .security-code
+            %p.card-number__text セキュリティコード
+            %span.card-number__necessary 必須
+            = f.number_field :security_code, placeholder: "カード背面4桁もしくは3桁の番号", class: "security-code__box"
+            .back-side
+              .back-side__number
+                %span.back-side__number--question ?
+                カード裏面の番号とは？
+              .back-side__picture
+                %p.back-side__picture--text カードの裏面をご参照ください。
+                %img{src: "https://4.bp.blogspot.com/-gXCyJrQBDMw/XG4GdCyKUZI/AAAAAAABRrQ/l-hzZXmOh_YnB1gy3lyrnyIFMzBVvu_FwCLcBGAs/s800/creditcard_back.png", class: "back-side__picture--image"}
+          = f.submit '追加する', class: 'card-submit'
+    .mains
+      .left
+        .left__top
+          %ul
+            = link_to '' do
+              %p
+                マイページ
+                %i= fa_icon "chevron-right", class: "special"
+            %li
+              お知らせ
+              %i= fa_icon "chevron-right"
+            %li
+              やることリスト
+              %i= fa_icon "chevron-right"
+            %li
+              いいね！一覧
+              %i= fa_icon "chevron-right"
+            %li
+              出品する
+              %i= fa_icon "chevron-right"
+            %li
+              出品した商品・出品中
+              %i= fa_icon "chevron-right"
+            %li
+              出品した商品・取引中
+              %i= fa_icon "chevron-right"
+            %li
+              出品した商品・売却済み
+              %i= fa_icon "chevron-right"
+            %li
+              購入した商品・取引中
+              %i= fa_icon "chevron-right"
+            %li
+              購入した商品・過去の取引
+              %i= fa_icon "chevron-right"
+            %li
+              ニュース一覧
+              %i= fa_icon "chevron-right"
+            %li
+              評価一覧
+              %i= fa_icon "chevron-right"
+            %li
+              ガイド
+              %i= fa_icon "chevron-right"
+            %li
+              お問い合わせ
+              %i= fa_icon "chevron-right"
+        .left__center
+          メルペイ
+          .left__center__box
+            %li
+              売上・振込申請
+              %i= fa_icon "chevron-right"
+            %li
+              ポイント
+              %i= fa_icon "chevron-right"
+        .left__bottom
+          設定
+          .left__bottom__box
+            %li
+              プロフィール
+              %i= fa_icon "chevron-right"
+            %li
+              発送元・お届け先住所変更
+              %i= fa_icon "chevron-right"
+            %li
+              支払い方法
+              %i= fa_icon "chevron-right"
+            %li
+              メール/パスワード
+              %i= fa_icon "chevron-right"
+            %li
+              本人情報
+              %i= fa_icon "chevron-right"
+            %li
+              電話番号の確認
+              %i= fa_icon "chevron-right"
+            %li
+              ログアウト
+              %i= fa_icon "chevron-right"
+  = render 'items/footer'
+
+.sell-icon
+  = link_to "" do
+    .red-circle
+      %p.text 出品
+      = fa_icon 'camera', class: "camera"

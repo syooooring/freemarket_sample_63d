@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   def profile
   end
 
-  def card
+  def card_info
   end
 
   def logout
