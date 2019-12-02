@@ -6,13 +6,12 @@
 @import "./users";
 @import "./items_details";
 @import "./font-awesome";
-// @import "./users_show";
 @import "slick-theme"; 
 @import "slick";
+@import "users_show";
+@import "./sidebar";
 @import "./profile";
-// @import "./card";
 @import "./clear";
-// @import "./pays";
 @import 'font-awesome-sprockets';
 @import "./users_registration";
 @import "./users_sms_confirmation";
@@ -23,3 +22,9 @@
 @import "logout";
 @import "buy";
 @import "buy1";
+@import "./card";
+@import "./pays";
+@import "./sell";
+@import "./zoom";
+
+ 

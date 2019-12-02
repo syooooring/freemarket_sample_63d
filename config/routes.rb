@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "items#index"
-  resources :items, only: [:index, :show] do
+
+  resources :items, only: [:index, :show, :new, :create, :edit, :update] do
     collection do
       get :buy
-      get :buy
+      get :buy1
       get :details
     end
   end    
@@ -22,7 +23,8 @@ Rails.application.routes.draw do
     member do
       get :identification
       get :profile
-      get :card
+      get :card_info
+      get :zoom
     end
   end
 end

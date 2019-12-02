@@ -90,7 +90,7 @@ a {
   width: 160px;
   height: 160px;
   padding-top: 32px;
-  z-index: 1;
+  z-index: 10;
 }
 
 .text {
@@ -107,17 +107,11 @@ a {
   margin-top: 6px;
 }
 
-* {
-  box-sizing: border-box;
-
-}
-
-
 
 .header{
   width: 1440px;
   height: 100px;
-
+  background-color: white;
   .main{
     width: 1020px;
     height: 100%;
@@ -201,7 +195,7 @@ a {
        }
       }
       &__right{
-        width: 520.31px;
+        width: 530px;
         height: 44px;
         background-color: white;
         display: flex;
@@ -238,7 +232,6 @@ a {
           width: 98px;
         }
         &__my-page{
-          width: 125.31px;
           height: 44px;
           display: flex;
           padding: 0 0 0 14px;
@@ -318,12 +311,146 @@ text-align: center;
   }
 }
 
+.contents{
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  color: #333333;
+  background-color: #f5f5f5;
+  width: 1440px !important;
+  &__category{
+    &__head{
+      padding: 56px 0px 30px;
+      background-color: #ffffff;
+      text-align: center;
+      &__upper{
+        font-size: 30px;
+        padding-bottom: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
+      &__list{
+        display: flex;
+        justify-content: center;
+        margin-top: 0;
+        font-weight: bold;
+        &__a{
+          margin: 0 10px 0 10px;
+          background-color: #efefef;
+          padding: 0 10px 0 10px;
+          border-radius: 30px;
+        }
+        &__b{
+          margin: 0 10px 0 10px;
+          background-color: #efefef;
+          padding: 0 10px 0 10px;
+          border-radius: 30px;
+        }
+        &__c{
+          margin: 0 10px 0 10px;
+          background-color: #efefef;
+          padding: 0 10px 0 10px;
+          border-radius: 30px;
+        }
+        &__d{
+          margin: 0 10px 0 10px;
+          background-color: #efefef;
+          padding: 0 10px 0 10px;
+          border-radius: 30px;
+        }
+      }
+    }
+      &__main{
+        margin: 0px 150px 0px;
+        padding: 42px 0px 0px;
+        &__list{
+          font-weight: bold;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          &__tag{
+            font-size: 25px;
+          } 
+          &__more{
+            font-size: 15px;
+            color: #0095ee;
+            cursor: pointer;
+          }
+        }
+      &__item{
+        display: flex;
+        max-width: 100%;
+        max-height: 100%;
+        &__box{
+          margin: 10px;
+          width: 20%;
+          background-color: #fff;
+          height: 200px;
+          box-shadow: 2px 2px 4px #55545475;
+          &__in{
+            // border: 1px solid #fff;
+            // border: 1px solid #0095ee;
+            -webkit-box-align: center;
+            height: 200px;
+            cursor: pointer;
+            // display: block;
+            &__image{
+              width: 100%;
+              height: 70%;
+              display: inline-block;
+              background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQq3uhhjARoVPJXC3Fz5UHl_BHqgt_ozCbwo66L3I-Rfa9OprBn");
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-size: cover;
+              background-position: top;
+              object-fit: cover;
+              &__price{
+                color: #ffffff;
+                background: rgba(0,0,0,0.4);
+                border-radius: 0 14px 14px 0;
+                font-size: 17px;
+                height: 28px;
+                letter-spacing: .02em;
+                position: absolute;
+                z-index: 2;
+                align-items: center;
+                position: absolute;
+                margin-top: 100px;
+                padding: 0 12px;
+                &__tag{
+                  margin-top: 5px;
+                }
+              }
+            }
+            &__text{
+              // border: solid 1px black;
+              width: 100%;
+              box-sizing: border-box;
+              color: #222;
+              font-size: 14px;
+              height: 64px;
+              line-height: 1.4em;
+              padding: 10px 10px;
+              white-space: normal;
+              word-break: break-word;
+              &__write{
+                display: inline-block;
+                height: 2.8em;
+                overflow: hidden;
+                //position: relative
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .footer {
   &-top {
     background-image: image-url("footer_book.jpeg");
     background-position: center;
     background-size: 100%;
-    width: 100%;
+    width: 1440px;
     height: 260px;
     &__center {
       width: 750px;
@@ -374,6 +501,7 @@ text-align: center;
     background-color: rgb(34, 34, 34);
     color: #fff;
     padding: 0 20px 10px;
+    width: 1440px;
     a {
       text-decoration: none;
       color: rgb(192, 192, 192);
@@ -414,7 +542,7 @@ text-align: center;
             .twitter {
               max-width: 100%;
               max-height: 100%;
-              width: 30px;
+              width: 50px;
               height: auto;
               margin-right: 16px;
               font-size: 33px;
@@ -423,13 +551,12 @@ text-align: center;
           }
           .sns-facebook {
             display: inline-block;
-            margin-top: 25px;
             .facebook {
               max-width: 100%;
               max-height: 100%;
               width: 30px;
               height: auto;
-              margin-right: 20px;
+              margin: 15px 20px 10px 0;
               font-size: 31px;
               color: #fafafa;
             }
@@ -540,31 +667,36 @@ text-align: center;
       }
     }
   }
-  .under {
-    display: flex;
-    background-color: rgb(34, 34, 34);
-    padding: 10px 210px;
-    &-logo {
-      color: #fafafa;
-      .f_logo {
-        max-width: 130px;
-        max-height: 50px;
-        width: 130px;
-        height: 50px;
-      }
+}
+
+.under {
+  display: flex;
+  background-color: rgb(34, 34, 34);
+  padding: 10px 210px;
+  width: 1440px;
+  &-logo {
+    color: #fafafa;
+    .f_logo {
+      max-width: 130px;
+      max-height: 50px;
+      width: 130px;
+      height: 50px;
     }
-    &-since {
-      color: #fff;
-      font-size: 12px;
-      text-align: center;
-      width: 80%;
-      padding-top: 10px;
-      font-weight: 400;
-    }
+  }
+  &-since {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    width: 80%;
+    padding-top: 10px;
+    font-weight: 400;
   }
 }
 
 
+* {
+  box-sizing: border-box;
+}
 
 a:hover {
   text-decoration: underline;
