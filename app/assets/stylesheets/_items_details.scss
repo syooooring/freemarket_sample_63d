@@ -37,8 +37,9 @@
          
 
           .thumbnail {
-            max-width: 700px;
-            margin: 0 auto 5px;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 0;
             padding: 0;
           
             img {
@@ -48,13 +49,15 @@
           }
           
           .thumbnail-nav img {
-            width: 100%;
+            width: 300px;
+            height: 300px;
+
           }
           
           .thumbnail-thumb {
-            max-width: 700px;
+            max-width: 300px;
             margin: 0 auto;
-          
+            height: 60px;
             li {
               margin: 5px;
             }
@@ -66,6 +69,10 @@
           }
           
           .thumbnail-thumb {
+            .slick-track{
+              height: 60px;
+            }
+
             .slick-prev {
               left: 15px;
               z-index: 100;
@@ -81,12 +88,14 @@
           }
           
           .thumbnail {
-            max-width: 700px;
-            margin: 0 auto 5px;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 0;
             padding: 0;
-          
+
             img {
-              width: 100%;
+              width: 300px;
+              height: 300px;
             }
           }
           
@@ -97,7 +106,7 @@
           .thumbnail-thumb {
             max-width: 700px;
             margin: 0 auto;
-          
+            height: 60px;
             li {
               margin: 5px;
             }
