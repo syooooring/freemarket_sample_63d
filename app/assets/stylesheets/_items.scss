@@ -257,7 +257,10 @@ a {
     }
   }
 }
-
+.sample{
+  color:red;
+  object-fit: contain;
+}
 .icon{
   font-size: 14px ; 
   
@@ -317,7 +320,152 @@ text-align: center;
     }
   }
 }
-
+*{
+  box-sizing: border-boxs;
+}
+.contents{
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  color: #333333;
+  background-color: #f5f5f5;
+  
+  .contents__category{
+    
+    
+    .contents__category__head{
+      padding: 56px 0px 30px;
+      position: relative;
+      background-color: #ffffff;
+      text-align: center;
+      
+      
+      .contents__category__head__upper{
+        font-size: 30px;
+        padding-bottom: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .contents__category__head__list{
+        display: flex;
+        justify-content: center;
+        margin-top: 0;
+        font-weight: bold;
+        .contents__category__head__list__a{
+          margin: 0 10px 0 10px;
+          background-color: #efefef;
+          padding: 0 10px 0 10px;
+          border-radius: 30px;
+        }
+        .contents__category__head__list__b{
+          margin: 0 10px 0 10px;
+          background-color: #efefef;
+          padding: 0 10px 0 10px;
+          border-radius: 30px;
+        }
+        .contents__category__head__list__c{
+          margin: 0 10px 0 10px;
+          background-color: #efefef;
+          padding: 0 10px 0 10px;
+          border-radius: 30px;
+        }
+        .contents__category__head__list__d{
+          margin: 0 10px 0 10px;
+          background-color: #efefef;
+          padding: 0 10px 0 10px;
+          border-radius: 30px;
+        }
+      }
+    }
+  
+      
+      .contents__category__main{
+        margin: 0px 150px 0px;
+        padding: 42px 0px 0px;
+        
+        .contents__category__main__list{
+          font-weight: bold;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          .contents__category__main__list__tag{
+            font-size: 25px;
+            
+          }
+            
+          .contents__category__main__list__more{
+            font-size: 15px;
+            color: #0095ee;
+            cursor: pointer;
+          }
+        }
+      
+      .contents__category__main__item{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+        max-height: 100%;
+        .contents__category__main__item__box{
+          margin: 10px;
+          width: 17%;
+          background-color: #fff;
+          height: 220px;
+          box-shadow: 2px 2px 4px #55545475;
+          .contents__category__main__item__box__in{
+            // border: 1px solid #fff;
+            // border: 1px solid #0095ee;
+            -webkit-box-align: center;
+            height: 220px;
+            cursor: pointer;
+            position: relative;
+            // display: block;
+            
+            .contents__category__main__item__box__in__image{
+              width: 100%;
+              height: 70%;
+              display: inline-block;
+              background-size: 100% 100%;
+              
+              .contents__category__main__item__box__in__image__price{
+                color: #ffffff;
+                background: rgba(0,0,0,0.4);
+                border-radius: 0 14px 14px 0;
+                font-size: 17px;
+                height: 28px;
+                letter-spacing: .02em;
+                position: absolute;
+                z-index: 2;
+                align-items: center;
+                margin-top: 100px;
+                padding: 0 12px;
+                
+                .contents__category__main__item__box__in__image__price__tag{
+                  margin-top: 5px;
+                }
+              }
+            }
+            .contents__category__main__item__box__in__text{
+              // border: solid 1px black;
+              width: 100%;
+              box-sizing: border-box;
+              color: #222;
+              font-size: 14px;
+              height: 64px;
+              line-height: 1.4em;
+              padding: 10px 10px;
+              white-space: normal;
+              word-break: break-word;
+              .contents__category__main__item__box__in__text__write{
+                display: inline-block;
+                height: 2.8em;
+                overflow: hidden;
+                position: relative
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 .footer {
   &-top {
     background-image: image-url("footer_book.jpeg");
