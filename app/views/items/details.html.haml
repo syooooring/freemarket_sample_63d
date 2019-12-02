@@ -1,5 +1,5 @@
 .topper
-  = render "header" 
+  = render "shared/header-login" 
 
 .details
   .contents
@@ -15,7 +15,7 @@
           .item-phot-low
             .item-phot-low-in
               .thumbnail
-                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7wRLAVNuXrw2QvUADoeUvqqdkgWM7nkun723aPuLHZ_oj3z0y" , class:"aaa" , with: "60px" , height: "60px"
+                %img{:alt => "", :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7wRLAVNuXrw2QvUADoeUvqqdkgWM7nkun723aPuLHZ_oj3z0y"}/
                 %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_2.jpg?1574477944"}/
                 %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_3.jpg?1574477944"}/
                 %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_4.jpg?1574477944"}/
@@ -431,4 +431,4 @@
       .item
         ニューバランス New Balance 1400 26.5cm ホワイト
 .footer
-  = render "footer"
+  = render "shared/footer"
