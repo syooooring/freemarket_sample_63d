@@ -44,7 +44,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -85,3 +86,4 @@ gem 'dotenv-rails'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'active_hash'
 gem 'gretel'
+gem 'rails-controller-testing'
