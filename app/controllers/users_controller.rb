@@ -40,8 +40,6 @@ class UsersController < ApplicationController
   end
 
 
-  def sell
-  end
   
   def identification
   end
