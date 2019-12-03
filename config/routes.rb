@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       get :card
       get :complete
       get :logout
-      get :sell
+  
     end
     member do
       get :identification
