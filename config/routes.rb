@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     collection do
       get :buy
       get :buy1
-      get 'test', to: 'test#index'
       get :details
     end
   end    
