@@ -5,7 +5,7 @@
 
   .header{
     height: 128px;
-    
+    background-color: #f5f5f5;
     &__box{
       height: 49px;
       width: 183px;
@@ -118,7 +118,7 @@
     &__box{
       font-size: 12px;
       color: #333;
-      margin: 0 40px;
+      margin: 0 20px;
       display: flex;
       text-decoration: none;
       justify-content: space-between;

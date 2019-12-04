@@ -24,9 +24,10 @@
               %li ブランドから探す
 
       .logout
-        .logout__new 
+        .logout__new
           .logout__new__text
-            新規会員登録
+            = link_to new_user_path do
+              新規会員登録
         .logout__rogin
           .logout__rogin__text
             ログイン

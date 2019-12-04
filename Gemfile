@@ -44,6 +44,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
 
 end
 
@@ -83,4 +84,5 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'active_hash'
+gem 'rails-i18n'
 
