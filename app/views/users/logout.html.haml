@@ -2,20 +2,11 @@
   = render "shared/header-login" 
   
 .indenti-crumbs
-  %ul
-    %li
-      = link_to "メルカリ", "https//www.yahoo.co.jp/"
-      %i.icon-arrow
-        = fa_icon "chevron-right"
-    %li
-      = link_to "マイページ", "https://www.yahoo.co.jp/"
-      %i.icon-arrow
-        = fa_icon "chevron-right"
-    %li
-      %span.indenti-list{itemprop: "title"} 本人情報の登録
+  - breadcrumb :logout
+  = render "layouts/breadcrumbs"
 
 .content 
-  .mains
+  .logout-mains
     = render "shared/sidebar"
     .my-logout
       .my-logout__bottom 

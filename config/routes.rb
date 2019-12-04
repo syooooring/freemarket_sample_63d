@@ -4,12 +4,15 @@ Rails.application.routes.draw do
     delete 'destroy' => 'devise/sessions#destroy',as: :current_user_destroy
   end
   root to: "items#index"
-  resources :items, only: [:index, :show] do
+
+  resources :items, only: [:index, :show, :new, :create, :edit, :update] do
     collection do
       get :buy
       get :buy1
+      get :details
     end
-  end
+  end    
+  resources :pays, only: [:new]
   resources :users, only: [:new, :create, :show, :edit] do
     member do
       get  :identification
@@ -27,6 +30,13 @@ Rails.application.routes.draw do
       post :card
       get :complete
       post :complete
+      get :logout
+    end
+    member do
+      get :identification
+      get :profile
+      get :card_info
+      get :zoom
     end
   end
 end

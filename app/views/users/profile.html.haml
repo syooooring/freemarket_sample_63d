@@ -1,0 +1,26 @@
+.profile-wrapper
+  = render 'shared/header-login'
+  .indenti-crumbs
+    - breadcrumb :profile
+    = render "layouts/breadcrumbs"
+  .main-content.clearfix
+    .profile
+      .profile__right
+        %h1.profile__right--top プロフィール
+        .profile__right--bottom
+          = form_with model: @user, class: 'profile-form', local: true do |f|
+            .profile-name
+              .profile-image
+                = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgKIFBhPPXWTbAkgXHeVP-T_yJ5IGPxot6pdT0-DSnh3ZJOKtkeg&s", class: "profile-name-image"
+              = f.text_field :nickname, class: 'profile-name__input'
+            .profile-text
+              = f.text_area :introduction, class: 'profile-text__input',  placeholder: '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'
+              = f.submit '変更する', class: 'profile-text__submit'
+    =render 'shared/sidebar'
+  = render 'shared/footer'
+
+.sell-icon
+  = link_to "" do
+    .red-circle
+      %p.text 出品
+      = fa_icon 'camera', class: "camera"

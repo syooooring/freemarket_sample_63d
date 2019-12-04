@@ -1,0 +1,36 @@
+.card-wrapper
+  = render 'shared/header-login'
+  .indenti-crumbs
+    - breadcrumb :card_info
+    = render "layouts/breadcrumbs"
+  .main-content.clearfix
+    .card
+      .card__right
+        %h2.card__right--title 支払い方法
+        .card__right--content
+          %p.card-index クレジットカード一覧
+          -# .card-button  「カードの登録がないときのビュー」
+          -#   .card-button__tag
+          -#     = link_to '' , class: 'card-button-link' do
+          -#       = fa_icon "credit-card", class: 'card-button-icon'
+          -#       %p.card-button-text クレジットカードを追加する
+          %ul.cards
+            %li.cards__show
+              = form_with model: @user, class: 'cards__show--form', local: true do |f|
+                = image_tag "/assets/mc_vrt_opt_pos_46_1x.png", width: "34", height: "20"
+                %p.card-info ************1975
+                %p.card-info 10 / 21 
+                = f.submit "削除する", class: "card-delete"
+            
+          .card-link
+            = link_to '', class: 'card-link-text' do
+              %p.card-link-font 支払い方法について
+              = fa_icon "chevron-right", class: 'card-link-icon'
+    = render 'shared/sidebar'
+  = render 'shared/footer'
+
+.sell-icon
+  = link_to "" do
+    .red-circle
+      %p.text 出品
+      = fa_icon 'camera', class: "camera"

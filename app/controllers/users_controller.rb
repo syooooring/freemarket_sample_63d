@@ -32,8 +32,11 @@ class UsersController < ApplicationController
   def edit
   end
 
-  # def registration
-  # end
+  def zoom
+  end
+  
+  def registration
+  end
 
   # def sms_confirmation
   #    # session[:phone_number] = user_params[:phone_number]
@@ -64,12 +67,16 @@ class UsersController < ApplicationController
     # sign_in User.find(session[:id]) unless user_signed_in?
   # end
 
+  def profile
+  end
+
+  def card_info
+  end
+
   def logout
   end
 
 
-  def sell
-  end
   
   def identification
   end

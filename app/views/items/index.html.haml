@@ -1,5 +1,4 @@
 .topper
-  =render "header"
   = render "shared/header-login" 
 .slick
   %div
@@ -25,8 +24,68 @@
               = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg', class: "icon-image", width: "170", height: "50"
             =link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" do
               = image_tag 'https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg', class: "icon-image", width: "170", height: "50"
+.contents
+  .contents__category
+    .contents__category__head
+      
+      .contents__category__head__upper
+        人気のカテゴリー
+      .contents__category__head__list
+        .contents__category__head__list__a
+          レディース
+        .contents__category__head__list__b
+          メンズ
+        .contents__category__head__list__c
+          家電・スマホ・カメラ
+        .contents__category__head__list__d
+          おもちゃ・ホビー・グッズ
+    
+    .contents__category__main
+      .contents__category__main__list
+        .contents__category__main__list__tag
+          レディース新着アイテム
+        .contents__category__main__list__more
+          もっとみる>
+      = render "shared/contents-item"
+    .contents__category__main
+      .contents__category__main__list
+        .contents__category__main__list__tag
+          メンズ新着アイテム
+        .contents__category__main__list__more
+          もっとみる>
+      = render "shared/contents-item"
+.contents
+  .contents__category
+    .contents__category__head
+      
+      .contents__category__head__upper
+        人気のブランド
+      .contents__category__head__list
+        .contents__category__head__list__a
+          シャネル
+        .contents__category__head__list__b
+          ルイヴィトン
+        .contents__category__head__list__c
+          シュプリーム
+        .contents__category__head__list__d
+          ナイキ
+    
+    .contents__category__main
+      .contents__category__main__list
+        .contents__category__main__list__tag
+          シャネル新着アイテム
+        .contents__category__main__list__more
+          もっとみる>
+      = render "shared/contents-item"
+        
+    .contents__category__main
+      .contents__category__main__list
+        .contents__category__main__list__tag
+          ルイヴィトン新着アイテム
+        .contents__category__main__list__more
+          もっとみる>
+      = render "shared/contents-item"
 .sell-icon1
   = render "shared/sell-icon"
-
 .footer
   = render "shared/footer"
