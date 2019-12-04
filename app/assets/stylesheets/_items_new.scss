@@ -81,13 +81,18 @@
           font-weight: bold;
         }
         &__name{
-      
           .input-default{
             height: 40px;
             width: 100%;
             font-size: 16px;
-            padding: 10px;
             margin-top: 8px;
+            #item_name {
+              width: 100%;
+              height: 48px;
+              border: solid 1px #ccc;
+              border-radius: 4px;
+              padding: 10px 16px 8px;
+            }
           }
         }
         &__description{
@@ -98,12 +103,14 @@
         }
         &__deteil{
           .textarea-default{
-            border: 1px solid #ccc;
-            height: 130px;
-            width: 100%;
-            font-size: 16px;
-            padding: 10px;
-            margin-top: 8px;
+            #item_text {
+              border: 1px solid #ccc;
+              height: 130px;
+              width: 100%;
+              font-size: 16px;
+              padding: 10px;
+              margin-top: 8px;
+            }
           }
         }
 
@@ -118,14 +125,15 @@
       float:right;
       }
       &__name{
-       
         display: flex;
+        margin-bottom: 5px;
+        font-weight: bold;
       }
 
       &__status{
-        margin-top: 40px;
+        margin: 40px 0 5px;
         display: flex;
-
+        font-weight: bold;
       }
       }
 
@@ -139,15 +147,19 @@
         }
         &__fee{
           display: flex;
+          margin-bottom: 5px;
+          font-weight: bold;
         }
         &__region{
+          margin: 40px 0 5px;
           display: flex;
-          margin-top: 40px;
+          font-weight: bold;
         }
 
         &__day{
+          margin: 40px 0 5px;
           display: flex;
-          margin-top: 40px;
+          font-weight: bold;
         }
       }
 
@@ -168,6 +180,7 @@
           .price-box-top{
             display: inline-block;
             margin-top: 12px;
+            font-weight: bold;
           } 
           .sell-price-input{
             display: flex;
@@ -267,7 +280,23 @@ select{
 
 .select-sell{
   position: relative;
+  cursor: pointer;
+  #item_prefecture_id{
+    height: 50px;
+    width: 340px;
+    background-color: #fff;
+    border:solid 1px #ccc;
+    padding: 0 20px;
+  }
+  i {
+    height: 50px;
+    position: absolute;
+    top: 15px;
+    right: 75px;
+    pointer-events: none;
+  }
 }
+
 .icon-arrow-sell{
 right: 20px;
 top: 25px;
@@ -278,15 +307,16 @@ pointer-events: none;
 }
 
 .input-sell{
+  #item_price {
   height: 50px;
   width: 160px;
-
   text-align: right;
   padding: 10px 15px;
   border-radius: 4px;
   border: 1px solid #ccc;
   font-size: 16px;
-  margin-left:10px ;
+  margin-left: 10px;
+  }
 }
 
 .sell-price-center{
@@ -341,5 +371,3 @@ pointer-events: none;
   bottom: 18px;
   cursor: pointer;
 }
-
-

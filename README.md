@@ -119,6 +119,7 @@ belongs_to :users
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
+|prefectures|integer|null: false|
 
 ### Association
 - belongs_to :user

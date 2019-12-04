@@ -6,100 +6,126 @@
 
 .sell-main
   .sell
-  = form_with model: @user, class: :indenti_forms ,local: true do |f|
+  = form_with model: @item, class: :indenti_forms, local: true do |f|
     .sell__inner  
       .sell__inner__top
-        %h2.sell-info 商品の情報を入力
+        .sell-info
+          商品の情報を入力
       .sell__inner__upload
         .sell__inner__upload__img-text
-          %h2.sent-left 出品画像
-          %h2.sell-right 必須
+          .sent-left
+            出品画像
+          .sell-right
+            必須
         .sell__inner__upload__img-text2
-          %h2.img-text-up 最大10枚までアップロードできます
+          .img-text-up
+            最大10枚までアップロードできます
         .sell__inner__upload__img-file
           .sell__inner__upload__img-file__box
           .sell__inner__upload__img-file__container
             %label
-              = f.file_field :image, class: 'hidden', style: "display: none;" 
-              .file-box
-                %pre.file-up
-                  :preserve
-                    ドラッグアンドドロップ
-                    またはクリックしてファイルをアップロード
+              = f.fields_for :thumbnails do |t|
+                = t.file_field :images, class: 'hidden', style: "display: none;"
+                .file-box
+                  %pre.file-up
+                    :preserve
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
 
       .sell__inner__content
         .sell__inner__content__item
-          %h2.sent-left 商品名
-          %h2.sell-right 必須
+          .sent-left
+            商品名
+          .sell-right
+            必須
         .sell__inner__content__name
-          %input.input-default{placeholder: "商品名（必須 40文字まで)",}/
+          .input-default
+            = f.text_field :name, placeholder: "商品名（必須 40文字まで)"
         .sell__inner__content__description
-          %h2.sent-left 商品の説明
-          %h2.sell-right 必須
+          .sent-left
+            商品の説明
+          .sell-right
+            必須
         .sell__inner__content__deteil
-          %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+          .textarea-default
+            = f.text_area :text, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
       .sell__inner__category  
-        %h2.text-inline  商品詳細
+        .text-inline
+          商品詳細
         .category-box
           .sell__inner__category__name
-            %h2.sent-left カテゴリー
-            %h2.sell-right 必須
+            .sent-left
+              カテゴリー
+            .sell-right
+              必須
           .sell__inner__category__box1
             .select-sell
-              %i.icon-arrow-sell
-                = fa_icon "chevron-down"
               .select-sell
-                = f.collection_select :prefecture_id, Prefecture.all, :id, :name 
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+                %i.icon-arrow-sell
+                = fa_icon "chevron-down"
           .sell__inner__category__status
-            %h2.sent-left 商品の状態
-            %h2.sell-right 必須
+            .sent-left
+              商品の状態
+            .sell-right
+              必須
           .sell__inner__category__box2
             .select-sell
-              %i.icon-arrow-sell 
-                = fa_icon "chevron-down"
               .select-sell
                 = f.collection_select :prefecture_id, Prefecture.all, :id, :name 
+                %i.icon-arrow-sell 
+                = fa_icon "chevron-down"
       .sell__inner__delivery 
-        %h2.text-inline 発送について
+        .text-inline
+          発送について
         %a.qestion-mark{href: ""} ?
         .delivery-box  
           .sell__inner__delivery__fee
-            %h2.sent-left 配送料の負担
-            %h2.sell-right 必須
+            .sent-left
+              配送料の負担
+            .sell-right
+              必須
           .select-sell
-            %i.icon-arrow-sell
-              = fa_icon "chevron-down"
             .select-sell
               = f.collection_select :prefecture_id, Prefecture.all, :id, :name 
+              %i.icon-arrow-sell 
+              = fa_icon "chevron-down"
           .sell__inner__delivery__region
-            %h2 発送元の地域
-            %h2.sell-right  必須
+            発送元の地域
+            .sell-right
+              必須
           .select-sell
-            %i.icon-arrow-sell
-              = fa_icon "chevron-down"
             .select-sell
               = f.collection_select :prefecture_id, Prefecture.all, :id, :name 
+              %i.icon-arrow-sell 
+              = fa_icon "chevron-down"
           .sell__inner__delivery__day
-            %h2.sent-left 発送までの日数
-            %h2.sell-right 必須
+            .sent-left
+              発送までの日数
+            .sell-right
+              必須
           .select-sell
-            %i.icon-arrow-sell
-              = fa_icon "chevron-down"
             .select-sell
               = f.collection_select :prefecture_id, Prefecture.all, :id, :name 
-
+              %i.icon-arrow-sell 
+              = fa_icon "chevron-down"
       .sell__inner__price
-        %h2.text-inline 販売価格(300〜9,999,999)
+        .text-inline
+          販売価格(300〜9,999,999)
         %a.qestion-mark{href: ""} ?
         .sell__inner__price__box
           %ul
             %li.sell-price-form
               .price-box-top
-                %h2.sent-left 価格
-                %h2.sell-right 必須
+                .sent-left
+                  価格
+                .sell-right
+                  必須
               .sell-price-input  
-                %h2.price-box-top ¥
-                %input.input-sell{placeholder: "例）300", value: ""}/
+                .price-box-top
+                  ¥
+                .input-sell
+                  = f.text_field :price, placeholder: "例）300"
             %li.sell-price-center
               .l-left
                 販売手数料 (10%)
@@ -112,22 +138,22 @@
         .sell__inner__privacy__top
           %div.privacy1
             %p
-              %a{href: ""} 禁止されている出品
-              %a{href: ""}行為
+              = link_to "禁止されている出品", "#"
+              為
               を必ずご確認ください。
           %div.privacy2
             %p
               またブランド品でシリアルナンバー等がある場合はご記載ください。
-              %a{href: ""} 偽ブランドの販売
+              = link_to "偽ブランドの販売", "#"
               は犯罪であり処罰される可能性があります。
           %div.privacy3
             %p
               また、出品をもちまして
-              %a{href: ""} 加盟店規約
+              = link_to "加盟店規約", "#"
               に同意したことになります。
         .sell__inner__privacy__exhibit
-          %button{name: "", type: "submit", class: "exhibit-btn", value: "ボタン"} 出品する
-          %a.sell-back(href="root_path") もどる
+          = f.submit "出品する", class: "exhibit-btn"
+          %a.sell-back(href= "user_path") もどる
 
 .main-footer
   .footer

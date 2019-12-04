@@ -38,10 +38,6 @@ class UsersController < ApplicationController
 
   def logout
   end
-
-
-  def sell
-  end
   
   def identification
   end

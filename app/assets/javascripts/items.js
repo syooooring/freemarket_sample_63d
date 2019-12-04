@@ -19,6 +19,6 @@ $(document).on('turbolinks:load', function () {
     // slidesPerRow:5,
     focusOnSelect: true, //フォーカスの有効化
     draggable: true,
-    asNavFor: '.thumbnail', //thumbnailクラスのナビゲーション
+    asNavFor: '.thumbnail' //thumbnailクラスのナビゲーション
   });
 });

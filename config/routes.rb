@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get :buy
       get :buy1
       get :details
+      get :address
     end
   end    
   resources :pays, only: [:new]
@@ -18,7 +19,6 @@ Rails.application.routes.draw do
       get :card
       get :complete
       get :logout
-      get :sell
     end
     member do
       get :identification
