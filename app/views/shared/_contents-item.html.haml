@@ -1,0 +1,14 @@
+.contents__category__main__item
+  - @items.each do |item|
+    .contents__category__main__item__box
+      .contents__category__main__item__box__in
+        .contents__category__main__item__box__in__image
+          = image_tag "#{item.image}"
+        .contents__category__main__item__box__in__price
+          .contents__category__main__item__box__in__price__tag
+            = item.price.to_s(:delimited)
+        .contents__category__main__item__box__in__text
+          .contents__category__main__item__box__in__text__write
+            = item.name
+      .contents__category__main__item__box__in__text
+        .contents__

@@ -1,17 +1,8 @@
 .card-wrapper
   = render 'shared/header-login'
   .indenti-crumbs
-    %ul
-      %li
-        = link_to "メルカリ", "https://www.yahoo.co.jp/"
-        %i.icon-arrow
-          = fa_icon "chevron-right"
-      %li
-        = link_to "マイページ", "https://www.yahoo.co.jp/"
-        %i.icon-arrow
-          = fa_icon "chevron-right"
-      %li
-        %span.indenti-list{itemprop: "title"} 支払い方法
+    - breadcrumb :card_info
+    = render "layouts/breadcrumbs"
   .main-content.clearfix
     .card
       .card__right

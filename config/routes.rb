@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users,
+  devise_for :users,skip: :all,
   controllers: {
     sessions: 'users/sessions',
     registrations: "users/registrations",
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
+
+
+  devise_scope :user do
+    delete 'destroy' => 'devise/sessions#destroy',as: :current_user_destroy
+  end
 
   root to: "items#index"
 
@@ -27,14 +32,23 @@ Rails.application.routes.draw do
   end    
   resources :pays, only: [:new]
   resources :users, only: [:new, :create, :show, :edit] do
+    member do
+      get  :identification
+      get :logout
+      get :sell
+    end
+  end
+  resources :signup, only: [:create] do
     collection do
       get :registration
       get :sms_confirmation
       get :address
+      post :address
       get :card
+      post :card
       get :complete
+      post :complete
       get :logout
-      get :sell
     end
     member do
       get :identification

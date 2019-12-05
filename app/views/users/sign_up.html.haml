@@ -23,17 +23,18 @@
           完了
         .progress-bar5__x
   .single
-  = form_with model: @user, url:step1_signups_path, class: :single, local: true do |f|
+  = form_with model: @user, url: sms_confirmation_signup_index_path, class: :single, local: true do |f|
     .single__head
       %h1
         会員情報入力
     .single-box
+      = @user.errors.full_messages
       .single-box2
         %li
           ニックネーム
         .single-box3
           必須
-        -# %input.input-default{name: "nickname", placeholder: "例) メルカリ太郎", type: "text", value: ""}/
+        
         - if @user.errors.messages[:nickname].any?
           .field-input
             = f.text_field :nickname, autofocus: true, class: 'user_nickname_error', id: 'nickname', placeholder: '例）フリマ123'
@@ -46,7 +47,7 @@
           メールアドレス
         .single-box5
           必須
-        -# %input.input-default{name: "email", placeholder: "PC・携帯どちらでも可", type: "email", value: ""}/
+        
         - if @user.errors.messages[:nickname].any?
           .field-input
             = f.text_field :email, autofocus: true, class: 'user_nickname_error', id: 'email'
@@ -54,18 +55,17 @@
         - else
           .field-input
             = f.text_field :email, autofocus: true, class: 'user_email', id: 'email'
-      .single-box6
-        %li
-          パスワード
-        .single-box7
-          必須
-        %input.input-default{name: "password",autofocus: true, placeholder: "7文字以上", type: "password_confirmation" }/
+      -# .single-box6
+      -#   %li
+      -#     パスワード
+      -#   .single-box7
+      -#     必須
+      -#   %input.input-default{name: "password",autofocus: true, placeholder: "7文字以上", type: "password_confirmation" }/
 
         
-        %label
-          %input.checkbox-default{type: "checkbox", id:"password-check"}/
-          パスワードを表示する
-          .passbox
+      -#   %label
+      -#     %input.checkbox-default{type: "checkbox", id:"password-check"}/
+      -#     パスワードを表示する
       .single-box8
         %h2
           本人確認
@@ -77,15 +77,15 @@
           お名前(全角)
         .single-box10
           必須
-        %input.input-default{name: "family_name", placeholder: "例) 山田", type: "text", value: ""}/
-        %input.input-default2{name: "last_name", placeholder: "例) 彩", type: "text", value: ""}/
+        = f.text_field :family_name, placeholder: "例) 山田", type: "text", class: "input-default"
+        = f.text_field :last_name, placeholder: "例) 彩", type: "text",class: "input-default"
       .single-box9
         %li
           お名前カナ(全角)
         .single-box11
           必須
-        %input.input-default{name: "family_name", placeholder: "例) ヤマダ", type: "text", value: ""}/
-        %input.input-default2{name: "last_name", placeholder: "例) アヤ", type: "text", value: ""}/
+        = f.text_field :j_family_name, placeholder: "例) ヤマダ", type: "text",class: "input-default"
+        = f.text_field :j_last_name, placeholder: "例) アヤ", type: "text",class: "input-default"
       .single-box13
         %li
           生年月日
@@ -95,7 +95,9 @@
           = fa_icon "chevron-down"
           %i= fa_icon "chevron-down"
           %i= fa_icon "chevron-down"
-        != sprintf(f.date_select(:birthday_year, prefix:'', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+        = f.collection_select :birthday_year_id, BirthdayYear.all, :id, :name
+        = f.collection_select :birthday_month_id, BirthdayMonth.all, :id, :name
+        = f.collection_select :birthday_day_id, BirthdayDay.all, :id, :name
         .caution
           %p
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
@@ -107,7 +109,7 @@
         %a{href: "/jp/tos_list/", target: "_blank"}> 利用規約
         に同意したものとみなします
       .button_box
-        %button.btn-default.btn-red{type: "submit"} 次へ進む
+        = f.submit "次へ進む",　class: "btn-default btn-red"
       .last_text
         %p
           %a{href: "/jp/help_center/article/423/", target: "_blank"}> 本人情報の登録について
