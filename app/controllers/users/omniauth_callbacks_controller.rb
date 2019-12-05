@@ -26,15 +26,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       #snsでのユーザ登録ではパスワードを入力させないので準備する。
       #今回のバリデーションは英数字のみなのでこっちを採用
       render template: "users/sign_up" 
+    end
 
     if SnsCredential.find_by(uid: info[:sns][:uid], provider: info[:sns][:provider]).nil?
       #ユーザ登録と同時にsns_credentialも登録するために
       session[:uid] = info[:sns][:uid]
       session[:provider] = info[:sns][:provider]
-    end
-    
-    
-      
     end
   end
 

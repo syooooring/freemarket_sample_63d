@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users,skip: :all,
+  devise_for :users,#,skip: :all,
   controllers: {
     sessions: 'users/sessions',
     registrations: "users/registrations",
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root to: "items#index"
 
 
-  resources :signups, only: [:index] do
+  resources :sign_ups, only: [:index] do
     collection do
       get 'step1'   # 登録情報の一部を入力してもらう
       post 'step1', to: 'signups#step1_validates'  #step1で入力したデータのバリデーションチャックをする(詳しくはコントローラーで説明) render後にリロードしてもエラーが出ないようにget'step1'とURLは同じに設定する
@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   resources :pays, only: [:new]
   resources :users, only: [:new, :create, :show, :edit] do
     member do
-      get  :identification
+      get :identification
       get :logout
       get :sell
     end
@@ -42,6 +42,7 @@ Rails.application.routes.draw do
     collection do
       get :registration
       get :sms_confirmation
+      post :sms_confirmation
       get :address
       post :address
       get :card

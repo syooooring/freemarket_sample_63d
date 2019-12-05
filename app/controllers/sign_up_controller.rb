@@ -6,18 +6,27 @@ class SignUpController < ApplicationController
   end
 
   #omniauth_callbacks_controllerからリダイレクトされたアクション
-  def step1
+  def save_to_session
     #sns認証を使った場合は情報利用してインスタンスを作成.
     #viewで条件分岐などを利用してパスワードフォームを表示させない
     if session[:password_confirmation]
-      @user = User.new(
+      
+      @user = User.new
       #omniauth_callbacks_controllerで定義したsession
-        nickname: session[:nickname],
-        email: session[:email],
-        password: session[:password_confirmation]
-      )
+      # nickname: session[:nickname],
+      # family_name: session[:family_name],
+      # last_name: session[:last_name],
+      # password: session[:password],
+      # email: session[:email],
+      # j_family_name: session[:j_family_name],
+      # j_last_name: session[:j_last_name],
+      # birthday_day_id: session[:birthday_day_id],
+      # birthday_year_id: session[:birthday_year_id],
+      # birthday_month_id: session[:birthday_month_id],
+      # phone_number: session[:phone_number]
     else
       @user = User.new
+      
     end
   end
 
@@ -28,9 +37,9 @@ class SignUpController < ApplicationController
     @user.valid?
     skip_phonenumber_validate(@user.errors)
     if verify_recaptcha(model: @user, message: "選択してください") && @user.errors.messages.blank? && @user.errors.details.blank?
-      redirect_to step2_signups_path
+      render '/signup/registration/' unless @user.valid?s
     else
-      @user.errors.messages[:birthday_day] = change_birthday_validate_message(@user)
+      @user.errors.messages[:birthday_day_id] = change_birthday_validate_message(@user)
       render :step1
     end
   end
@@ -61,8 +70,8 @@ class SignUpController < ApplicationController
 
     def user_params
       params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :lastname, :firstname,
-                                  :lastname_kana, :firstname_kana, :birthday_year,
-                                  :birthday_month, :birthday_day, :phonenumber)
+                                  :j_last_name, :j_family_name, :birthday_year_id,
+                                  :birthday_month_id, :birthday_day_id, :phonenumber)
     end
 
     def create_session(user_params)
@@ -77,11 +86,11 @@ class SignUpController < ApplicationController
       end
       session[:lastname] = user_params[:lastname]
       session[:firstname] = user_params[:firstname]
-      session[:lastname_kana] = user_params[:lastname_kana]
-      session[:firstname_kana] = user_params[:firstname_kana]
-      session[:birthday_year] = user_params[:birthday_year]
-      session[:birthday_month] = user_params[:birthday_month]
-      session[:birthday_day] = user_params[:birthday_day]
+      session[:j_last_name] = user_params[:j_last_name]
+      session[:j_family_name] = user_params[:j_family_name]
+      session[:birthday_year_id] = user_params[:birthday_year_id]
+      session[:birthday_month_id] = user_params[:birthday_month_id]
+      session[:birthday_day_id] = user_params[:birthday_day_id]
     end
 
     def set_user_with_session
@@ -92,11 +101,11 @@ class SignUpController < ApplicationController
         password_confirmation: session[:password_confirmation],
         lastname: session[:lastname],
         firstname: session[:firstname],
-        lastname_kana: session[:lastname_kana],
-        firstname_kana: session[:firstname_kana],
-        birthday_year: session[:birthday_year],
-        birthday_month: session[:birthday_month],
-        birthday_day: session[:birthday_day]
+        j_last_name: session[:j_last_name,
+        j_family_name: session[:j_family_name],
+        birthday_year_id: session[:birthday_year_id],
+        birthday_month_id: session[:birthday_month_id],
+        birthday_day_id: session[:birthday_day_id]
       )
     end
 
@@ -108,10 +117,10 @@ class SignUpController < ApplicationController
 
     # 生年月日のどれかにひとつでもバリデーションエラーがあった場合は同じエラーメッセージを表示する
     def change_birthday_validate_message(user)
-      if user.errors.messages[:birthday_year].any? || user.errors.messages[:birthday_month].any? || user.errors.messages[:birthday_day].any?
-        user.errors.messages.delete(:birthday_year)
-        user.errors.messages.delete(:birthday_month)
-        user.errors.messages[:birthday_year] = ["生年月日は正しく入力してください"]
+      if user.errors.messages[:birthday_year_id].any? || user.errors.messages[:birthday_month_id].any? || user.errors.messages[:birthday_day_id].any?
+        user.errors.messages.delete(:birthday_year_id)
+        user.errors.messages.delete(:birthday_month_id)
+        user.errors.messages[:birthday_year_id] = ["生年月日は正しく入力してください"]
       end
     end
 
@@ -122,13 +131,12 @@ class SignUpController < ApplicationController
       session.delete(:password_confirmation)
       session.delete(:lastname)
       session.delete(:firstname)
-      session.delete(:lastname_kana)
-      session.delete(:firstname_kana)
-      session.delete(:birthday_year)
-      session.delete(:birthday_month)
-      session.delete(:birthday_day)
+      session.delete(:j_last_name)
+      session.delete(:j_family_name)
+      session.delete(:birthday_year_id)
+      session.delete(:birthday_month_id)
+      session.delete(:birthday_day_id)
       session.delete(:pid)
       session.delete(:provider)
     end
-end
 end
