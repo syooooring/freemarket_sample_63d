@@ -228,8 +228,19 @@
           left: 95px;
           bottom: 22px;
           text-align: center;
-          
         }
+        .field-input{
+          input{
+            padding: 10px 16px 8px;
+            height: 48px ;
+            width: 340px;
+            border-radius: 4px;
+            border: solid 1px #ccc;
+            position: relative;
+            bottom: 12px;
+          }
+        }
+        
       }
       .single-box4{
         height: 70px;
@@ -248,6 +259,19 @@
           bottom: 22px;
           text-align: center;
         }
+
+        .field-input{
+          input{
+            padding: 10px 16px 8px;
+            height: 48px ;
+            width: 340px;
+            border-radius: 4px;
+            border: solid 1px #ccc;
+            position: relative;
+            bottom: 12px;
+          }
+        }
+
       }
       .single-box6{
         height: 120px;

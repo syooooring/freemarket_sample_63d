@@ -8,8 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'b0b07855313aba4395155e60ef54d2afb6aa21042e23684c319ccff76fe4e9412cfc0fde29aceb621b4889fbac222c37e91f3cd104828b27d79a4aa3b75a9389'
-
+  # config.secret_key = '5cc364e15adba5939249508938e2bc8104910b33a6e74a7368cf7bedc55a2227d713e736f7eff358dabc7ea5f7e007f21d4787868827a30f647782bb9706039b'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -115,7 +114,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '2d81e3ce349696a042ffc7dbd2ce03c567e8f83d0beb0e5c3ee5ebee0db65f5e83a8a6bbc2ebd7f7e2567c3c19c1a28a9e2ac34a55e78beb69ac294630298f12'
+  # config.pepper = '59f5dd4312413376dd661007ae65961715c2b706de8ad1949cc82da53e9aa12a61edf9bc1b53fddfbeb649df79c41809fdb4d6ec3973ad7a6efd8d7cf866db12'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -261,6 +260,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_SECRET_KEY']
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], skip_jwt: true
+  OmniAuth.config.logger = Rails.logger if Rails.env.development? # debug用
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

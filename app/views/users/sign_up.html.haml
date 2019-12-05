@@ -23,7 +23,7 @@
           完了
         .progress-bar5__x
   .single
-  = form_with model: @user, class: :single, local: true do |f|
+  = form_with model: @user, url:step1_signups_path, class: :single, local: true do |f|
     .single__head
       %h1
         会員情報入力
@@ -33,19 +33,35 @@
           ニックネーム
         .single-box3
           必須
-        %input.input-default{name: "nickname", placeholder: "例) メルカリ太郎", type: "text", value: ""}/
+        -# %input.input-default{name: "nickname", placeholder: "例) メルカリ太郎", type: "text", value: ""}/
+        - if @user.errors.messages[:nickname].any?
+          .field-input
+            = f.text_field :nickname, autofocus: true, class: 'user_nickname_error', id: 'nickname', placeholder: '例）フリマ123'
+            = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:nickname)
+        - else
+          .field-input
+            = f.text_field :nickname, autofocus: true, class: 'user_nickname', id: 'nickname', placeholder: '例）フリマ123'
       .single-box4
         %li
           メールアドレス
         .single-box5
           必須
-        %input.input-default{name: "email", placeholder: "PC・携帯どちらでも可", type: "email", value: ""}/
+        -# %input.input-default{name: "email", placeholder: "PC・携帯どちらでも可", type: "email", value: ""}/
+        - if @user.errors.messages[:nickname].any?
+          .field-input
+            = f.text_field :email, autofocus: true, class: 'user_nickname_error', id: 'email'
+            = render 'shard/signups_errors', errors: @user.errors.full_messages_for(:email)
+        - else
+          .field-input
+            = f.text_field :email, autofocus: true, class: 'user_email', id: 'email'
       .single-box6
         %li
           パスワード
         .single-box7
           必須
-        %input.input-default{name: "password", placeholder: "7文字以上", type: "password" }/
+        %input.input-default{name: "password",autofocus: true, placeholder: "7文字以上", type: "password_confirmation" }/
+
+        
         %label
           %input.checkbox-default{type: "checkbox", id:"password-check"}/
           パスワードを表示する
