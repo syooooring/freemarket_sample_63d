@@ -265,6 +265,15 @@
           bottom: 22px;
           text-align: center;
         }
+        .passbox{
+          display: none;
+          padding: 10px 20px;
+          font-size: 16px;
+          color: #333;
+          font-weight: 400;
+          text-decoration: none;
+          background-color: #ccc;
+        }
         label{
           font-size: 15px;
           cursor: pointer;
@@ -274,11 +283,6 @@
           transform: scale(1.5);
           margin-left: 5px;
           cursor: pointer;
-        }
-        .passbox{
-          height: 35px;
-          width: 150px;
-          background-color: #ccc;
         }
       }
       .single-box8{
