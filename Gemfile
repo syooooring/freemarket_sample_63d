@@ -89,3 +89,4 @@ gem 'omniauth-google-oauth2'
 gem 'rails-i18n'
 gem 'gretel'
 gem 'rails-controller-testing'
+gem "omniauth-rails_csrf_protection"
