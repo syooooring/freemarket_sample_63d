@@ -16,10 +16,10 @@ Rails.application.routes.draw do
 
   resources :sign_ups, only: [:index] do
     collection do
-      get 'step1'   # 登録情報の一部を入力してもらう
-      post 'step1', to: 'signups#step1_validates'  #step1で入力したデータのバリデーションチャックをする(詳しくはコントローラーで説明) render後にリロードしてもエラーが出ないようにget'step1'とURLは同じに設定する
-      get 'step2'  # 残りの登録情報を入力してもらう
-      post 'step2', to: 'signups#create' # 入力した情報すべてを保存 こっちもrenderするなら揃える
+      get :registration  # 登録情報の一部を入力してもらう
+      post :registration, to: 'signups#step1_validates'  #step1で入力したデータのバリデーションチャックをする(詳しくはコントローラーで説明) render後にリロードしてもエラーが出ないようにget'step1'とURLは同じに設定する
+      get :sms_confirmation  # 残りの登録情報を入力してもらう
+      post :sms_confirmation, to: 'signups#create' # 入力した情報すべてを保存 こっちもrenderするなら揃える
     end
   end
 
