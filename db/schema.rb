@@ -12,6 +12,21 @@
 
 ActiveRecord::Schema.define(version: 2019_12_02_083116) do
 
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
+    t.string "family_name", null: false
+    t.string "last_name", null: false
+    t.string "postal_code", null: false
+    t.string "banti", null: false
+    t.string "building_name", null: false
+    t.string "phone_number", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "image", null: false
@@ -25,6 +40,17 @@ ActiveRecord::Schema.define(version: 2019_12_02_083116) do
     t.integer "inappropriate_item"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pays", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "card_number", null: false
+    t.integer "deadline_month_id", null: false
+    t.integer "deadline_year_id", null: false
+    t.integer "security_code", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_pays_on_user_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -60,5 +86,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_083116) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "users"
+  add_foreign_key "pays", "users"
   add_foreign_key "sns_credentials", "users"
 end
