@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
 
   def update
     item = Item.find(4)
-    item.update(item_params)
+    item.update(item_params)   
     if item.save
       redirect_to root_path
     else
