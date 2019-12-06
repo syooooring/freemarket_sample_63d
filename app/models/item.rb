@@ -5,5 +5,8 @@ class Item < ApplicationRecord
   # belongs_to :user
   has_many :comments
   has_many :goods
+  belongs_to_active_hash :delivery
+  belongs_to_active_hash :state
+  belongs_to_active_hash :estimated_shipping_data
   # belongs_to :category
 end
