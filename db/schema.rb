@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2019_12_04_083108) do
-
+ActiveRecord::Schema.define(version: 2019_12_04_081012) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id", null: false
@@ -52,16 +50,12 @@ ActiveRecord::Schema.define(version: 2019_12_04_083108) do
     t.integer "price", null: false
     t.text "text", null: false
     t.integer "inappropriate_item"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "prefecture_id"
     t.integer "state_id"
     t.integer "delivery_id"
     t.integer "estimated_shipping_data_id"
-  end
-
-  create_table "states", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pays", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -82,6 +76,12 @@ ActiveRecord::Schema.define(version: 2019_12_04_083108) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
+  create_table "states", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "state_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
