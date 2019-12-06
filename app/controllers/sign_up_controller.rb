@@ -101,7 +101,7 @@ class SignUpController < ApplicationController
         password_confirmation: session[:password_confirmation],
         lastname: session[:lastname],
         firstname: session[:firstname],
-        j_last_name: session[:j_last_name,
+        j_last_name: session[:j_last_name],
         j_family_name: session[:j_family_name],
         birthday_year_id: session[:birthday_year_id],
         birthday_month_id: session[:birthday_month_id],
