@@ -38,10 +38,6 @@ ActiveRecord::Schema.define(version: 2019_12_02_083116) do
     t.integer "price", null: false
     t.text "text", null: false
     t.integer "inappropriate_item"
-    t.integer "prefecture_id"
-    t.integer "state_id"
-    t.integer "delivery_id"
-    t.integer "estimated_shipping_data_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
