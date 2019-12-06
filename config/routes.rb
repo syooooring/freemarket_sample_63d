@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users,#,skip: :all,
+  devise_for :users, skip: :all,
   controllers: {
     sessions: 'users/sessions',
     registrations: "users/registrations",
