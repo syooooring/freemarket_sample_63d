@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  # before_action :set_item, only: [:edit, :update]
+
   def index
     @items = Item.all.limit(10).order(id: "DESC")
   end
@@ -14,9 +14,16 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(4)
   end
 
   def update
+    item = Item.find(4)
+    if item.update(item_params) 
+      redirect_to root_path
+    else
+      redirect_to edit_item_path
+    end
   end
 
   def details
@@ -30,10 +37,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name)
-  end
-
-  def set_item
-    @item = Item.find(params[:id])
+    params.require(:item).permit(:name, :text, :price, :prefecture_id , :state_id ,:delivery_id, :estimated_shipping_data_id,:image)
   end
 end
