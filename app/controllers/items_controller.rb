@@ -14,11 +14,11 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(4)
+    @item = Item.find(1)
   end
 
   def update
-    item = Item.find(4)
+    item = Item.find(1)
     if item.update(item_params) 
       redirect_to root_path
     else
