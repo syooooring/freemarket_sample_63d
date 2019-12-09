@@ -1,6 +1,6 @@
-  .sell-main{
-  background-color: #f5f5f5;
-  width: 1440px;
+.sell-main{
+background-color: #f5f5f5;
+width: 1440px;
   .sell{
     &__inner{
       width: 700px;
@@ -24,7 +24,6 @@
         border-bottom: solid 1.5px #f5f5f5;
         &__img-text{
           display: flex;
-         
         }
         &__img-text2{
           margin-top: 5px;
@@ -41,11 +40,7 @@
             border: 1px dashed #ccc;
             font-size: 0;
             text-align: center;
-         
           }
-          
-      
-        
         }
         .file-box {
           width: 100%;
@@ -64,16 +59,13 @@
         }
         .file-up{
           margin-top: 45px;
-
         }
       }
-
       &__content{
         height: 360px;
         width: 100%;
         padding: 40px;
         border-bottom: solid 1.5px #f5f5f5;
-     
         &__item{
           display: flex;
           margin-top: 8px;
@@ -113,37 +105,33 @@
             }
           }
         }
-
       }
-
       &__category{
-      height: 270px;
-      width: 100%;
-      padding: 40px;
-      border-bottom: solid 1.5px #f5f5f5;
-      .category-box{
-      float:right;
+        height: 270px;
+        width: 100%;
+        padding: 40px;
+        border-bottom: solid 1.5px #f5f5f5;
+        .category-box{
+          float:right;
+        }
+        &__name{
+          display: flex;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+        &__status{
+          margin: 40px 0 5px;
+          display: flex;
+          font-weight: bold;
+        }
       }
-      &__name{
-        display: flex;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-
-      &__status{
-        margin: 40px 0 5px;
-        display: flex;
-        font-weight: bold;
-      }
-      }
-
       &__delivery{
         height: 385px;
         width: 100%;
         padding: 40px;
         border-bottom: solid 1.5px #f5f5f5;
         .delivery-box{
-        float:right;
+          float:right;
         }
         &__fee{
           display: flex;
@@ -155,14 +143,12 @@
           display: flex;
           font-weight: bold;
         }
-
         &__day{
           margin: 40px 0 5px;
           display: flex;
           font-weight: bold;
         }
       }
-
       &__price {
         height: 300px;
         width: 100%;
@@ -176,18 +162,16 @@
             display:flex;
             margin-top:10px;
             justify-content: space-between;
-       
-          .price-box-top{
-            display: inline-block;
-            margin-top: 12px;
-            font-weight: bold;
-          } 
-          .sell-price-input{
-            display: flex;
-            
+            .price-box-top{
+              display: inline-block;
+              margin-top: 12px;
+              font-weight: bold;
+            } 
+            .sell-price-input{
+              display: flex;
+            }
           }
-         }
-       } 
+        }
       }
       &__privacy{
         height: 330px;
@@ -210,15 +194,15 @@
             position: absolute;
             top: 75px;
             left: 166px;
-           }
           }
         }
-        a{
-          color: #0099e8;
-        }
-        }
+      }
+      a{
+        color: #0099e8;
       }
     }
+  }
+}
   
 .sell-right{
   margin: 0 0 0 8px;
@@ -269,10 +253,10 @@ select{
   background-size: 12px 10px;
   background-position: right 10px center;
   background-color: #bddfff;
-  }
-  select::-ms-expand{
+}
+select::-ms-expand{
   display: none;
-  }
+}
 
 .text-inline{
   display: inline;
@@ -298,24 +282,23 @@ select{
 }
 
 .icon-arrow-sell{
-right: 20px;
-top: 25px;
-z-index: 1;
-position: absolute;
-pointer-events: none;
-
+  right: 20px;
+  top: 25px;
+  z-index: 1;
+  position: absolute;
+  pointer-events: none;
 }
 
 .input-sell{
   #item_price {
-  height: 50px;
-  width: 160px;
-  text-align: right;
-  padding: 10px 15px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  margin-left: 10px;
+    height: 50px;
+    width: 160px;
+    text-align: right;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-left: 10px;
   }
 }
 
@@ -339,8 +322,8 @@ pointer-events: none;
     font-weight: bold;
   }
   .l-right {
-  font-size:30px;
-  font-weight: bold;
+    font-size:30px;
+    font-weight: bold;
   }
 }
 .privacy1{

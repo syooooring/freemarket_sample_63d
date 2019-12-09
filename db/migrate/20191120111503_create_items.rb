@@ -3,16 +3,17 @@ class CreateItems < ActiveRecord::Migration[5.2]
     create_table :items do |t|
       t.string  :name
       t.integer :size
-      t.integer :state
-      t.integer :delivery_fee
-      t.integer :shipping_method
-      t.integer :estimated_shipping_date
+      t.integer :state_id
+      t.integer :delivery_fee_id
+      t.integer :shipping_method_id
+      t.integer :estimated_shipping_date_id
       t.integer :price
       t.text    :text
       t.integer :inappropriate_item
       t.integer :prefecture_id
-      t.references :sailer_id
-      t.references :buyer_id
+      t.references :saler, foreing_key: true, default: ""
+      t.references :buyer, foreing_key: true, default: ""
+      t.references :user, foreing_key: true, default: ""
       t.timestamps
     end
   end

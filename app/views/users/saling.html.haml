@@ -1,0 +1,22 @@
+.sale__item
+  .sale__item--top
+    = render "/shared/header-login"
+  .sale__item--sidebar
+    = render "/shared/sidebar"
+  .sale__item--redcircle
+    = render "/shared/sell-icon"
+  .sale__item__box
+    .sale__item__box__main
+      .sale__item__box__main--sale
+        出品中
+      .sale__item__box__main--sell
+        取引中
+      .sale__item__box__main--sold
+        売却済み
+        .sale__item__box__main--sold--list
+          .saling
+            - @items.each do |item|
+              .saling--all
+                = item.name
+  .sale__item--bottom
+    = render "/shared/footer"

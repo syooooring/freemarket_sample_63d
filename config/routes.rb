@@ -25,6 +25,9 @@ Rails.application.routes.draw do
       get :profile
       get :card_info
       get :zoom
+      get :saling
+      get :selling
+      get :sold
     end
   end
 end

@@ -41,4 +41,20 @@ class UsersController < ApplicationController
   
   def identification
   end
+
+  def saling
+    user = User.find(params[:id])
+    @items = user.saling_items
+  end
+
+  def selling
+    user = User.find(params[:id])
+    @items = user.selling_items
+  end
+
+  def sold
+    user = User.find(params[:id])
+    @items = user.sold_items
+  end
+
 end
