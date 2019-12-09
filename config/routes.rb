@@ -36,7 +36,9 @@ Rails.application.routes.draw do
     member do
       get :identification
       get :logout
-      get :sell
+      get :selling
+      get :saling
+      get :sold
     end
   end
   resources :signup, only: [:create] do

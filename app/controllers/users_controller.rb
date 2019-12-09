@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:saling, :selling, :sold]
 
   def new
   end
@@ -51,17 +52,14 @@ class UsersController < ApplicationController
   end
 
   def saling
-    user = User.find(params[:id])
     @items = user.saling_items
   end
 
   def selling
-    user = User.find(params[:id])
     @items = user.selling_items
   end
 
   def sold
-    user = User.find(params[:id])
     @items = user.sold_items
   end
   
@@ -69,3 +67,9 @@ class UsersController < ApplicationController
   end
 
 end
+
+private
+
+  def set_user
+    user = User.find(params[:id])
+  end
