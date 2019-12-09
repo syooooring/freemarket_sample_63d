@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:saling, :selling, :sold]
 
   def new
   end
@@ -38,35 +39,6 @@ class UsersController < ApplicationController
   def registration
   end
 
-  # def sms_confirmation
-  #    # session[:phone_number] = user_params[:phone_number]
-  #    # @user = User.new # 新規インスタンス作成
-  # end
-
-  # def address
-    # session[:familyname] = address_params[:familyname]
-    # session[:last_name] = address_params[:last_name]
-    # session[:postal_code] = address_params[:postal_code]
-    # session[:prefectures_id] = address_params[:prefectures_id]
-    # session[:city] = address_params[:city]
-    # session[:banti] = address_params[:banti]
-    # session[:building_name] = address_params[:building_name]
-    # session[:phone_number] = address_params[:phone_number]
-    # @user = User.new # 新規インスタンス作成
-
-  # end
-
-  # def card
-    # session[:card_number] = pay_params[:card_number]
-    # session[:card_deadline] = pay_params[:card_deadline]
-    # session[:security_code] = pay_params[:security_code]
-    # @user = User.new # 新規インスタンス作成
-  # end
-
-  # def complete
-    # sign_in User.find(session[:id]) unless user_signed_in?
-  # end
-
   def profile
   end
 
@@ -75,16 +47,28 @@ class UsersController < ApplicationController
 
   def logout
   end
-
-
   
   def identification
   end
 
-
-  private
-
-  def user_params
-    #  params.require(:user).permit(:email, :encrypted_password, :nickname, :introduction, :family_name, :last_name, :j_familyname, :j_last_name, :birthday_year, :birthday_month, :birthday_day, :phone_number, :image, :point)
+  def saling
+    @items = user.saling_items
   end
+
+  def selling
+    @items = user.selling_items
+  end
+
+  def sold
+    @items = user.sold_items
+  end
+  
+  def identification
+  end
+
 end
+
+private
+  def set_user
+    user = User.find(params[:id])
+  end

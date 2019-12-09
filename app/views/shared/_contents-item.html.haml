@@ -3,7 +3,7 @@
     .contents__category__main__item__box
       .contents__category__main__item__box__in
         .contents__category__main__item__box__in__image
-          = image_tag "#{item.image}"
+          -# = image_tag "#{thumbnails_attributes.images.find(1)}"
         .contents__category__main__item__box__in__price
           .contents__category__main__item__box__in__price__tag
             = item.price.to_s(:delimited)
@@ -11,4 +11,3 @@
           .contents__category__main__item__box__in__text__write
             = item.name
       .contents__category__main__item__box__in__text
-        .contents__
