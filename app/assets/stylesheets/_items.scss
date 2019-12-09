@@ -250,7 +250,10 @@ a {
     }
   }
 }
-
+.sample{
+  color:red;
+  object-fit: contain;
+}
 .icon{
   font-size: 14px ; 
   
@@ -310,7 +313,6 @@ text-align: center;
     }
   }
 }
-
 .contents{
   font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   color: #333333;
@@ -321,6 +323,7 @@ text-align: center;
       padding: 56px 0px 30px;
       background-color: #ffffff;
       text-align: center;
+      position: relative;
       &__upper{
         font-size: 30px;
         padding-bottom: 20px;
@@ -375,51 +378,54 @@ text-align: center;
             cursor: pointer;
           }
         }
+      
       &__item{
         display: flex;
+        flex-wrap: wrap;
         max-width: 100%;
         max-height: 100%;
         &__box{
           margin: 10px;
-          width: 20%;
+          width: 17%;
           background-color: #fff;
-          height: 200px;
+          height: 250px;
           box-shadow: 2px 2px 4px #55545475;
           &__in{
             // border: 1px solid #fff;
             // border: 1px solid #0095ee;
             -webkit-box-align: center;
-            height: 200px;
+            height: 250px;
             cursor: pointer;
+            position: relative;
             // display: block;
-            &__image{
+            
+            &__image{         
               width: 100%;
               height: 70%;
               display: inline-block;
-              background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQq3uhhjARoVPJXC3Fz5UHl_BHqgt_ozCbwo66L3I-Rfa9OprBn");
-              background-repeat: no-repeat;
-              background-position: center center;
-              background-size: cover;
-              background-position: top;
-              object-fit: cover;
-              &__price{
-                color: #ffffff;
-                background: rgba(0,0,0,0.4);
-                border-radius: 0 14px 14px 0;
-                font-size: 17px;
-                height: 28px;
-                letter-spacing: .02em;
-                position: absolute;
-                z-index: 2;
-                align-items: center;
-                position: absolute;
-                margin-top: 100px;
-                padding: 0 12px;
-                &__tag{
-                  margin-top: 5px;
-                }
+              background-size: 100% 100%;
+              img {
+                height: 100%;
+                width: 100%;
               }
             }
+            &__price{
+              color: #ffffff;
+              background: rgba(0,0,0,0.4);
+              border-radius: 0 14px 14px 0;
+              font-size: 17px;
+              height: 28px;
+              letter-spacing: .02em;
+              position: absolute;
+              z-index: 2;
+              align-items: center;
+              padding: 0 12px;
+              top: 140px;
+              &__tag{
+                margin-top: 5px;
+              }
+            }
+            
             &__text{
               // border: solid 1px black;
               width: 100%;
@@ -444,7 +450,6 @@ text-align: center;
     }
   }
 }
-
 .footer {
   &-top {
     background-image: image-url("footer_book.jpeg");

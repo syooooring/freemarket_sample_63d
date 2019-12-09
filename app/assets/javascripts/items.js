@@ -22,3 +22,16 @@ $(document).on('turbolinks:load', function () {
     asNavFor: '.thumbnail' //thumbnailクラスのナビゲーション
   });
 });
+
+$(document).ready(function() {
+  //キーボードイベント
+  $(".input-defaultx").keyup(function() {
+       //.input-defaultに入力した内容が.passboxに反映される
+      $(".passbox").html($(this).val());
+  });
+  //クリックイベント
+  $(".checkbox-default").change(function() {
+      //反映箇所の表示/非表示スイッチ
+      $(".passbox").toggle();
+  });
+});

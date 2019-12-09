@@ -1,14 +1,9 @@
 .users__show
   .users__show__top
     = render "shared/header-new"
-    .top-ber
-      %ul.top-ber__box
-        %li
-          =link_to "フリーマーケット",root_path
-        .top-ber__box2
-          %i= fa_icon "chevron-right", class:"arrow"
-        .top-ber__box3
-          マイページ
+    .indenti-crumbs
+      - breadcrumb :mypage
+      = render "layouts/breadcrumbs"
 
   .sell-icon
     = render "/shared/sell-icon"

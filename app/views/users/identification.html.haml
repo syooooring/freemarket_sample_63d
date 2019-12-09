@@ -2,17 +2,8 @@
   = render "shared/header-login" 
   .indenti-wrapper
     .indenti-crumbs
-      %ul
-        %li
-          = link_to "メルカリ", "https://www.yahoo.co.jp/"
-          %i.icon-arrow
-            = fa_icon "chevron-right"
-        %li
-          = link_to "マイページ", "https://www.yahoo.co.jp/"
-          %i.icon-arrow
-            = fa_icon "chevron-right"
-        %li
-          %span.indenti-list{itemprop: "title"} 本人情報の登録
+      - breadcrumb :indentification
+      = render "layouts/breadcrumbs"
     .clearfix
       = render 'shared/sell-icon'
       .indenti-container

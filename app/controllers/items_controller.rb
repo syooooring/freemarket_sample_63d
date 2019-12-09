@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
 
   def index
+    @items = Item.all.limit(10).order(id: "DESC")
+  end
+  
+  def show
   end
 
   def new
@@ -10,18 +14,29 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    #@item = current_user.item.build(item_params)
-    #ユーザー登録が実装されれば上記に変更
     respond_to do |format|
       if @item.save
-        params[:thumbnails][:images].each do |image|
-          @item.thumbnails.create(images: image, item_id: @item.id)
-        end
+          params[:thumbnails][:images].each do |image|
+            @item.thumbnails.create(images: image, item_id: @item.id)
+          end
         format.html{redirect_to root_path}
       else
         @item.thumbnails.build
         format.html{render action: 'new'}
       end
+    end
+  end
+
+  def edit
+    @item = Item.find(1)
+  end
+
+  def update
+    item = Item.find(1)
+    if item.update(item_params) 
+      redirect_to root_path
+    else
+      redirect_to edit_item_path
     end
   end
 
@@ -40,8 +55,7 @@ class ItemsController < ApplicationController
 private
 
   def item_params
-    params.require(:item).permit(:name, :size, :state, :delivery_fee, :shipping_method, :estimated_shipping_date, :price, :text, :prefecture_id,  thumbnails_attributes: [:images])
+    params.require(:item).permit(:name, :size, :state_id, :delivery_id, :shipping_method_id, :estimated_shipping_date_id, :price, :text, :prefecture_id,  thumbnails_attributes: [:images])
   end
 
 end
-

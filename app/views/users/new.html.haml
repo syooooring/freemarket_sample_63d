@@ -8,20 +8,21 @@
       新規会員登録
     .form
       .form__box
-        = link_to "https://www.mercari.com/jp/signup/registration/", class: "box1" do
-          メールアドレスで登録する
+        = link_to registration_signup_index_path do
+          .box1
+            メールアドレスで登録する
           = fa_icon "envelope", class: "boximage"
-        = link_to "https://www.facebook.com/", class: "box2" do
+        = link_to user_facebook_omniauth_authorize_path, method: :post, class: "box2" do
           Facebookで登録する
           = fa_icon "facebook-square" , class: "boximage2"
-        = link_to "https://www.google.com/",class: "box3" do
+        = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "box3" do
           Googleで登録する
           .boximage3
             %img{ src: "//www.mercari.com/jp/assets/img/common/common/google.svg"}/
   .footer
     %ul.footer__box
       %li= link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
-      %li= link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+      %li= link_to "フリマ利用規約", "https://www.mercari.com/jp/tos/"
       %li= link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
     .footer__box2
       = link_to root_path do

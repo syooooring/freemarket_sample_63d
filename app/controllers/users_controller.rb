@@ -4,6 +4,26 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(
+      nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
+      email: session[:email],
+      password: session[:password],
+      # password_confirmation: session[:password_confirmation],
+      last_name: session[:last_name], 
+      first_name: session[:first_name], 
+      last_name_kana: session[:last_name_kana], 
+      first_name_kana: session[:first_name_kana], 
+      birthday_year: session[:birthday_year],
+      birthday_month: session[:birthday_month],
+      birthday_day: session[:birthday_day],
+    )
+    if @user.save
+      # ログインするための情報を保管
+      session[:id] = @user.id
+      redirect_to complete_users_path
+    else
+      render '/signup/registration'
+    end
   end
 
   def show
@@ -16,18 +36,6 @@ class UsersController < ApplicationController
   end
   
   def registration
-  end
-
-  def sms_confirmation
-  end
-
-  def address
-  end
-
-  def card
-  end
-
-  def complete
   end
 
   def profile
@@ -55,6 +63,9 @@ class UsersController < ApplicationController
   def sold
     user = User.find(params[:id])
     @items = user.sold_items
+  end
+  
+  def identification
   end
 
 end

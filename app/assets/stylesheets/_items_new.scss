@@ -224,7 +224,7 @@ width: 1440px;
 
 .select-sell {
   width: 400px;
-  #prefecture_id {
+  #item_prefecture_id {
     width: 400px;
     margin: 8px 0 0;
     height: 48px;
@@ -235,7 +235,40 @@ width: 1440px;
     line-height: 1.5;
     font-size: 16px;
   }
+
 }
+#item_state_id {
+    width: 400px;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  #item_delivery_id {
+    width: 400px;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }#item_estimated_shipping_data_id {
+    width: 400px;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
 
 
 select{
@@ -333,7 +366,7 @@ select::-ms-expand{
   display: flex;
 }
 
-.exhibit-btn{
+.exhibit_btn{
   width: 620px;
   height: 45px;
   background: #ea352d;
