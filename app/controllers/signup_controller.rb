@@ -5,7 +5,7 @@ class SignupController < ApplicationController
       nickname: session[:nickname],
       family_name: session[:family_name],
       last_name: session[:last_name],
-      password: session[:password_confirmation],
+      password: session[:password],
       email: session[:email],
       j_family_name: session[:j_family_name],
       j_last_name: session[:j_last_name],
@@ -32,14 +32,13 @@ class SignupController < ApplicationController
   end
 
   def save_to_session
-    
     session[:phone_number] = user_params[:phone_number]
     
     @user = User.new(
       nickname: session[:nickname],
       family_name: session[:family_name],
       last_name: session[:last_name],
-      password: session[:password_confirmation],
+      password: session[:password],
       email: session[:email],
       j_family_name: session[:j_family_name],
       j_last_name: session[:j_last_name],
@@ -61,9 +60,9 @@ class SignupController < ApplicationController
     session[:email] = user_params[:email]
     session[:j_family_name] = user_params[:j_family_name]
     session[:j_last_name] = user_params[:j_last_name]
+    session[:birthday_day_id] = user_params[:birthday_day_id]
     session[:birthday_year_id] = user_params[:birthday_year_id]
     session[:birthday_month_id] = user_params[:birthday_month_id]
-    session[:birthday_day_id] = user_params[:birthday_day_id]
     @user = User.new
   end
 

@@ -25,7 +25,7 @@ $(document).on('turbolinks:load', function () {
 
 $(document).ready(function() {
   //キーボードイベント
-  $(".input-default").keyup(function() {
+  $(".input-defaultx").keyup(function() {
        //.input-defaultに入力した内容が.passboxに反映される
       $(".passbox").html($(this).val());
   });
@@ -35,4 +35,3 @@ $(document).ready(function() {
       $(".passbox").toggle();
   });
 });
-
