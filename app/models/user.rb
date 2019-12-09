@@ -42,5 +42,4 @@ class User < ApplicationRecord
   validates :phone_number,format: {
    with: /\A\d{10}\z|\A\d{11}\z/,
   }
-
 end

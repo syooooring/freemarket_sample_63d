@@ -265,6 +265,15 @@
           bottom: 22px;
           text-align: center;
         }
+        .input-defaultx{
+          padding: 10px 16px 8px;
+          height: 48px;
+          width: 340px;
+          border-radius: 4px;
+          border:solid 1px #ccc;
+          position: relative;
+          bottom: 12px;
+        }
         .passbox{
           display: none;
           padding: 10px 20px;
@@ -277,7 +286,6 @@
         label{
           font-size: 15px;
           cursor: pointer;
-         
         }
         .checkbox-default{
           transform: scale(1.5);
@@ -388,7 +396,7 @@
           
         }
         
-        #_birthday_year_1i{
+        #user_birthday_year_id{
           width: 80px;
           padding: 0 10px;
           border:solid 1px #ccc;
@@ -397,23 +405,25 @@
           height: 50px;
           cursor: pointer;
         }
-        #_birthday_year_2i{
+        #user_birthday_month_id{
           width: 80px;
           padding: 0 10px;
           border:solid 1px #ccc;
           background-color: #fff;
           font-weight: 200;
+          margin-left: 10px;
           height: 50px;
           position: relative;
           cursor: pointer;
         }
-        #_birthday_year_3i{
+        #user_birthday_day_id{
           width: 80px;
           padding: 0 10px;
           border:solid 1px #ccc;
           background-color: #fff;
           font-weight: 200;
           height: 50px;
+          margin-left: 10px;
           cursor: pointer;
           position: relative;
         }
@@ -449,7 +459,7 @@
         width: 343px;
         margin: 32px auto 0;
       
-        button{
+        input{
           margin: 0 auto;
           width: 100%;
           height: 100%;
