@@ -11,11 +11,11 @@
         = link_to registration_signup_index_path do
           .box1
             メールアドレスで登録する
-            = fa_icon "envelope", class: "boximage"
-        = link_to "https://www.facebook.com/", class: "box2" do
+          = fa_icon "envelope", class: "boximage"
+        = link_to user_facebook_omniauth_authorize_path, method: :post, class: "box2" do
           Facebookで登録する
           = fa_icon "facebook-square" , class: "boximage2"
-        = link_to "https://www.google.com/",class: "box3" do
+        = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "box3" do
           Googleで登録する
           .boximage3
             %img{ src: "//www.mercari.com/jp/assets/img/common/common/google.svg"}/

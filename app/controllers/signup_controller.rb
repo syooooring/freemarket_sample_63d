@@ -33,12 +33,12 @@ class SignupController < ApplicationController
 
   def save_to_session
     session[:phone_number] = user_params[:phone_number]
-
+    
     @user = User.new(
       nickname: session[:nickname],
       family_name: session[:family_name],
       last_name: session[:last_name],
-      password: session[:password],
+      password: session[:password_confirmation],
       email: session[:email],
       j_family_name: session[:j_family_name],
       j_last_name: session[:j_last_name],
@@ -51,6 +51,8 @@ class SignupController < ApplicationController
   end
 
   def sms_confirmation
+    
+    
     session[:nickname] = user_params[:nickname]
     session[:family_name] = user_params[:family_name]
     session[:last_name] = user_params[:last_name]

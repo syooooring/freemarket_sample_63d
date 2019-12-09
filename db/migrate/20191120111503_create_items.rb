@@ -11,6 +11,10 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :price,                    null: false
       t.text    :text,                     null: false
       t.integer :inappropriate_item
+      t.integer :prefecture_id
+      t.integer :state_id
+      t.integer :delivery_id  
+      t.integer :estimated_shipping_data_id
       t.timestamps
     end
   end
