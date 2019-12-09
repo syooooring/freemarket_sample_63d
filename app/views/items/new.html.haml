@@ -68,7 +68,7 @@
             .select-sell
               .select-sell
                 = f.collection_select :state_id, State.all, :id, :name 
-                %i.icon-arrow-sell 
+              %i.icon-arrow-sell 
                 = fa_icon "chevron-down"
       .sell__inner__delivery 
         .text-inline
@@ -83,7 +83,7 @@
           .select-sell
             .select-sell
               = f.collection_select :estimated_shipping_date_id, EstimatedShippingDate.all, :id, :name 
-              %i.icon-arrow-sell 
+            %i.icon-arrow-sell 
               = fa_icon "chevron-down"
           .sell__inner__delivery__region
             発送元の地域
@@ -92,7 +92,7 @@
           .select-sell
             .select-sell
               = f.collection_select :prefecture_id, Prefecture.all, :id, :name 
-              %i.icon-arrow-sell 
+            %i.icon-arrow-sell 
               = fa_icon "chevron-down"
           .sell__inner__delivery__day
             .sent-left
@@ -101,8 +101,8 @@
               必須
           .select-sell
             .select-sell
-              = f.collection_select :estimated_shipping_date_id, EstimatedShippingDate.all, :id, :name 
-              %i.icon-arrow-sell 
+              = f.collection_select :delivery_id, Delivery.all, :id, :name 
+            %i.icon-arrow-sell 
               = fa_icon "chevron-down"
       .sell__inner__price
         .text-inline
