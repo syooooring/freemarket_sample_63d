@@ -38,7 +38,7 @@ class SignupController < ApplicationController
       nickname: session[:nickname],
       family_name: session[:family_name],
       last_name: session[:last_name],
-      password: session[:password_confirmation],
+      password: session[:password],
       email: session[:email],
       j_family_name: session[:j_family_name],
       j_last_name: session[:j_last_name],
