@@ -41,6 +41,12 @@ class ItemsController < ApplicationController
   end
 
   def details
+    @item = Item.find(params[:id])
+    @items = Item.where(saler_id: @item.saler_id).limit(6).order('id DESC')
+    @price = "¥#{@item.price.to_s(:delimited)}"
+    @state = @item.state.name
+    @delivery = @item.delivery.name
+    @date = @item.estimated_shipping_date.name
   end
   
   def address
@@ -55,7 +61,7 @@ class ItemsController < ApplicationController
 private
 
   def item_params
-    params.require(:item).permit(:name, :size, :state_id, :delivery_id, :shipping_method_id, :estimated_shipping_date_id, :price, :text, :prefecture_id,  thumbnails_attributes: [:images])
+    params.require(:item).permit(:name, :size, :state_id, :delivery_id, :shipping_method_id, :estimated_shipping_date_id, :price, :text, :prefecture_id,  thumbnails_attributes: [:images]).merge(user_id: current_user.id, saler_id: current_user.id)
   end
 
 end

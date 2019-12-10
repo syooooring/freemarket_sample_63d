@@ -33,7 +33,6 @@ class SignupController < ApplicationController
 
   def save_to_session
     session[:phone_number] = user_params[:phone_number]
-    
     @user = User.new(
       nickname: session[:nickname],
       family_name: session[:family_name],

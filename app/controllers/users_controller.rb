@@ -50,7 +50,7 @@ class UsersController < ApplicationController
 
   def logout
   end
-  
+
   def identification
   end
 
@@ -65,9 +65,6 @@ class UsersController < ApplicationController
   def sold
     @items = user.sold_items
   end
-  
-  def identification
-  end
 
   private
 
@@ -75,7 +72,5 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
   end
 
-  def user_params
-  end
 
 end

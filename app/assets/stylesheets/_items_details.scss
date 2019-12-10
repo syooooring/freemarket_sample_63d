@@ -754,19 +754,19 @@
     .another-image{
       width: 100%;
       .another-image-box{
-        width: 700px;
+        width: 720px;
         height: 700px;
         margin: 24px auto 0;
         // border: solid 1px black;
         .another-image-box-in{
-          width: 700px;
-          height: 350px;
-          display: flex;
+          width: auto;
+          height: 700px;
           .image-box{
             width: 220px;
             height: 330px;
             margin: 0 20px 20px 0;
             background-color: #fff;
+            float: left;
             // border: solid 1px black;
             .image-box-in{
               width: 220px;
