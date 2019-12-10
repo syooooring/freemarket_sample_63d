@@ -26,6 +26,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def login
+  end
+
   def show
   end
 
@@ -74,6 +77,10 @@ class UsersController < ApplicationController
   end
 
   def logout
+  end
+
+  def destroy
+    
   end
 
 
