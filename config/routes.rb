@@ -13,7 +13,6 @@ Rails.application.routes.draw do
 
   root to: "items#index"
 
-
   resources :sign_ups, only: [:index] do
     collection do
       get :registration  # 登録情報の一部を入力してもらう
@@ -23,7 +22,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items, only: [:index, :show, :new, :create, :edit, :update] do
+  resources :items do
     collection do
       get :buy
       get :buy1
@@ -44,6 +43,7 @@ Rails.application.routes.draw do
       get :selling
       get :saling
       get :sold
+      get :selling_items
     end
   end
   resources :signup, only: [:create] do

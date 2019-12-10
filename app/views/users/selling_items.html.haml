@@ -1,0 +1,32 @@
+.users__show
+  .users__show__top
+    = render "shared/header-login"
+    .indenti-crumbs
+      - breadcrumb :mypage
+      = render "layouts/breadcrumbs"
+
+  .sell-icon
+    = render "/shared/sell-icon"
+
+  .content.clearfix
+    = render "shared/sidebar"
+    .right
+      .bought
+        .bought__items
+          出品した商品
+        .bought__status
+          %ul.trader
+            %li.trader__change.movie
+              出品中
+            %li.trader__change
+              過去の取引
+        .bought__text
+          %ul.bought__text__list
+            %li.bought__text__list--message.see
+              取引中の商品がありません
+            %li.bought__text__list--message
+              - @items.each do |item|
+                = link_to item.name, item_path(item)
+                
+  .users__show__bottom
+    = render "shared/footer"
