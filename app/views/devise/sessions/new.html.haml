@@ -13,12 +13,12 @@
           %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
             .btn-image1
               = image_tag "f_logo_RGB-Blue_1024.png", class: "facebook-logo"
-              = link_to user_facebook_omniauth_authorize_path , class: "facebook-link" do
+              = link_to user_facebook_omniauth_authorize_path ,method: :post, class: "facebook-link" do
                 Facebookでログイン
           %button#google-login.btn-default.btn-sns.btn-sns-google
             .btn-image2
               = image_tag "btn_google_light_pressed_ios@2x.png", class: "google-logo"
-              = link_to user_google_oauth2_omniauth_authorize_path , class: "google-link" do
+              = link_to user_google_oauth2_omniauth_authorize_path ,method: :post, class: "google-link" do
                 googleでログイン
         .login-form-inner1
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
