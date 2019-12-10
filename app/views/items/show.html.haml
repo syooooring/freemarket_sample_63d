@@ -1,0 +1,307 @@
+.topper
+  = render "shared/header-login" 
+
+.details
+  .contents
+    .contents__box
+      .contents__item__name
+        = @item.name
+
+      .contents__item__main
+        .item-phot
+          .item-phot-upper
+          .item-phot-low
+            .item-phot-low-in
+              .thumbnail
+                - @item.thumbnails.each do |thumbnail|
+                  = image_tag "#{thumbnail.images}"
+
+        .item-detail-table
+          .item-detail-table-box
+            .item-detail-table-Exhibitor
+              .name
+                .name-bar
+                  出品者
+              .text
+                .user-name
+                  = @item.user.nickname
+                .markbox
+                  .markbox-good
+                    .mark-1
+                      = fa_icon 'smile'
+                    .num
+                      3
+                  .markbox-usually
+                    .mark-2
+                      = fa_icon 'meh'
+                    .num
+                      2
+                  .markbox-bad
+                    .mark-3
+                      = fa_icon 'frown'
+                    .num
+                      1
+
+            .item-detail-table-category
+              .name
+                .name-bar
+                  カテゴリー
+              .text
+                .text__1
+                  メンズ
+                .text__2
+                  .icon
+                    >
+                  .bar
+                    靴
+                .text__3
+                  .icon
+                    >
+                  .bar
+                    スニーカー
+            .item-detail-table-brand
+              .name
+                .name-bar
+                  ブランド
+              .text
+                .text__1
+                  ニューバランス
+            .item-detail-table-size
+              .name
+                .name-bar
+                  サイズ
+              .text
+                .text__1
+                  26.5cm
+            .item-detail-table-status
+              .name
+                .name-bar
+                  商品の状態
+              .text
+                .text__1
+                  = @state
+            .item-detail-table-charge
+              .name
+                .name-bar
+                  配送料の負担
+              .text
+                .text__1
+                  = @delivery
+            .item-detail-table-method
+              .name
+                .name-bar
+                  配送の方法
+              .text
+                .text__1
+                  ゆうパック
+            .item-detail-table-region
+              .name
+                .name-bar
+                  配送元地域
+              .text
+                .text__1
+                  = @item.user.address.prefecture.name
+            .item-detail-table-indication
+              .name
+                .name-bar
+                  発送日の目安
+              .text
+                .text__1
+                  = @date
+                  
+        .item-pricebox
+          .item-price
+            = @price
+          .item-tax
+            (税込) 
+          .item-fee
+            送料込み
+        %ul.item-btn
+          %li.item-btn-in
+            = link_to "この商品を削除する", item_path(@item), method: :delete
+          
+
+        .item-description
+          .item-description__in
+            .p
+              = @item.text
+            
+        .item-btn-box
+          .item-btn-box-left
+            .item-btn-box-like
+              .item-btn-box-like-in
+                .icon
+                  = fa_icon 'heart-o lg'
+                .like
+                  いいね!
+                .num
+                  10
+            .item-btn-box-report
+              .item-btn-box-report-in
+                .icon
+                  = fa_icon 'flag'
+                %ul.inappropriate
+                  %li.inappropriate-in
+                    = link_to "不適切な商品の報告", "https://www.yahoo.co.jp/"
+          .item-btn-box-right
+            .item-btn-box-right-in
+              .icon
+                = fa_icon 'lock'
+              %ul.support
+                %li.support-in
+                  = link_to "あんしん・あんぜんへの取り組み", "https://www.yahoo.co.jp/", class:"support-in-a"
+
+    .itemlink
+      .itemlink-bar
+        %ul.itemlink-bar__left
+          .itemlink-bar__left-icon
+            <
+          %li.itemlink-bar__left
+            = link_to "前の商品", "https://www.yahoo.co.jp/", class:"itemlink-bar__left-a"
+            
+        .itemlink-bar__right
+          %ul.itemlink-bar__right
+            %li.itemlink-bar__right
+              = link_to "次の商品", "https://www.yahoo.co.jp/", class:"itemlink-bar__right-a"
+            .itemlink-bar__right-icon
+              >
+    .media-box
+      .media-box-in
+        .logo-box
+          .fb-icon
+            -# = fa_icon 'facebook' fa-icon使用する時用に置いておきます。
+          .tw-icon
+            -# = fa_icon 'twitter'
+          .pt-icon
+            -# = fa_icon 'pinterest'
+    .another-item
+      .another-item-in
+        = "#{@item.user.nickname}さんのその他の出品"
+    .another-image
+      .another-image-box
+        .another-image-box-in
+          - @items.each do |item|
+            .image-box
+              .image-box-in
+                = image_tag "#{item.thumbnails.last.images}", width: "220", height: "220"
+              .text-box
+                .text-box-in
+                  = item.name
+                .item-box-num
+                  .price-box
+                    = "¥#{item.price.to_s(:delimited)}"
+                    .price-in
+                  .num-box
+                    .nice
+                      = fa_icon 'heart'
+                    .num
+                      10
+    .another-brand
+      .another-brand-in
+        ニューバランスのスニーカー その他の商品
+    .another-brand-image
+      .another-brand-image-box
+        .another-image-box-in
+          .image-box
+            .image-box-in
+              .image-box-in-ph
+            .text-box
+              .text-box-in
+                NEW BALANCE MRL996AN ネイビー NB
+              .item-box-num
+                .price-box
+                  ¥10,900
+                  .price-in
+                .num-box
+                  .nice
+                    = fa_icon 'heart'
+                  .num
+                    8
+          .image-box
+            .image-box-in
+              .image-box-in-ph
+            .text-box
+              .text-box-in
+                NEW BALANCE MRL996AN ネイビー NB
+              .item-box-num
+                .price-box
+                  ¥10,900
+                  .price-in
+                .num-box
+                  .nice
+                    = fa_icon 'heart'
+                  .num
+                    8
+          .image-box
+            .image-box-in
+              .image-box-in-ph
+            .text-box
+              .text-box-in
+                NEW BALANCE MRL996AN ネイビー NB
+              .item-box-num
+                .price-box
+                  ¥10,900
+                  .price-in
+                .num-box
+                  .nice
+                    = fa_icon 'heart'
+                  .num
+                    8
+        .another-image-box-in
+          .image-box
+            .image-box-in
+              .image-box-in-ph
+            .text-box
+              .text-box-in
+                NEW BALANCE MRL996AN ネイビー NB
+              .item-box-num
+                .price-box
+                  ¥10,900
+                  .price-in
+                .num-box
+                  .nice
+                    = fa_icon 'heart'
+                  .num
+                    8
+          .image-box
+            .image-box-in
+              .image-box-in-ph
+            .text-box
+              .text-box-in
+                NEW BALANCE MRL996AN ネイビー NB
+              .item-box-num
+                .price-box
+                  ¥10,900
+                  .price-in
+                .num-box
+                  .nice
+                    = fa_icon 'heart'
+                  .num
+                    8
+          .image-box
+            .image-box-in
+              .image-box-in-ph
+            .text-box
+              .text-box-in
+                NEW BALANCE MRL996AN ネイビー NB
+              .item-box-num
+                .price-box
+                  ¥10,900
+                  .price-in
+                .num-box
+                  .nice
+                    = fa_icon 'heart'
+                  .num
+                    8
+.bread-crumbs
+  .bread-crumbs-in
+    .left-bar
+      .home
+        メルカリ
+      .icon
+        >
+    .right-bar
+      .item
+        ニューバランス New Balance 1400 26.5cm ホワイト
+.footer
+  = render "shared/footer"

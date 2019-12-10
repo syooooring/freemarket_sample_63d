@@ -88,9 +88,8 @@
         width: 520.31px;
         height: 44px;
         background-color: white;
-        display: flex;
-        
         color: #333333;
+        display: contents;
         &__nice{
           width: 127px;
           height: 44px;
@@ -122,7 +121,7 @@
           width: 98px;
         }
         &__my-page{
-          width: 125.31px;
+      
           height: 44px;
           display: flex;
           font-size: 14px;
@@ -189,11 +188,15 @@
 .logout{
 display: flex;
 text-align: center;
+a:link {color:#fff; text-decoration:none }
+a:visited { color:#fff; text-decoration:none }
+a:hover { color:#fff; text-decoration:none }
+a:active { color:#fff; text-decoration:none }
   &__new{
-   width:106px ;   
+   width: 106px;
+   cursor: pointer;
     &__text{
       background-color: rgb(234, 53, 45);
-      color: rgb(255, 255, 255);
       display: block;
       font-size: 14px;
       border-width: 1px;
@@ -202,15 +205,19 @@ text-align: center;
       border-image: initial;
       border-radius: 4px;
       padding: 4px 5px;
-    } 
+    }
   }
   &__rogin{
   padding:0 0 0 11px;
   box-sizing: border-box;
   text-align: center;
+  a:link {color:#59b1eb; text-decoration:none }
+  a:visited { color:#59b1eb; text-decoration:none }
+  a:hover { color:#59b1eb; text-decoration:none }
+  a:active { color:#59b1eb; text-decoration:none }
+ 
     &__text{
       background-color: rgb(255, 255, 255);
-      color: rgb(0, 149, 238);
       display: block;
       font-size: 14px;
       border-width: 1px;

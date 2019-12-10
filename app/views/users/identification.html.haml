@@ -2,19 +2,11 @@
   = render "shared/header-login" 
   .indenti-wrapper
     .indenti-crumbs
-      %ul
-        %li
-          = link_to "メルカリ", "https://www.yahoo.co.jp/"
-          %i.icon-arrow
-            = fa_icon "chevron-right"
-        %li
-          = link_to "マイページ", "https://www.yahoo.co.jp/"
-          %i.icon-arrow
-            = fa_icon "chevron-right"
-        %li
-          %span.indenti-list{itemprop: "title"} 本人情報の登録
+      - breadcrumb :indentification
+      = render "layouts/breadcrumbs"
     .clearfix
       = render 'shared/sell-icon'
+      
       .indenti-container
         .indenti-content
           .mypage-indenti
@@ -74,85 +66,6 @@
                 %i.icon-arrow-right
                   = fa_icon "chevron-right"
         .indenti-side
-          .mains
-            .left
-              .left__top
-                %ul
-                  = link_to user_path do
-                    %p
-                      マイページ
-                      %i= fa_icon "chevron-right", class: "special"
-                  %li
-                    お知らせ
-                    %i= fa_icon "chevron-right"
-                  %li
-                    やることリスト
-                    %i= fa_icon "chevron-right"
-                  %li
-                    いいね！一覧
-                    %i= fa_icon "chevron-right"
-                  %li
-                    出品する
-                    %i= fa_icon "chevron-right"
-                  %li
-                    出品した商品・出品中
-                    %i= fa_icon "chevron-right"
-                  %li
-                    出品した商品・取引中
-                    %i= fa_icon "chevron-right"
-                  %li
-                    出品した商品・売却済み
-                    %i= fa_icon "chevron-right"
-                  %li
-                    購入した商品・取引中
-                    %i= fa_icon "chevron-right"
-                  %li
-                    購入した商品・過去の取引
-                    %i= fa_icon "chevron-right"
-                  %li
-                    ニュース一覧
-                    %i= fa_icon "chevron-right"
-                  %li
-                    評価一覧
-                    %i= fa_icon "chevron-right"
-                  %li
-                    ガイド
-                    %i= fa_icon "chevron-right"
-                  %li
-                    お問い合わせ
-                    %i= fa_icon "chevron-right"
-              .left__center
-                メルペイ
-                .left__center__box
-                  %li
-                    売上・振込申請
-                    %i= fa_icon "chevron-right"
-                  %li
-                    ポイント
-                    %i= fa_icon "chevron-right"
-              .left__bottom
-                設定
-                .left__bottom__box
-                  %li
-                    プロフィール
-                    %i= fa_icon "chevron-right"
-                  %li
-                    発送元・お届け先住所変更
-                    %i= fa_icon "chevron-right"
-                  %li
-                    支払い方法
-                    %i= fa_icon "chevron-right"
-                  %li
-                    メール/パスワード
-                    %i= fa_icon "chevron-right"
-                  %li
-                    本人情報
-                    %i= fa_icon "chevron-right"
-                  %li
-                    電話番号の確認
-                    %i= fa_icon "chevron-right"
-                  %li
-                    ログアウト
-                    %i= fa_icon "chevron-right" 
+          = render "shared/sidebar"
   .indenti-banner
     = render "shared/footer"

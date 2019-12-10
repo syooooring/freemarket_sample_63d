@@ -6,14 +6,15 @@
 @import "./users";
 @import "./items_details";
 @import "./font-awesome";
+@import "./users_show";
 @import "slick-theme"; 
 @import "slick";
 @import "users_show";
 @import "./sidebar";
 @import "./profile";
 @import "./clear";
-@import 'font-awesome-sprockets';
-@import "./users_registration";
+@import "./users_sign_up";
+//@import 'font-awesome-sprockets';
 @import "./users_sms_confirmation";
 @import "./users_address";
 @import "./users_card";
@@ -24,3 +25,7 @@
 @import "buy1";
 @import "./card";
 @import "./pays";
+@import "./zoom";
+@import "./items_new";
+@import "./sale";
+@import "./breadcrumbs";

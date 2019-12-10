@@ -26,8 +26,8 @@
 |------|----|-------|
 |family_name|string|null: false|
 |last_name|string|null: false|
-|postal-code|string|null: false|
-|prefectures|string|null: false|
+|postal_code|string|null: false|
+|prefectures_id|string|null: false|
 |city|string|null: false|
 |banti|string|null: false| 
 |building_name|string|
@@ -119,6 +119,7 @@ belongs_to :users
 |seller_id|references|null: false, foreign_key: true|
 |buyer_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
+|prefectures|integer|null: false|
 
 ### Association
 - belongs_to :user
