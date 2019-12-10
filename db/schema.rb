@@ -103,4 +103,5 @@ ActiveRecord::Schema.define(version: 2019_12_04_084428) do
   add_foreign_key "addresses", "users"
   add_foreign_key "pays", "users"
   add_foreign_key "sns_credentials", "users"
+  add_foreign_key "thumbnails", "items"
 end

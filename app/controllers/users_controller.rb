@@ -54,21 +54,22 @@ class UsersController < ApplicationController
   def identification
   end
 
-  def saling
-    @items = user.saling_items
-  end
-
-  def selling
-    @items = user.selling_items
-  end
-
-  def sold
-    @items = user.sold_items
-  end
-
   def selling_items
     @items = Item.where(saler_id: current_user.id)
   end
+
+  def saling
+    @items = current_user.saling_items
+  end
+
+  def selling
+    @items = current_user.selling_items
+  end
+
+  def sold
+    @items = current_user.sold_items
+  end
+
 
   private
 
