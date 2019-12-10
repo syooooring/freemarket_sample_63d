@@ -1,11 +1,10 @@
-//後ほどマークアップを実装します。
-.sale__item {
+.selling__item {
   background-color: #f5f5f5;
   width: 1440px;
-  .sale__item--sidebar{
+  .selling__item--sidebar{
     margin: 50px 0 0 30px;
   }
-  .sale__item__box {
+  .selling__item__box {
     width: 870px;
     height: 400px;
     background-color: #fff;
@@ -20,30 +19,30 @@
       color: #333;
       font-weight: bold;
     }
-    &__sale {
+    &__selling {
       height: 75px;
       line-height: 75px;
       width: 290px;
-      border-top: solid 3px #ea352d;
       font-size: 18px;
       color: #333;
       text-align: center;
       font-weight: bold;
-      background-color: #fff;
+      background-color: #eeeeee;
       
     }
-    &__sell {
+    &__sale {
       height: 75px;
       width: 290px;
       line-height: 75px;
       font-size: 18px;
       color: #333;
+      border-top: solid 3px #ea352d;
       text-align: center;
       font-weight: bold;
       position: relative;
       left: 290px;
       bottom: 75px;
-      background-color: #eeeeee;
+      background-color: #fff;
     }
     &__sold {
       height: 75px;
@@ -64,7 +63,7 @@
       background-color: #fff;
       width: 100%;
       height: 100%;
-      .saling {
+      .selling {
         &__all {
           font-size: 18px;
           line-height: 70px;
