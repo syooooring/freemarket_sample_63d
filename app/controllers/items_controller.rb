@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :set_details, only: [:details, :show]
   before_action :set_item, only: [:details, :show, :edit, :update, :destroy]
+  before_action :set_details, only: [:details, :show]
+  
   def index
     @items = Item.all.limit(10).order(id: "DESC")
   end
@@ -70,7 +71,6 @@ private
   end
   
   def set_details
-    @item = Item.find(params[:id])
     @items = Item.where(saler_id: @item.saler_id).limit(6).order('id DESC')
     @price = "¥#{@item.price.to_s(:delimited)}"
     @state = @item.state.name
