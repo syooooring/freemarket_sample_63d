@@ -47,7 +47,6 @@ class ItemsController < ApplicationController
     @state = @item.state.name
     @delivery = @item.delivery.name
     @date = @item.estimated_shipping_date.name
-    # @shipping_method = @item.shipping_method.name
   end
   
   def address
