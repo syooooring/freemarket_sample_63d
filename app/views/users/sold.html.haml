@@ -1,0 +1,18 @@
+.sold__item
+  .sold__item--top
+    = render "/shared/header-login"
+  .sold__item--sidebar
+    = render "/shared/sidebar"
+  .sold__item__box
+    .sold__item__box__main
+      .sold__item__box__main--sale
+        出品中
+      .sold__item__box__main--sell
+        取引中
+      .sold__item__box__main--sold
+        売却済み
+        .sold__item__box__main--list
+          .item
+            - @items.each do |item|
+              .item-1
+                = item.name

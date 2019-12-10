@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_29_103437) do
+ActiveRecord::Schema.define(version: 2019_12_04_084428) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id", null: false
@@ -27,19 +27,32 @@ ActiveRecord::Schema.define(version: 2019_11_29_103437) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "image", null: false
-    t.integer "size"
-    t.integer "state", null: false
-    t.integer "delivery_fee", null: false
-    t.integer "shipping_method", null: false
-    t.integer "estimated_shipping_date", null: false
-    t.integer "price", null: false
-    t.text "text", null: false
-    t.integer "inappropriate_item"
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "category_name", null: false
+    t.integer "parent_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "size"
+    t.integer "state_id"
+    t.integer "delivery_id"
+    t.integer "shipping_method_id"
+    t.integer "estimated_shipping_date_id"
+    t.integer "price"
+    t.text "text"
+    t.integer "inappropriate_item"
+    t.integer "prefecture_id"
+    t.bigint "saler_id"
+    t.bigint "buyer_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
+    t.index ["saler_id"], name: "index_items_on_saler_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "pays", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -51,6 +64,23 @@ ActiveRecord::Schema.define(version: 2019_11_29_103437) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_pays_on_user_id"
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
+  create_table "thumbnails", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "images"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_thumbnails_on_item_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -79,4 +109,6 @@ ActiveRecord::Schema.define(version: 2019_11_29_103437) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "pays", "users"
+  add_foreign_key "sns_credentials", "users"
+  add_foreign_key "thumbnails", "items"
 end

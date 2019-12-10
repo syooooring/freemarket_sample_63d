@@ -34,7 +34,7 @@
             カード番号
           .single-box25
             必須
-            = c.text_field :card_number, placeholder: "半角数字のみ", type: "text", class: "input-default"
+          = c.text_field :card_number, placeholder: "半角数字のみ", type: "text", class: "input-default"
         .ic2
           = fa_icon "cc-visa"
           = fa_icon "cc-mastercard"
@@ -47,8 +47,8 @@
             有効期限
           .single-box27
             必須
-            = c.collection_select :deadline_month_id, DeadlineMonth.all, :id, :name
-            = c.collection_select :deadline_year_id, DeadlineYear.all, :id, :name
+          = c.collection_select :deadline_month_id, DeadlineMonth.all, :id, :name
+          = c.collection_select :deadline_year_id, DeadlineYear.all, :id, :name
           .ic3
             = fa_icon "chevron-down"
           .ic4
@@ -58,12 +58,12 @@
             セキュリティコード
           .single-box29
             必須
-            = c.text_field :security_code, placeholder: "カード背面4桁もしくは3桁の番号", type: "text", class: "input-default"
-      .message4
-        %p
-          %a{:href => "/jp/help_center/article/244/", target: "_blank"}> カード裏面の番号とは？
-    .button_box3
-      = f.submit "次へ進む", class: "btn-default btn-red"
+          = c.text_field :security_code, placeholder: "カード背面4桁もしくは3桁の番号", type: "text", class: "input-default"
+        .message4
+          %p
+            %a{:href => "/jp/help_center/article/244/", target: "_blank"}> カード裏面の番号とは？
+        .button_box3
+          = f.submit "次へ進む", class: "btn-default btn-red"
   .footer
     %ul.footer__box
       %li= link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"

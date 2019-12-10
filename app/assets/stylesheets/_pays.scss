@@ -220,21 +220,25 @@
     }
   }
 }
+.pay-wrapper {
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-input {
-  outline: 0;
-  outline-color: initial;
-  outline-style: initial;
-  outline-width: 0px;
-}
-select {
-  outline: 0;
-  outline-color: initial;
-  outline-style: initial;
-  outline-width: 0px;
+
+  input {
+    outline: 0;
+    outline-color: initial;
+    outline-style: initial;
+    outline-width: 0px;
+  }
+
+  select {
+    outline: 0;
+    outline-color: initial;
+    outline-style: initial;
+    outline-width: 0px;
+  }
 }

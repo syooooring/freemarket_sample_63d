@@ -3,7 +3,6 @@ require 'rails_helper'
 describe ItemsController do
   describe 'Get #index' do
     before do
-      # @bob = FactoryBot.create(:item, name: "bob")
       @bob = Item.create(name: "tanaka" )
       get 'index'
     end
@@ -13,6 +12,5 @@ describe ItemsController do
     it 'リクエストは200 OKとなること'  do
       expect(response.status).to eq 200
     end
-  
   end
 end

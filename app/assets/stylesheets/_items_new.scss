@@ -1,6 +1,6 @@
-  .sell-main{
-  background-color: #f5f5f5;
-  width: 1440px;
+.sell-main{
+background-color: #f5f5f5;
+width: 1440px;
   .sell{
     &__inner{
       width: 700px;
@@ -24,7 +24,6 @@
         border-bottom: solid 1.5px #f5f5f5;
         &__img-text{
           display: flex;
-         
         }
         &__img-text2{
           margin-top: 5px;
@@ -41,11 +40,7 @@
             border: 1px dashed #ccc;
             font-size: 0;
             text-align: center;
-         
           }
-          
-      
-        
         }
         .file-box {
           width: 100%;
@@ -64,16 +59,13 @@
         }
         .file-up{
           margin-top: 45px;
-
         }
       }
-
       &__content{
         height: 360px;
         width: 100%;
         padding: 40px;
         border-bottom: solid 1.5px #f5f5f5;
-     
         &__item{
           display: flex;
           margin-top: 8px;
@@ -81,13 +73,18 @@
           font-weight: bold;
         }
         &__name{
-      
-          .input_default{
+          .input-default{
             height: 40px;
             width: 100%;
             font-size: 16px;
-            padding: 10px;
             margin-top: 8px;
+            #item_name {
+              width: 100%;
+              height: 48px;
+              border: solid 1px #ccc;
+              border-radius: 4px;
+              padding: 10px 16px 8px;
+            }
           }
         }
         &__description{
@@ -98,59 +95,60 @@
         }
         &__deteil{
           .textarea-default{
-            border: 1px solid #ccc;
-            height: 130px;
-            width: 100%;
-            font-size: 16px;
-            padding: 10px;
-            margin-top: 8px;
+            #item_text {
+              border: 1px solid #ccc;
+              height: 130px;
+              width: 100%;
+              font-size: 16px;
+              padding: 10px;
+              margin-top: 8px;
+            }
           }
         }
-
       }
-
       &__category{
-      height: 270px;
-      width: 100%;
-      padding: 40px;
-      border-bottom: solid 1.5px #f5f5f5;
-      .category-box{
-      float:right;
+        height: 270px;
+        width: 100%;
+        padding: 40px;
+        border-bottom: solid 1.5px #f5f5f5;
+        .category-box{
+          float:right;
+        }
+        &__name{
+          display: flex;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+        &__status{
+          margin: 40px 0 5px;
+          display: flex;
+          font-weight: bold;
+        }
       }
-      &__name{
-       
-        display: flex;
-      }
-
-      &__status{
-        margin-top: 40px;
-        display: flex;
-
-      }
-      }
-
       &__delivery{
         height: 385px;
         width: 100%;
         padding: 40px;
         border-bottom: solid 1.5px #f5f5f5;
         .delivery-box{
-        float:right;
+          float:right;
         }
         &__fee{
           display: flex;
+          margin-bottom: 5px;
+          font-weight: bold;
         }
         &__region{
+          margin: 40px 0 5px;
           display: flex;
-          margin-top: 40px;
+          font-weight: bold;
         }
-
         &__day{
+          margin: 40px 0 5px;
           display: flex;
-          margin-top: 40px;
+          font-weight: bold;
         }
       }
-
       &__price {
         height: 300px;
         width: 100%;
@@ -164,17 +162,16 @@
             display:flex;
             margin-top:10px;
             justify-content: space-between;
-       
-          .price-box-top{
-            display: inline-block;
-            margin-top: 12px;
-          } 
-          .sell-price-input{
-            display: flex;
-            
+            .price-box-top{
+              display: inline-block;
+              margin-top: 12px;
+              font-weight: bold;
+            } 
+            .sell-price-input{
+              display: flex;
+            }
           }
-         }
-       } 
+        }
       }
       &__privacy{
         height: 330px;
@@ -197,15 +194,15 @@
             position: absolute;
             top: 75px;
             left: 166px;
-           }
           }
         }
-        a{
-          color: #0099e8;
-        }
-        }
+      }
+      a{
+        color: #0099e8;
       }
     }
+  }
+}
   
 .sell-right{
   margin: 0 0 0 8px;
@@ -227,7 +224,7 @@
 
 .select-sell {
   width: 400px;
-  #prefecture_id {
+  #item_prefecture_id {
     width: 400px;
     margin: 8px 0 0;
     height: 48px;
@@ -238,7 +235,40 @@
     line-height: 1.5;
     font-size: 16px;
   }
+
 }
+#item_state_id {
+    width: 400px;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  #item_delivery_id {
+    width: 400px;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }#item_estimated_shipping_data_id {
+    width: 400px;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
 
 
 select{
@@ -256,10 +286,10 @@ select{
   background-size: 12px 10px;
   background-position: right 10px center;
   background-color: #bddfff;
-  }
-  select::-ms-expand{
+}
+select::-ms-expand{
   display: none;
-  }
+}
 
 .text-inline{
   display: inline;
@@ -267,26 +297,42 @@ select{
 
 .select-sell{
   position: relative;
+  cursor: pointer;
+  #item_prefecture_id{
+    height: 50px;
+    width: 340px;
+    background-color: #fff;
+    border:solid 1px #ccc;
+    padding: 0 20px;
+  }
+  i {
+    height: 50px;
+    position: absolute;
+    top: 15px;
+    right: 75px;
+    pointer-events: none;
+  }
 }
-.icon-arrow-sell{
-right: 20px;
-top: 25px;
-z-index: 1;
-position: absolute;
-pointer-events: none;
 
+.icon-arrow-sell{
+  right: 20px;
+  top: 25px;
+  z-index: 1;
+  position: absolute;
+  pointer-events: none;
 }
 
 .input-sell{
-  height: 50px;
-  width: 160px;
-
-  text-align: right;
-  padding: 10px 15px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  margin-left:10px ;
+  #item_price {
+    height: 50px;
+    width: 160px;
+    text-align: right;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-left: 10px;
+  }
 }
 
 .sell-price-center{
@@ -309,8 +355,8 @@ pointer-events: none;
     font-weight: bold;
   }
   .l-right {
-  font-size:30px;
-  font-weight: bold;
+    font-size:30px;
+    font-weight: bold;
   }
 }
 .privacy1{
@@ -320,7 +366,7 @@ pointer-events: none;
   display: flex;
 }
 
-.exhibit-btn{
+.exhibit_btn{
   width: 620px;
   height: 45px;
   background: #ea352d;
@@ -341,5 +387,3 @@ pointer-events: none;
   bottom: 18px;
   cursor: pointer;
 }
-
-

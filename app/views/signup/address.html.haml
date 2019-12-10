@@ -34,21 +34,21 @@
             お名前(全角)
           .single-box16
             必須
-            = a.text_field :family_name, placeholder: "例) 山田", type: "text", class: "input-default"
-            = a.text_field :last_name, placeholder: "例) 彩", type: "text", class: "input-default2"
+          = a.text_field :family_name, placeholder: "例) 山田", type: "text", class: "input-default"
+          = a.text_field :last_name, placeholder: "例) 彩", type: "text", class: "input-default2"
         .single-box15
           %li
             お名前カナ(全角)
           .single-box17
             必須
-            = a.text_field :family_name, placeholder: "例) ヤマダ", type: "text", class: "input-default"
-            = a.text_field :last_name, placeholder: "例) アヤ", type: "text",class: "input-default2"
+          = a.text_field :family_name, placeholder: "例) ヤマダ", type: "text", class: "input-default"
+          = a.text_field :last_name, placeholder: "例) アヤ", type: "text",class: "input-default2"
         .single-box18
           %li
             郵便番号
           .single-box19
             必須
-            = a.text_field :postal_code, placeholder: "例) 123-4567", type: "text",class: "input-default"
+          = a.text_field :postal_code, placeholder: "例) 123-4567", type: "text",class: "input-default"
         .single-box18
           %li
             都道府県
@@ -63,27 +63,27 @@
             市区町村
           .single-box19
             必須
-            = a.text_field :city, placeholder: "例) 横浜市緑区", type: "text",class: "input-default"
+          = a.text_field :city, placeholder: "例) 横浜市緑区", type: "text",class: "input-default"
         .single-box20
           %li
             番地
           .single-box21
             必須
-            = a.text_field :banti, placeholder: "例) 青山1-1-1", type: "text",class: "input-default"
+          = a.text_field :banti, placeholder: "例) 青山1-1-1", type: "text",class: "input-default"
         .single-box22
           %li
             建物名
           .single-box23
             任意
-            = a.text_field :building_name, placeholder: "例) 柳ビル103", type: "text",class: "input-default"
+          = a.text_field :building_name, placeholder: "例) 柳ビル103", type: "text",class: "input-default"
         .single-box20
           %li
             電話
           .single-box25
             任意
-            = a.text_field :phone_number, placeholder: "例) 09012345678", type: "text",class: "input-default"
-    .button_box2
-      = f.submit "次へ進む", class: "btn-default btn-red"
+          = a.text_field :phone_number, placeholder: "例) 09012345678", type: "text",class: "input-default"
+        .button_box2
+          = f.submit "次へ進む", class: "btn-default btn-red"
   .footer
     %ul.footer__box
       %li= link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"

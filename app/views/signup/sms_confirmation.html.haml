@@ -24,8 +24,9 @@
         .progress-bar5s__x
   .singles
   = form_with model: @user, local: true, url: address_signup_index_path, class: 'singles' do |f|
-    %h1
-      電話番号の確認
+    .singles__head
+      %h1
+        電話番号の確認
     .singles-box
       .singles-box2
         %li
@@ -34,7 +35,7 @@
         .message1
           本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
       .button_box
-        = f.submit "SMSを送信する",　class: "btn-default btn-red"
+        = f.submit "SMSを送信する",　class: "btn-defaultbtn-red"
         .message2
           ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
       .message3
