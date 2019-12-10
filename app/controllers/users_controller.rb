@@ -55,15 +55,15 @@ class UsersController < ApplicationController
   end
 
   def saling
-    @items = user.saling_items
+    @items = current_user.saling_items
   end
 
   def selling
-    @items = user.selling_items
+    @items = current_user.selling_items
   end
 
   def sold
-    @items = user.sold_items
+    @items = current_user.sold_items
   end
 
   private
