@@ -1,28 +1,27 @@
-- if user_signed_in? 
-  .header
-    .main
-      .main__top
-        .main__top__left
-          = image_tag "fmarket_logo_red.svg", class: "merukari-logo"
-        .main__top__right
-          %input.search-form__input{name: "keyword", placeholder: "何かお探しですか？", type: "text", value: ""}
-          %i.icon-search
-            = fa_icon  "search", class: 'icon' 
-      .main__bottom
-        .main__bottom__left
-          .main__bottom__left__category
-            .logo1
-              = fa_icon  "list-ul",class: 'icon1'
-            .category-word
-              %ul 
-                %li カテゴリーから探す
-          .main__bottom__left__brand
-            .logo1
-              = fa_icon  "tags lg",class: 'icon1'
-            .category-word
-              %ul 
-                %li ブランドから探す
-
+.header
+  .main
+    .main__top
+      .main__top__left
+        = image_tag "fmarket_logo_red.svg", class: "merukari-logo"
+      .main__top__right
+        %input.search-form__input{name: "keyword", placeholder: "何かお探しですか？", type: "text", value: ""}
+        %i.icon-search
+          = fa_icon  "search", class: 'icon' 
+    .main__bottom
+      .main__bottom__left
+        .main__bottom__left__category
+          .logo1
+            = fa_icon  "list-ul",class: 'icon1'
+          .category-word
+            %ul 
+              %li カテゴリーから探す
+        .main__bottom__left__brand
+          .logo1
+            = fa_icon  "tags lg",class: 'icon1'
+          .category-word
+            %ul 
+              %li ブランドから探す
+      - if user_signed_in? 
         .main__bottom__right  
           .main__bottom__right__nice
             .logo-heart
@@ -49,30 +48,7 @@
               .my-page-word
                 %ul
                   %li マイページ
-- else 
-  .header
-    .main
-      .main__top
-        .main__top__left
-          = image_tag "fmarket_logo_red.svg", class: "merukari-logo"
-        .main__top__right
-          %input.search-form__input{name: "keyword", placeholder: "何かお探しですか？", type: "text", value: ""}
-          %i.icon-search
-            = fa_icon  "search", class: 'icon' 
-      .main__bottom
-        .main__bottom__left
-          .main__bottom__left__category
-            .logo1
-              = fa_icon  "list-ul",class: 'icon1'
-            .category-word
-              %ul 
-                %li カテゴリーから探す
-          .main__bottom__left__brand
-            .logo1
-              = fa_icon  "tags lg",class: 'icon1'
-            .category-word
-              %ul 
-                %li ブランドから探す
+      - else 
         .main__bottom__right  
           .logout
             .logout__new
