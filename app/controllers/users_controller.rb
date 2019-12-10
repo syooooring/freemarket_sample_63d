@@ -27,6 +27,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def login
+  end
+
   def show
   end
 
@@ -47,39 +50,27 @@ class UsersController < ApplicationController
 
   def logout
   end
-  
+
   def identification
   end
 
   def saling
-    user = User.find(params[:id])
     @items = user.saling_items
   end
 
   def selling
-    user = User.find(params[:id])
-    @items = user.selling_items
-  end
-
-  def sold
-    user = User.find(params[:id])
-    @items = user.sold_items
-  end
-
-  def selling
     @items = user.selling_items
   end
 
   def sold
     @items = user.sold_items
   end
-  
-  def identification
-  end
 
-end
+  private
 
-private
   def set_user
     user = User.find(params[:id])
   end
+
+
+end

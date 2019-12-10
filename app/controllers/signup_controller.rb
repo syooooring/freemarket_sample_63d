@@ -80,6 +80,9 @@ class SignupController < ApplicationController
     sign_in User.find(session[:id]) unless user_signed_in?
   end
 
+  def logout
+  end
+
   private
 
   def user_params

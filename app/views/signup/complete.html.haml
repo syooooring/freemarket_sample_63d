@@ -33,7 +33,9 @@
         %p
           会員登録が完了しました。
     .button_box4
-      %button.btn-default.btn-red{type: "submit"} フリーマーケットをはじめる
+      = link_to root_path do
+        %button.btn-default.btn-red
+          フリーマーケットをはじめる
     .bottomlinks
       %h1
         ＼　スマホでかんたんフリマアプリ　／
