@@ -27,6 +27,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def login
+  end
+
   def show
   end
 
@@ -66,9 +69,13 @@ class UsersController < ApplicationController
   def identification
   end
 
-end
+  private
 
-private
   def set_user
     user = User.find(params[:id])
   end
+
+  def user_params
+  end
+
+end

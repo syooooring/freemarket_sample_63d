@@ -9,8 +9,9 @@
   .logout-mains
     = render "shared/sidebar"
     .my-logout
-      .my-logout__bottom 
-        %button{name: "", type: "submit", class: "logout-btn", value: "ボタン"} ログアウト
+      .my-logout__bottom
+        =link_to destroy_user_session_path, method: :delete, class: "logout-btn" do
+          ログアウト
 
 
 

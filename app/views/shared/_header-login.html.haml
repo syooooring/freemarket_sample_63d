@@ -21,32 +21,41 @@
           .category-word
             %ul 
               %li ブランドから探す
-
-      .main__bottom__right  
-        .main__bottom__right__nice
-          .logo-heart
-            = fa_icon  "heart lg",class: 'icon2'
-          .nice-word
-            %ul
-              %li いいね！一覧
-        .main__bottom__right__information
-          .logo-bell
-            = fa_icon  "bell lg",class: 'icon2'
-          .information-word
-            %ul
-              %li お知らせ
-        .main__bottom__right__list
-          .logo2
-            = fa_icon  "check lg",class: "icon2"
-          .list-word
-            %ul
-              %li やることリスト
-        .main__bottom__right__my-page
-          .logo2
-            = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: 'logo-my'
-          .my-page-word
-            %ul
-              %li マイページ
-      
-      
-      
+      - if user_signed_in? 
+        .main__bottom__right  
+          .main__bottom__right__nice
+            .logo-heart
+              = fa_icon  "heart lg",class: 'icon2'
+            .nice-word
+              %ul
+                %li いいね！一覧
+          .main__bottom__right__information
+            .logo-bell
+              = fa_icon  "bell lg",class: 'icon2'
+            .information-word
+              %ul
+                %li お知らせ
+          .main__bottom__right__list
+            .logo2
+              = fa_icon  "check lg",class: "icon2"
+            .list-word
+              %ul
+                %li やることリスト
+          .main__bottom__right__my-page
+            .logo2
+              = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: 'logo-my'
+            = link_to user_path(current_user.id) do
+              .my-page-word
+                %ul
+                  %li マイページ
+      - else 
+        .main__bottom__right  
+          .logout
+            .logout__new
+              = link_to new_user_path do
+                .logout__new__text
+                  新規登録
+            .logout__rogin
+              = link_to new_user_session_path do
+                .logout__rogin__text
+                  ログイン

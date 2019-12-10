@@ -188,6 +188,10 @@
 .logout{
 display: flex;
 text-align: center;
+a:link {color:#fff; text-decoration:none }
+a:visited { color:#fff; text-decoration:none }
+a:hover { color:#fff; text-decoration:none }
+a:active { color:#fff; text-decoration:none }
   &__new{
    width: 106px;
    cursor: pointer;
@@ -201,19 +205,19 @@ text-align: center;
       border-image: initial;
       border-radius: 4px;
       padding: 4px 5px;
-      a:link {color:#fff; text-decoration:none }
-      a:visited { color:#fff; text-decoration:none }
-      a:hover { color:#fff; text-decoration:none }
-      a:active { color:#fff; text-decoration:none }
     }
   }
   &__rogin{
   padding:0 0 0 11px;
   box-sizing: border-box;
   text-align: center;
+  a:link {color:#59b1eb; text-decoration:none }
+  a:visited { color:#59b1eb; text-decoration:none }
+  a:hover { color:#59b1eb; text-decoration:none }
+  a:active { color:#59b1eb; text-decoration:none }
+ 
     &__text{
       background-color: rgb(255, 255, 255);
-      color: rgb(0, 149, 238);
       display: block;
       font-size: 14px;
       border-width: 1px;

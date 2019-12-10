@@ -1,0 +1,52 @@
+.main-all
+  .single-container
+    .single-header
+      %h1
+        = link_to root_path do
+          %img
+    .single-main
+      .login-panel
+        .login-no-account
+          %p　アカウントをお持ちでないかたはこちら
+          = link_to  "新規会員登録", new_user_path
+        .login-form-inner
+          %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
+            .btn-image1
+              = image_tag "f_logo_RGB-Blue_1024.png", class: "facebook-logo"
+              = link_to user_facebook_omniauth_authorize_path , class: "facebook-link" do
+                Facebookでログイン
+          %button#google-login.btn-default.btn-sns.btn-sns-google
+            .btn-image2
+              = image_tag "btn_google_light_pressed_ios@2x.png", class: "google-logo"
+              = link_to user_google_oauth2_omniauth_authorize_path , class: "google-link" do
+                googleでログイン
+        .login-form-inner1
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .form-group
+              = f.text_field :email, placeholder: 'Eメールアドレス', type: "emial", class: 'login-input-text input-default'
+            .form-group
+              = f.text_field :password, placeholder: "パスワード", type: "password",class: 'login-input-text input-default'
+            .form-group
+              .g-recaptcha.login-captcha
+                -# %div
+                -#   %iframe{frameborder: "0", name: "a-x6czxoic852l", role: "presentation", sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", scrolling: "no", src: "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=75nbHAdFrusJCwoMVGTXoHoM&size=normal&cb=8by6abyui13", }
+                -# %textarea#g-recaptcha-response.g-recaptcha-response{name: "g-recaptcha-response",}
+              .login-submit
+                .btn-default
+                  .btn-red
+                    = f.submit 'ログイン', class: "btn-red"
+                  = link_to "パスワードをお忘れの方", "c", class: "btn-pass" 
+    .single-footer
+      %nav
+        %ul.clearfix
+          %li
+            = link_to "プライバシーポリシー", "https://www.yahoo.co.jp/"
+          %li
+            = link_to "フリマ利用規約", "https://www.yahoo.co.jp/" 
+          %li
+            = link_to "特定商取引に関する表記", "https://www.yahoo.co.jp/" 
+      .single-fotter-logo
+        = image_tag "logo_gray.svg", class: "mercari-image"
+
+      %p 
+        %small © 2019 Mercari

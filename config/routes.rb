@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   }
 
 
-  # devise_scope :user do
-  #   delete 'destroy' => 'devise/sessions#destroy',as: :current_user_destroy
-  # end
+  devise_scope :user do
+    delete 'destroy' => 'devise/sessions#destroy',as: :current_user_destroy
+    get 'new' => 'devise/sessions#new'
+    post 'create' => 'devise/sessions#create'
+  end
 
   root to: "items#index"
 
@@ -31,7 +33,10 @@ Rails.application.routes.draw do
     end
   end    
   resources :pays, only: [:new]
-  resources :users, only: [:new, :create, :show, :edit] do
+  resources :users, only: [:new, :create, :show, :edit, :destroy] do
+    collection do
+      get :login
+    end
     member do
       get :identification
       get :logout
