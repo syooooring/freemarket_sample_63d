@@ -1,0 +1,28 @@
+.contents
+  .header
+    .header__box
+      = link_to root_path do
+        = image_tag "fmarket_logo_red.svg"
+.sold
+  .sold_top
+    %i.far.fa-clock
+      %span#messeage 発送をお待ちください
+    %p 出品者からの発送通知をお待ちください
+  .sold__content
+    .sold__content__top
+      %h2.soldtop-text 購入が完了しました
+    .sold__content__bottom
+      .sold__content__bottom__text
+        %a.sold-back{href: "#"}
+          %span マイページへ戻る
+.main-footer
+  .footer
+    %ul.footer__box
+      %li= link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      %li= link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+      %li= link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    .footer__box2
+      = link_to root_path do
+        = image_tag "fmarket_logo_white.svg" , height: "60", width: "150"
+    .footer__box3
+      © 2019 Mercari
