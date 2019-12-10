@@ -5,9 +5,7 @@
   .contents
     .contents__box
       .contents__item__name
-        ニューバランス New Balance 1400 26.5cm ホワイト
-      .contents__item__text
-        『ニューバランス New Balance 1400 26.5cm ホワイト』は、46回の取引実績を持つシュワルツェネッガー☆さんから出品されました。ニューバランス（スニーカー/メンズ）の商品で、愛知県から1~2日で発送されます。
+        = @item.name
 
       .contents__item__main
         .item-phot
@@ -15,26 +13,8 @@
           .item-phot-low
             .item-phot-low-in
               .thumbnail
-                %img{:alt => "", :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7wRLAVNuXrw2QvUADoeUvqqdkgWM7nkun723aPuLHZ_oj3z0y"}/
-                %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_2.jpg?1574477944"}/
-                %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_3.jpg?1574477944"}/
-                %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_4.jpg?1574477944"}/
-                %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_5.jpg?1574477944"}/
-                
-              .thumbnail-thumb
-                %img{:alt => "", :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7wRLAVNuXrw2QvUADoeUvqqdkgWM7nkun723aPuLHZ_oj3z0y"}/
-                %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_2.jpg?1574477944"}/
-                %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_3.jpg?1574477944"}/
-                %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_4.jpg?1574477944"}/
-                %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_5.jpg?1574477944"}/
-
-              .thumbnail-thumb
-                %img{:alt => "", :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7wRLAVNuXrw2QvUADoeUvqqdkgWM7nkun723aPuLHZ_oj3z0y"}/
-                %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_2.jpg?1574477944"}/
-                %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_3.jpg?1574477944"}/
-                %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_4.jpg?1574477944"}/
-                %img{:alt => "", :src => "https://static.mercdn.net/item/detail/orig/photos/m66781101121_5.jpg?1574477944"}/
-
+                - @item.thumbnails.each do |thumbnail|
+                  = image_tag "#{thumbnail.images}"
 
         .item-detail-table
           .item-detail-table-box
@@ -44,7 +24,7 @@
                   出品者
               .text
                 .user-name
-                  シュワルツェネッガー☆
+                  = @item.user.nickname
                 .markbox
                   .markbox-good
                     .mark-1
@@ -99,39 +79,39 @@
                   商品の状態
               .text
                 .text__1
-                  目立った汚れ・キズなし
+                  = @state
             .item-detail-table-charge
               .name
                 .name-bar
                   配送料の負担
               .text
                 .text__1
-                  送料込み(出品者負担)
+                  = @delivery
             .item-detail-table-method
               .name
                 .name-bar
                   配送の方法
               .text
                 .text__1
-                  未定
+                  ゆうパック
             .item-detail-table-region
               .name
                 .name-bar
                   配送元地域
               .text
                 .text__1
-                  大阪
+                  = @item.user.address.prefecture.name
             .item-detail-table-indication
               .name
                 .name-bar
                   発送日の目安
               .text
                 .text__1
-                  1~2日で発送
+                  = @date
                   
         .item-pricebox
           .item-price
-            ¥15,000
+            = @price
           .item-tax
             (税込) 
           .item-fee
@@ -144,35 +124,7 @@
         .item-description
           .item-description__in
             .p
-              new balance/ニューバランス
-            .p
-              型番:M1400JWH
-            .p
-              サイズ:26.5cm US8.5 UK8
-            .p
-              カラー:オフホワイト/スエード×メッシュ
-            .p
-              生産国:made in U.S.A.
-            .p
-              ニューバランス正規店で購入（¥27,000程）
-            .p
-              履き心地がとてもいいです。
-            .p
-              白い靴なので足元が明るくおしゃれです。
-            .p
-              あまり履かないため出品します。
-            .p
-              もう生産終了しておりますので希少です。
-            .p
-              何回か履いておりますので全体的に
-            .p
-              目立たない汚れありますが比較的綺麗だと思います。
-            .p
-              まだまだキレイなうちにお譲りしたいと思います。
-            .p
-              お探しの方いかがでしょうか？
-            .p
-              質問などお待ちしております。
+              = @item.text
             
         .item-btn-box
           .item-btn-box-left
@@ -224,105 +176,26 @@
             -# = fa_icon 'pinterest'
     .another-item
       .another-item-in
-        シュワルツェネッガー☆さんのその他の出品
+        = "#{@item.user.nickname}さんのその他の出品"
     .another-image
       .another-image-box
         .another-image-box-in
-          .image-box
-            .image-box-in
-              .image-box-in-ph
-            .text-box
-              .text-box-in
-                nike C.ロナウド限定モデル
-              .item-box-num
-                .price-box
-                  ¥19,000
-                  .price-in
-                .num-box
-                  .nice
-                    = fa_icon 'heart'
-                  .num
-                    10
-         
-          .image-box
-            .image-box-in
-              .image-box-in-ph
-            .text-box
-              .text-box-in
-                nike C.ロナウド限定モデル
-              .item-box-num
-                .price-box
-                  ¥19,000
-                  .price-in
-                .num-box
-                  .nice
-                    = fa_icon 'heart'
-                  .num
-                    10
-          
-          .image-box
-            .image-box-in
-              .image-box-in-ph
-            .text-box
-              .text-box-in
-                nike C.ロナウド限定モデル
-              .item-box-num
-                .price-box
-                  ¥19,000
-                  .price-in
-                .num-box
-                  .nice
-                    = fa_icon 'heart'
-                  .num
-                    10
-        .another-image-box-in
-          .image-box
-            .image-box-in
-              .image-box-in-ph
-            .text-box
-              .text-box-in
-                nike C.ロナウド限定モデル
-              .item-box-num
-                .price-box
-                  ¥19,000
-                  .price-in
-                .num-box
-                  .nice
-                    = fa_icon 'heart'
-                  .num
-                    10
-         
-          .image-box
-            .image-box-in
-              .image-box-in-ph
-            .text-box
-              .text-box-in
-                nike C.ロナウド限定モデル
-              .item-box-num
-                .price-box
-                  ¥19,000
-                  .price-in
-                .num-box
-                  .nice
-                    = fa_icon 'heart'
-                  .num
-                    10
-          
-          .image-box
-            .image-box-in
-              .image-box-in-ph
-            .text-box
-              .text-box-in
-                nike C.ロナウド限定モデル
-              .item-box-num
-                .price-box
-                  ¥19,000
-                  .price-in
-                .num-box
-                  .nice
-                    = fa_icon 'heart'
-                  .num
-                    10
+          - @items.each do |item|
+            .image-box
+              .image-box-in
+                = image_tag "#{item.thumbnails.last.images}", width: "220", height: "220"
+              .text-box
+                .text-box-in
+                  = item.name
+                .item-box-num
+                  .price-box
+                    = "¥#{item.price.to_s(:delimited)}"
+                    .price-in
+                  .num-box
+                    .nice
+                      = fa_icon 'heart'
+                    .num
+                      10
     .another-brand
       .another-brand-in
         ニューバランスのスニーカー その他の商品
