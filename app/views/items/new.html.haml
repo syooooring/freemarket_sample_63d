@@ -1,0 +1,163 @@
+.contents
+  .header
+    .header__box
+      = link_to root_path do
+        = image_tag "fmarket_logo_red.svg"
+
+.sell-main
+  .sell
+  = form_for @item, html: {class: "sell-form dropzone", id: "item-dropzone"} do |f|
+    %h2.sell-form__header
+      商品情報を入力
+    .sell-form-container
+      %label.sell-form-container__label
+        出品画像
+      %span.sell-form-container__require
+        必須
+      = f.fields_for :thumbnails do |image|
+        .dropzone-container.clearfix
+          #preview
+          .dropzone-area
+            = image.label :images, class: "dropzone-box", for: "upload-image" do
+              .input_area
+                = image.file_field :images, multiple: true, name: 'thumbnails[images][]', id: "upload-image", class: "upload-image", 'data-image': 0
+              %p ここをクリックしてください
+          #preview2
+          .dropzone-area2
+            = image.label :images, class: "dropzone-box", for: "upload-image" do
+              %p ここをクリックしてください
+
+      .sell__inner__content
+        .sell__inner__content__item
+          .sent-left
+            商品名
+          .sell-right
+            必須
+        .sell__inner__content__name
+          .input-default
+            = f.text_field :name, placeholder: "商品名（必須 40文字まで)"
+        .sell__inner__content__description
+          .sent-left
+            商品の説明
+          .sell-right
+            必須
+        .sell__inner__content__deteil
+          .textarea-default
+            = f.text_area :text, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
+      .sell__inner__category  
+        .text-inline
+          商品詳細
+        .category-box
+          .sell__inner__category__name
+            .sent-left
+              カテゴリー
+            .sell-right
+              必須
+          .sell__inner__category__box1
+            .select-sell
+              .select-sell
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+              %i.icon-arrow-sell
+                = fa_icon "chevron-down"
+          .sell__inner__category__status
+            .sent-left
+              商品の状態
+            .sell-right
+              必須
+          .sell__inner__category__box2
+            .select-sell
+              .select-sell
+                = f.collection_select :state_id, State.all, :id, :name 
+              %i.icon-arrow-sell 
+                = fa_icon "chevron-down"
+      .sell__inner__delivery 
+        .text-inline
+          発送について
+        %a.qestion-mark{href: ""} ?
+        .delivery-box  
+          .sell__inner__delivery__fee
+            .sent-left
+              配送料の負担
+            .sell-right
+              必須
+          .select-sell
+            .select-sell
+              = f.collection_select :delivery_id, Delivery.all, :id, :name 
+            %i.icon-arrow-sell 
+              = fa_icon "chevron-down"
+          .sell__inner__delivery__region
+            発送元の地域
+            .sell-right
+              必須
+          .select-sell
+            .select-sell
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name 
+            %i.icon-arrow-sell 
+              = fa_icon "chevron-down"
+          .sell__inner__delivery__day
+            .sent-left
+              発送までの日数
+            .sell-right
+              必須
+          .select-sell
+            .select-sell
+              = f.collection_select :estimated_shipping_date_id, EstimatedShippingDate.all, :id, :name 
+            %i.icon-arrow-sell 
+              = fa_icon "chevron-down"
+      .sell__inner__price
+        .text-inline
+          販売価格(300〜9,999,999)
+        %a.qestion-mark{href: ""} ?
+        .sell__inner__price__box
+          %ul
+            %li.sell-price-form
+              .price-box-top
+                .sent-left
+                  価格
+                .sell-right
+                  必須
+              .sell-price-input  
+                .price-box-top
+                  ¥
+                .input-sell
+                  = f.text_field :price, placeholder: "例）300"
+            %li.sell-price-center
+              .l-left
+                販売手数料 (10%)
+              .l-right -
+            %li.sell-price-bold
+              .l-left 販売利益
+              .l-right 
+                
+
+      .sell__inner__privacy
+        .sell__inner__privacy__top
+          %div.privacy1
+            %p
+              = link_to "禁止されている出品", "#"
+              為
+              を必ずご確認ください。
+          %div.privacy2
+            %p
+              またブランド品でシリアルナンバー等がある場合はご記載ください。
+              = link_to "偽ブランドの販売", "#"
+              は犯罪であり処罰される可能性があります。
+          %div.privacy3
+            %p
+              また、出品をもちまして
+              = link_to "加盟店規約", "#"
+              に同意したことになります。
+        .sell__inner__privacy__exhibit
+          = f.submit "出品する", class: "exhibit-btn"
+          %a.sell-back(href= "user_path") もどる
+.main-footer
+  .footer
+    %ul.footer__box
+      %li= link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      %li= link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+      %li= link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    .footer__box2
+      = link_to root_path do
+        = image_tag "fmarket_logo_white.svg" , height: "60", width: "150"
+    .footer__box3
+      © 2019 Mercari

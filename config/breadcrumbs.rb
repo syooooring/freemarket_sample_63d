@@ -9,12 +9,12 @@ end
 
 # マイページ
 crumb :mypage do
-  link "マイページ", users_path
+  link "マイページ", user_path
 
 end
 
 crumb :logout do 
-  link "ログアウト", logout_users_path
+  link "ログアウト", logout_user_path
   parent :mypage
 end
 

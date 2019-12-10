@@ -10,13 +10,13 @@
       %li
         = link_to "いいね！一覧", class: "note"
       %li
-        = link_to "出品する", class: "note"
+        = link_to "出品する", new_item_path, class: "note"
       %li
-        = link_to "出品した商品・出品中", class: "note"
+        = link_to "出品した商品・出品中", saling_user_path, class: "note"
       %li
-        = link_to "出品した商品・取引中", class: "note"
+        = link_to "出品した商品・取引中", selling_user_path, class: "note"
       %li
-        = link_to "出品した商品・売却済み", class: "note"
+        = link_to "出品した商品・売却済み", sold_user_path, class: "note"
       %li
         = link_to "購入した商品・取引中", class: "note"
       %li
@@ -52,4 +52,4 @@
       %li
         = link_to "電話番号の確認", class: "note"
       %li
-        = link_to "ログアウト", class: "note"
+        = link_to "ログアウト", logout_user_path,method: :get ,class: "note"

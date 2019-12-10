@@ -19,13 +19,13 @@ $(document).on('turbolinks:load', function () {
     // slidesPerRow:5,
     focusOnSelect: true, //フォーカスの有効化
     draggable: true,
-    asNavFor: '.thumbnail', //thumbnailクラスのナビゲーション
+    asNavFor: '.thumbnail' //thumbnailクラスのナビゲーション
   });
 });
 
 $(document).ready(function() {
   //キーボードイベント
-  $(".input-default").keyup(function() {
+  $(".input-defaultx").keyup(function() {
        //.input-defaultに入力した内容が.passboxに反映される
       $(".passbox").html($(this).val());
   });
@@ -35,4 +35,3 @@ $(document).ready(function() {
       $(".passbox").toggle();
   });
 });
-

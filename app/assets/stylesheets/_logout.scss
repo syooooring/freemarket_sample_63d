@@ -195,8 +195,6 @@
             line-height: 75px;
             width: 50%;
             color: #333;
-            //border-top: 2px solid #ea352d;
-            //background-color: #fff;
           }
         }
       }
@@ -204,29 +202,9 @@
     a {
       text-decoration: none;
       transition: background-color .2s;
-      width: 100%;
       height: 100%;
       margin: auto;
       padding-left: 15px;
-      display: flex;
-    }
-    a:hover {
-      text-decoration: none;
-      background-color: #eee;
-    }
-    a::after {
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      content: '\f054';
-      position: absolute;
-      right: 1.5em;
-      transition: all .2s;
-      color: #ccc;
-      font-size: 17px;
-    }
-    a:hover::after {
-      right: 1.4rem;
-      color: #333;
     }
   }
 }
@@ -241,26 +219,27 @@
 
 
 
-  .my-logout{
-    height: 179px;
-    width: 700px;
-    box-sizing: border-box;
-    background-color: white;
-    float: left;
+.my-logout{
+  height: 179px;
+  width: 700px;
+  box-sizing: border-box;
+  background-color: white;
+  float: left;
+  position: relative;
+  &__bottom{
     position: relative;
-    &__bottom{
-      position: relative;
-      top: 65px;
-      left: 185px;
-      display: inline;
-      .logout-btn{
-        background-color: #ea352d;
-        line-height: 48px;
-        font-size: 14px;
-        width: 320px;
-        color: white;
-      
-      }
+    top: 65px;
+    display: block;
+
+    .logout-btn{
+      background-color: #ea352d;
+      display: block;
+      text-align: center;
+      line-height: 48px;
+      font-size: 14px;
+      width: 320px;
+      color: white;
     }
   }
+}
 

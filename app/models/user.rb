@@ -14,6 +14,12 @@ class User < ApplicationRecord
   has_many :sns_credentials, dependent: :destroy
   has_many :cards
   
+
+  has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
+  has_many :saling_items, -> {where("buyer_id is NULL")}, foreign_key: "saler_id", class_name: "Item" 
+  has_many :selling_items, -> {where("buyer_id is not NULL")}, foreign_key: "saler_id", class_name: "Item"
+  has_many :sold_items, -> {where("saler_id is NULL")}, foreign_key: "buyer_id", class_name: "Item"
+         
   has_one :address
   has_one :pay
   accepts_nested_attributes_for :address
@@ -23,11 +29,15 @@ class User < ApplicationRecord
   has_many :goods
   has_many :items
   has_many :comments
+  has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
+  has_many :saling_items, -> {where("buyer_id is NULL")}, foreign_key: "saler_id", class_name: "Item"
+  has_many :selling_items, -> {where("buyer_id is not NULL")}, foreign_key: "saler_id", class_name: "Item"
+  has_many :sold_items, -> {where("saler_id is NULL")}, foreign_key: "buyer_id", class_name: "Item"
 
   validates :birthday_year_id,  presence: :true
   validates :birthday_month_id, presence: :true
   validates :birthday_day_id,   presence: :true
-  validates :phone_number,      presence: :true,     length: {maximum: 11 }
+  validates :phone_number,      presence: :true
   validates :nickname,          presence: :true,     length: {maximum: 20 }
   validates :family_name,       presence: :true,     length: {maximum: 35 }
   validates :last_name,         presence: :true,     length: {maximum: 35 }
@@ -36,7 +46,7 @@ class User < ApplicationRecord
   validates :family_name, format: {
   with: /\A[一-龥ぁ-ん]/,
   }
-  validates :family_name,format: {
+  validates :last_name,format: {
   with: /\A[一-龥ぁ-ん]/,
   }
   validates :j_family_name,format: {
