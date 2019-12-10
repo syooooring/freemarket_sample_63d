@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:saling, :selling, :sold]
 
   def new
   end
@@ -41,7 +42,6 @@ class UsersController < ApplicationController
   def registration
   end
 
- 
   def profile
   end
 
@@ -54,9 +54,28 @@ class UsersController < ApplicationController
   def identification
   end
 
+  def saling
+    @items = user.saling_items
+  end
+
+  def selling
+    @items = user.selling_items
+  end
+
+  def sold
+    @items = user.sold_items
+  end
+  
+  def identification
+  end
 
   private
 
+  def set_user
+    user = User.find(params[:id])
+  end
+
   def user_params
   end
+
 end

@@ -8,9 +8,23 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
+    @item.thumbnails.build
   end
 
   def create
+    @item = Item.new(item_params)
+    respond_to do |format|
+      if @item.save
+          params[:thumbnails][:images].each do |image|
+            @item.thumbnails.create(images: image, item_id: @item.id)
+          end
+        format.html{redirect_to root_path}
+      else
+        @item.thumbnails.build
+        format.html{render action: 'new'}
+      end
+    end
   end
 
   def edit
@@ -29,14 +43,19 @@ class ItemsController < ApplicationController
   def details
   end
   
+  def address
+  end
+
   def buy
   end
 
   def buy1
   end
 
-  private
+private
+
   def item_params
-    params.require(:item).permit(:name, :text, :price, :prefecture_id , :state_id ,:delivery_id, :estimated_shipping_data_id,:image)
+    params.require(:item).permit(:name, :size, :state_id, :delivery_id, :shipping_method_id, :estimated_shipping_date_id, :price, :text, :prefecture_id,  thumbnails_attributes: [:images])
   end
+
 end
