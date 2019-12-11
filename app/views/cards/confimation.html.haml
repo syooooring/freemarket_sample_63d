@@ -1,0 +1,41 @@
+.contents
+  .header
+    .header__box
+      = link_to root_path do
+        = image_tag "fmarket_logo_red.svg"
+.buy
+  .buy__main
+    %p.details 購入内容の確認
+    .buy__main__pay
+      .buy__main__pay__inner
+        -# .buy__main__pay__inner__image
+        -#   = image_tag "https://cdn.pixabay.com/photo/2019/11/09/14/28/camera-4613669__480.jpg", class: "image-item"
+        -#   %p.image-text エスニック柄ワイルドパンツ
+        -# .buy__main__pay__inner__pay
+        -#   %p.buy-price-1
+        -#     ¥980
+        -#     %span.item-shipping-fee 送料込み
+
+        .buy__main__pay__inner__point
+          %p.buy-point ポイントはありません
+        .buy__main__pay__inner__price
+          %li.buy-text  支払い金額
+          %li.buy-price-2 
+            = @price
+        .buy__main__pay__inner__button
+      = form_tag(action: :confimation, method: :post) do
+        :plain
+        %script.payjp-button{src:"https://checkout.pay.jp", type:"text/javascript" ,"data-text" => "購入する" ,"data-key" => ENV["PAYJP_PUBLIC_KEY"]}
+        
+
+.main-footer
+  .footer
+    %ul.footer__box
+      %li= link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      %li= link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+      %li= link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    .footer__box2
+      = link_to root_path do
+        = image_tag "fmarket_logo_white.svg" , height: "60", width: "150"
+    .footer__box3
+      © 2019 Mercari

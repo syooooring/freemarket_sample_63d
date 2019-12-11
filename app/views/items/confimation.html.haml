@@ -1,0 +1,33 @@
+.contents
+  .header
+    .header__box
+      = link_to root_path do
+        = image_tag "fmarket_logo_red.svg"
+.main-confimation        
+  .confimation
+    .confimation__buy
+      %h2 購入を確定しますか？
+    .confimation__yen  
+      %h2.yen-left ¥809
+      %h2.yen-right  送料込み
+    .confimation__point
+      %h2.point-box ポイントはありません
+    .confimation__pay
+      %h2.pay-left 支払金額
+      %h2.pay-right ¥809
+    .confimation__card  
+      = form_tag(action: :confimation, method: :post) do
+        :plain
+        %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_36c760ac84cc0be08c976196"}
+
+.main-footer
+  .footer
+    %ul.footer__box
+      %li= link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      %li= link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+      %li= link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    .footer__box2
+      = link_to root_path do
+        = image_tag "fmarket_logo_white.svg" , height: "60", width: "150"
+    .footer__box3
+      © 2019 Mercari

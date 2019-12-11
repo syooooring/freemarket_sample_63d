@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, skip: :new,
   controllers: {
-    registrations: "users/registrations",
+    # sessions: 'users/sessions',
+    # registrations: "users/registrations",
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items do
+  resources :items, only: [:index, :new, :create, :edit, :update, :show] do
     collection do
       get :buy
       get :buy1
@@ -40,6 +41,8 @@ Rails.application.routes.draw do
     member do
       get :identification
       get :logout
+      get :profile
+      post :profile
       get :selling
       get :saling
       get :sold
@@ -62,11 +65,18 @@ Rails.application.routes.draw do
     end
     member do
       get :identification
-      get :profile
       get :zoom
       get :saling
       get :selling
       get :sold
+    end
+  end
+
+  resources :cards, only: [:index, :create,:new, :show] do
+    collection do  
+      get :confimation
+      post :confimation
+      get :completed
     end
   end
 end

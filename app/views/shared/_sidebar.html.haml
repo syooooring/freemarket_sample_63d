@@ -40,15 +40,15 @@
     設定
     .left__bottom__box
       %li
-        = link_to "プロフィール", class: "note"
+        = link_to "プロフィール",profile_user_path, class: "note"
       %li
         = link_to "発送元・お届け先住所変更", class: "note"
       %li
-        = link_to "支払い方法", class: "note"
+        = link_to "支払い方法",card_info_user_path, class: "note"
       %li
         = link_to "メール/パスワード", class: "note"
       %li
-        = link_to "本人情報", class: "note"
+        = link_to "本人情報",identification_user_path, class: "note"
       %li
         = link_to "電話番号の確認", class: "note"
       %li
