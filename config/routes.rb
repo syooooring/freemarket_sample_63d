@@ -71,7 +71,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cards, only: [:index, :create,:new] do
+  resources :cards, only: [:index, :create,:new, :show] do
     collection do  
       get :confimation
       post :confimation

@@ -13,8 +13,10 @@
       %h2.soldtop-text 購入が完了しました
     .sold__content__bottom
       .sold__content__bottom__text
-        %a.sold-back{href: "#"}
-          %span マイページへ戻る
+        .sold-back
+        = link_to root_path do
+          %span TOPへ戻る
+
 .main-footer
   .footer
     %ul.footer__box

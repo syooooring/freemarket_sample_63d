@@ -19,7 +19,7 @@ class CardsController < ApplicationController
   # 登録画面で入力した情報をDBに保存
   def create
     
-    Payjp.api_key = "sk_test_046a73e1cffbb5b0a496029d"
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     if params['payjp-token'].blank?
       render 'mypages/create_card'
     else
@@ -41,33 +41,46 @@ class CardsController < ApplicationController
   def destroy
   end
 
-  require 'payjp'
+  def show
+    card = current_user.credit_card
+    if card.blank?
+      redirect_to action: "new" 
+    else
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @customer_card = customer.cards.retrieve(card.card_id)
+    end
+  end
 
   def confimation
     if @card.blank?
       redirect_to action: "new"
       flash[:alert] = '購入にはクレジットカード登録が必要です'
     else
-      @items = Item.find(1)
+      @item = Item.find(2) #.find(params[id])#後にしようします。
+      @price = "¥ #{@item.price.to_s(:delimited)}"
      # 購入した際の情報を元に引っ張ってくる
       card = Card.find(1)
      # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる
-      Payjp.api_key = "sk_test_046a73e1cffbb5b0a496029d"
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
      # キーをセットする(環境変数においても良い)
       Payjp::Charge.create(
-      amount: 800, #支払金額
+      amount: @item.price, #支払金額
       customer: card.customer_id, #顧客ID
       currency: 'jpy', #日本円
       )
      # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
-      # if @product.update(status: 1, buyer_id: current_user.id)
-      #   flash[:notice] = '購入しました。'
-      #   redirect_to controller: "products", action: 'show'
-      # else
-      #   flash[:alert] = '購入に失敗しました。'
-      #   redirect_to controller: "products", action: 'show'
-      # end
+      if @item.update(buyer_id: current_user.id)
+        
+        flash[:notice] = '購入しました。'
+        # render template: "cards/completed" 
+        # redirect_to controller: "cards", action: 'completed'
+      else
+        flash[:alert] = '購入に失敗しました。'
+        redirect_to controller: "items", action: 'show'
+      end
      #↑この辺はこちら側のテーブル設計どうりに色々しています
+     
     end
   end
 
