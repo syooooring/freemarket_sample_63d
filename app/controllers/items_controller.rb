@@ -12,8 +12,10 @@ class ItemsController < ApplicationController
   end
 
   def create
+    
     @item = Item.new(item_params)
     respond_to do |format|
+     
       if @item.save
           params[:thumbnails][:images].each do |image|
             @item.thumbnails.create(images: image, item_id: @item.id)
@@ -63,7 +65,7 @@ class ItemsController < ApplicationController
 private
 
   def item_params
-    params.require(:item).permit(:name, :size, :state_id, :delivery_id, :shipping_method_id, :estimated_shipping_date_id, :price, :text, :prefecture_id,  thumbnails_attributes: [:images]).merge(user_id: current_user.id, saler_id: current_user.id)
+    params.require(:item).permit(:name, :size, :state_id, :delivery_id, :estimated_shipping_date_id, :price, :text, :prefecture_id,  thumbnails_attributes: [:images]).merge(user_id: current_user.id, saler_id: current_user.id)
   end
   
   def set_item
