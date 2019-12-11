@@ -8,12 +8,7 @@ class CardsController < ApplicationController
 
   # クレジットカード情報入力画面
   def new
-    if @card
-      
-      redirect_to card_path unless @card
-    else
-      redirect_to root_path
-    end
+    
   end
 
   # 登録画面で入力した情報をDBに保存
