@@ -57,7 +57,7 @@ class SignupController < ApplicationController
     session[:nickname] = user_params[:nickname]
     session[:family_name] = user_params[:family_name]
     session[:last_name] = user_params[:last_name]
-    session[:password] = user_params[:password]
+    session[:password_confirmation] = user_params[:password]
     session[:email] = user_params[:email]
     session[:j_family_name] = user_params[:j_family_name]
     session[:j_last_name] = user_params[:j_last_name]
