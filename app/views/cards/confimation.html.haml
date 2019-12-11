@@ -25,7 +25,7 @@
         .buy__main__pay__inner__button
       = form_tag(action: :confimation, method: :post) do
         :plain
-        %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => ENV["PAYJP_PUBLIC_KEY"]}
+        %script.payjp-button{src:"https://checkout.pay.jp", type:"text/javascript" ,"data-text" => "購入する" ,"data-key" => ENV["PAYJP_PUBLIC_KEY"]}
         
 
 .main-footer
