@@ -2,7 +2,7 @@
 .sale__item {
   background-color: #f5f5f5;
   width: 1440px;
-  .sale__item--sidebar{
+  &__sidebar{
     margin: 50px 0 0 30px;
   }
   .sale__item__box {
