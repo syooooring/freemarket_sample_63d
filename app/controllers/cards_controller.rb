@@ -12,7 +12,7 @@ class CardsController < ApplicationController
       
       redirect_to card_path unless @card
     else
-      # redirect_to root_path
+      redirect_to root_path
     end
   end
 
@@ -42,7 +42,7 @@ class CardsController < ApplicationController
   end
 
   def show
-    card = current_user.credit_card
+    @card
     if card.blank?
       redirect_to action: "new" 
     else
@@ -57,7 +57,7 @@ class CardsController < ApplicationController
       redirect_to action: "new"
       flash[:alert] = '購入にはクレジットカード登録が必要です'
     else
-      @item = Item.find(2) #.find(params[id])#後にしようします。
+      @item = Item.find(2) #.find(params[id])後にしようします。
       @price = "¥ #{@item.price.to_s(:delimited)}"
      # 購入した際の情報を元に引っ張ってくる
       card = Card.find(1)
