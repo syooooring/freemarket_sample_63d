@@ -24,18 +24,28 @@
                     = fa_icon "chevron-right"
               %div.indenti-form
                 %label お名前
-                %p Dチーム
+                %p
+                  = current_user.family_name
+                  = current_user.last_name
               %div.indenti-form
                 %label お名前カナ
-                %p ディーチーム
+                %p
+                  = current_user.j_family_name
+                  = current_user.j_last_name
               %div.indenti-form
                 %label 生年月日
-                %p 7/4
+                %p
+                  = @birthday1
+                  年
+                  = @birthday2
+                  月
+                  = @birthday3
+                  日
               %div.indenti-form
                 %label 郵便番号
                 %span.form-arbitray 任意
                 %br>/
-                %input.input-default{placeholder: "例) 1234567", type: "text", value: ""}/
+                %input.input-default{placeholder:current_user.address.postal_code , type: "text", value: ""}/
               %div.indenti-form
                 %label 都道府県
                 %span.form-arbitray 任意
@@ -49,17 +59,17 @@
                 %label 市区町村
                 %span.form-arbitray 任意
                 %br>/
-                %input.input-default{type: "text", name: "city", placeholder: "例) 横浜市緑区"}
+                %input.input-default{type: "text", name: "city", placeholder: current_user.address.city}
               %div.indenti-form
                 %label 番地
                 %span.form-arbitray 任意
                 %br>/
-                %input.input-default{type: "text", name: "address1", placeholder: "例) 青山1-1-1"}
+                %input.input-default{type: "text", name: "address1", placeholder: current_user.address.banti}
               %div.indenti-form
                 %label 建物名
                 %span.form-arbitray 任意
                 %br/
-                %input.input-default{type: "text", name: "address2", placeholder: "例) 柳ビル103"}
+                %input.input-default{type: "text", name: "address2", placeholder: current_user.address.building_name}
               %button.btn-indenti{type: "submit"}登録する
               .indenti-form-text
                 = link_to "本人情報の登録について", "https://www.yahoo.co.jp/"
