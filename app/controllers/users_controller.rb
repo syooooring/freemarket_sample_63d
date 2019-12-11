@@ -69,6 +69,10 @@ class UsersController < ApplicationController
     @items = current_user.sold_items
   end
 
+  def selling_items
+    @items = Item.where(saler_id: current_user.id)
+  end
+
   private
 
   def set_user
