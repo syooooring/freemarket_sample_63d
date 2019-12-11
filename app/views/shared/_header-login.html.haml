@@ -2,7 +2,8 @@
   .main
     .main__top
       .main__top__left
-        = image_tag "fmarket_logo_red.svg", class: "merukari-logo"
+        = link_to root_path do
+          = image_tag "fmarket_logo_red.svg", class: "merukari-logo"
       .main__top__right
         %input.search-form__input{name: "keyword", placeholder: "何かお探しですか？", type: "text", value: ""}
         %i.icon-search
