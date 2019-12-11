@@ -52,10 +52,9 @@ class UsersController < ApplicationController
   end
 
   def identification
-  end
-
-  def selling_items
-    @items = Item.where(saler_id: current_user.id)
+    @birthday1 = current_user.birthday_year.name
+    @birthday2 = current_user.birthday_month.name
+    @birthday3 = current_user.birthday_day.name
   end
 
   def saling
@@ -70,11 +69,11 @@ class UsersController < ApplicationController
     @items = current_user.sold_items
   end
 
-
   private
 
   def set_user
     user = User.find(params[:id])
   end
+
 
 end

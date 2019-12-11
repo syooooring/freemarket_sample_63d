@@ -10,6 +10,7 @@
         .profile__right--bottom
           = form_with model: @user, class: 'profile-form', local: true do |f|
             .profile-name
+              = current_user.nickname
               .profile-image
                 = image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgKIFBhPPXWTbAkgXHeVP-T_yJ5IGPxot6pdT0-DSnh3ZJOKtkeg&s", class: "profile-name-image"
               = f.text_field :nickname, class: 'profile-name__input'
