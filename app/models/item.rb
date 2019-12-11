@@ -13,6 +13,6 @@ class Item < ApplicationRecord
   #belongs_to :category
   belongs_to :saler, optional: true, class_name: "User"
   belongs_to :buyer, optional: true, class_name: "User"
-  has_many :thumbnails
+  has_many :thumbnails, dependent: :destroy
   accepts_nested_attributes_for :thumbnails
 end

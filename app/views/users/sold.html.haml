@@ -1,18 +1,29 @@
-.sold__item
+.sold__item.crearfix
   .sold__item--top
     = render "/shared/header-login"
-  .sold__item--sidebar
+  .sold__item__sidebar
     = render "/shared/sidebar"
-  .sold__item__box
-    .sold__item__box__main
-      .sold__item__box__main--sale
+  .sold__item--redcircle
+    = render "/shared/sell-icon"
+    .sold__item__box
+      .sold__item__box__main
+        出品した商品
+      .sold__item__box__sale
         出品中
-      .sold__item__box__main--sell
+      .sold__item__box__sell
         取引中
-      .sold__item__box__main--sold
+      .sold__item__box__sold
         売却済み
-        .sold__item__box__main--list
-          .item
+      .sold__item__box__list
+        .soldx
+          - if @items.present?
             - @items.each do |item|
-              .item-1
+              .soldx__all
                 = item.name
+          - else
+            .soldx__else
+              = image_tag "logo_white.svg", height: '120px', width: '120px', class: 'free-logo'
+            .soldx__else2
+              売却済みの商品がありません
+  .sold__item--bottom
+    = render "/shared/footer"

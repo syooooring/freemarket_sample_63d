@@ -54,6 +54,10 @@ class UsersController < ApplicationController
   def identification
   end
 
+  def selling_items
+    @items = Item.where(saler_id: current_user.id)
+  end
+
   def saling
     @items = current_user.saling_items
   end
@@ -66,11 +70,11 @@ class UsersController < ApplicationController
     @items = current_user.sold_items
   end
 
+
   private
 
   def set_user
     user = User.find(params[:id])
   end
-
 
 end
