@@ -48,6 +48,7 @@ Rails.application.routes.draw do
       get :sold
       get :selling_items
       get :card_info
+      get :zoom
     end
   end
   resources :signup, only: [:create] do
@@ -65,7 +66,6 @@ Rails.application.routes.draw do
     end
     member do
       get :identification
-      get :zoom
       get :saling
       get :selling
       get :sold

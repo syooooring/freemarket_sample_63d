@@ -50,11 +50,8 @@
           = image_tag "/assets/LINE_APP.png", class: "zoom--line"
 
 .sell-icon
-  = link_to "" do
-    .red-circle
-      %p.text 出品
-      = fa_icon 'camera', class: "camera"
+  = render "/shared/sell-icon"
+  
 
-.content.clearfix
 .zoom__bottom
   = render "shared/footer"
