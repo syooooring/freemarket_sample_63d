@@ -20,39 +20,43 @@
           %p.buy-point ポイントはありません
         .buy__main__pay__inner__price
           %li.buy-text  支払い金額
-          %li.buy-price-2 ￥1,300  　
-        .buy__main__pay__inner__button　
-        %button{name: "", type: "submit", class: "buy-btn", value: "ボタン"} 購入する   
+          %li.buy-price-2 ￥1,300  
+        .buy__main__pay__inner__button
+            
+          = form_tag(action: :buy, method: :post) do
+            :plain
+            %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_36c760ac84cc0be08c976196"}
 
-    .buy__main__address
-      .buy__main__address__inner
-        .buy__main__address__inner__area
-          %p 配送先 
-        .buy__main__address__inner__info
-          %p 〒547-****
-          %p 大阪府大阪府大阪市****
-          %p メルカリ　太郎
-        .buy__main__address__inner__fix
-          %a.buy-user-info-fix{href: "#"}
-            %span 変更する
-            %i.icon-check
-            = fa_icon  "chevron-right", class: 'buy-icon' 
 
-    .buy__main__card
-      .buy__main__card__inner
-        .buy__main__card__inner__way
-          %p 支払方法
-        .buy__main__card__inner__text
-          %p ***************1111
-          %p 01/25 
-        .buy__main__card__innner__type
-          = image_tag "https://cdn.pixabay.com/photo/2017/08/10/14/02/visa-2623015_1280.png", class: "image-visa"
+    -# .buy__main__address
+    -#   .buy__main__address__inner
+    -#     .buy__main__address__inner__area
+    -#       %p 配送先 
+    -#     .buy__main__address__inner__info
+    -#       %p 〒547-****
+    -#       %p 大阪府大阪府大阪市****
+    -#       %p メルカリ 太郎
+    -#     .buy__main__address__inner__fix
+    -#       %a.buy-user-info-fix{href: "#"}
+    -#         %span 変更する
+    -#         %i.icon-check
+    -#         = fa_icon  "chevron-right", class: 'buy-icon' 
+
+    -# .buy__main__card
+    -#   .buy__main__card__inner
+    -#     .buy__main__card__inner__way
+    -#       %p 支払方法
+    -#     .buy__main__card__inner__text
+    -#       %p ***************1111
+    -#       %p 01/25 
+    -#     .buy__main__card__innner__type
+    -#       = image_tag "https://cdn.pixabay.com/photo/2017/08/10/14/02/visa-2623015_1280.png", class: "image-visa"
           
         
-        .buy__main__card__inner__fix  
-          %a.buy-user-info-fix{href: "#"}
-            %span 変更する
-            %i.icon-check
+    -#     .buy__main__card__inner__fix  
+    -#       %a.buy-user-info-fix{href: "#"}
+    -#         %span 変更する
+    -#         %i.icon-check
             = fa_icon  "chevron-right", class: 'buy-icon'        
 .main-footer
   .footer

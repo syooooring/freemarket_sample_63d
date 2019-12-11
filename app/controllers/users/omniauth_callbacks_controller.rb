@@ -17,7 +17,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     else 
-      
       @sns = info[:sns]
       session[:email] = info[:user][:email]
       session[:nickname] = info[:user][:nickname]
@@ -28,12 +27,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       render template: "users/sign_up" 
     end
 
-    if SnsCredential.find_by(uid: info[:sns][:uid], provider: info[:sns][:provider]).nil?
-      #ユーザ登録と同時にsns_credentialも登録するために
-      session[:uid] = info[:sns][:uid]
-      session[:provider] = info[:sns][:provider]
-    end
+    # if SnsCredential.find_by(uid: info[:sns][:uid], provider: info[:sns][:provider]).nil?
+    #   #ユーザ登録と同時にsns_credentialも登録するために
+    #   session[:uid] = info[:sns][:uid]
+    #   session[:provider] = info[:sns][:provider]
+    # end
   end
+  
 
   def failure
     
