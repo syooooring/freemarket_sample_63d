@@ -1,7 +1,7 @@
 .sold__item {
   background-color: #f5f5f5;
   width: 1440px;
-  .sold__item--sidebar{
+  &__sidebar{
     margin: 50px 0 0 30px;
   }
   .sold__item__box {
