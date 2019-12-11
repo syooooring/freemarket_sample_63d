@@ -17,7 +17,11 @@ $(document).on('turbolinks:load', function() {
       var btn_wrapper = $('<div class="btn_wrapper"><div class="btn edit">編集</div><div class="btn delete">削除</div></div>');
       img.append(btn_wrapper);
       img.find('img').attr({
-        src: e.target.result
+        src: e.target.result,
+        width: "115px",
+        height: "80px",
+        class: "pic",
+        title: file.name
       })
     }
     reader.readAsDataURL(file);
@@ -47,7 +51,7 @@ $(document).on('turbolinks:load', function() {
           preview.append(image);
         })
         dropzone.css({
-          'width': `calc(100% - (135px * ${images.length}))`
+          'width': `calc(100% - (131px * ${images.length}))`
         })
       }
       if(images.length == 4) {
