@@ -17,7 +17,7 @@
           %ul.cards
             %li.cards__show
               = form_with model: @user, class: 'cards__show--form', local: true do |f|
-                = image_tag "/assets/mc_vrt_opt_pos_46_1x.png", width: "34", height: "20"
+                = image_tag "mc_vrt_opt_pos_46_1x.png", width: "34", height: "20"
                 %p.card-info ************1975
                 %p.card-info 10 / 21 
                 = f.submit "削除する", class: "card-delete"
