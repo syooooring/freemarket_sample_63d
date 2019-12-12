@@ -16,17 +16,16 @@
           %h2.sell-right 必須
         .sell__inner__upload__img-text2
           %h2.img-text-up 最大10枚までアップロードできます
-        .sell__inner__upload__img-file
-          .sell__inner__upload__img-file__box
-            = image_tag "#{@item.image}"
-          .sell__inner__upload__img-file__container
-            %label
-              = f.file_field :image, class: 'hidden', style: "display: none;" 
-              .file-box
-                %pre.file-up
-                  :preserve
-                    ドラッグアンドドロップ
-                    またはクリックしてファイルをアップロード
+        = f.fields_for :thumbnails do |image|
+          .sell__inner__upload__img-file
+            .sell__inner__upload__img-file__container
+              %label
+                = image.file_field :images, class: 'hidden', style: "display: none;"
+                .file-box
+                  %pre.file-up
+                    :preserve
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
 
       .sell__inner__content
         .sell__inner__content__item
@@ -141,4 +140,4 @@
         = image_tag "fmarket_logo_white.svg" , height: "60", width: "150"
     .footer__box3
 
-      © 2019 Mercari        
+      © 2019 Mercari
