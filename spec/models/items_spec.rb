@@ -1,39 +1,41 @@
 require 'rails_helper'
 describe Item do
-  describe '#update' do
+  describe '#create' do
     it "nameが空だとバリデーション" do
-     item = build(:item, name: "")
+     item = build(:item, name: nil)
      item.valid?
-     expect(item.errors[:name]).to include("can't be blank")
+     expect(item.errors[:name]).to include("を入力してください")
     end
-  #   it "priceが空だとバリデーション" do
-  #     item = build(:item,price: "")
-  #     item.valid?
-  #     expect(item.errors[:price]).to include("can't be blank")
-  #    end
-  #    it "delivery_idが空だとバリデーション" do
-  #     item = build(:item,delivery_id: "")
-  #     item.valid?
-  #     expect(item.errors[:delivery_id]).to include("can't be blank")
-  #    end
-  # end
+
+    it "priceが空だとバリデーション" do
+      item = build(:item,price: nil)
+      item.valid?
+      expect(item.errors[:price]).to include("を入力してください")
+    end
+
+    it "delivery_idが空だとバリデーション" do
+      item = build(:item,delivery_id: nil)
+      item.valid?
+      expect(item.errors[:delivery_id]).to include("を入力してください")
+    end
+
+    it "textが空だとバリデーション" do
+      item = build(:item, text: nil)
+      item.valid?
+      expect(item.errors[:text]).to include("を入力してください")
+    end
+
+    it "prefecture_idが空だとバリデーション" do
+      item = build(:item, prefecture_id: nil)
+      item.valid?
+      expect(item.errors[:prefecture_id]).to include("を入力してください")
+    end
+
+    it "prefecture_idが空だとバリデーション" do
+      item = build(:item, prefecture_id: nil)
+      item.valid?
+      expect(item.errors[:prefecture_id]).to include("を入力してください")
+    end
+    
   end
-# require 'rails_helper'
-
-# describe Item do
-#   describe '#update' do
-
-#     it "アイテムの名前テスト" do
-#       item = build(:item, name: nil)
-#       item.valid?
-#       expect(user.errors[:name]).to include("can't be blank")
-#     end
-
-#     it "アイテムのプライステスト" do
-#       item = build(:item, price: nil)
-#       item.valid?
-#       expect(user.errors[:price]).to include("can't be blank")
-#     end
-
-#   end
 end
