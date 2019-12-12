@@ -8,22 +8,23 @@
     %p.details 購入内容の確認
     .buy__main__pay
       .buy__main__pay__inner
-        .buy__main__pay__inner__image
-          = image_tag "https://cdn.pixabay.com/photo/2019/11/09/14/28/camera-4613669__480.jpg", class: "image-item"
-          %p.image-text　エスニック柄ワイルドパンツ
-        .buy__main__pay__inner__pay
-          %p.buy-price-1
-            ¥980
-            %span.item-shipping-fee 送料込み
+        -# .buy__main__pay__inner__image
+        -#   = image_tag "https://cdn.pixabay.com/photo/2019/11/09/14/28/camera-4613669__480.jpg", class: "image-item"
+        -#   %p.image-textエスニック柄ワイルドパンツ
+        -# .buy__main__pay__inner__pay
+        -#   %p.buy-price-1
+        -#     ¥980
+        -#     %span.item-shipping-fee 送料込み
 
         .buy__main__pay__inner__point
           %p.buy-point ポイントはありません
         .buy__main__pay__inner__price
           %li.buy-text  支払い金額
-          %li.buy-price-2 ￥1,300  
+          %li.buy-price-2 
+            = @price
         .buy__main__pay__inner__button
             
-          = form_tag(action: :buy, method: :post) do
+          = form_tag(action: :confimation, method: :post) do
             :plain
             %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_36c760ac84cc0be08c976196"}
 
