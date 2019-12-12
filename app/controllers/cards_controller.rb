@@ -14,9 +14,9 @@ class CardsController < ApplicationController
   # 登録画面で入力した情報をDBに保存
   def create
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-    # if params['payjp-token'].blank?
-    #   render 'cards/index'
-    # else
+    if params['payjp-token'].blank?
+      render 'cards/index'
+    else
       customer = Payjp::Customer.create(card: params['payjp-token'])
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
     
@@ -25,7 +25,7 @@ class CardsController < ApplicationController
       else
         redirect_to route_patu
       end
-    # end
+    end
   end
 
   # 後ほど削除機能を実装します。
