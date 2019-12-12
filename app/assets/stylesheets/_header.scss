@@ -126,6 +126,14 @@
           display: flex;
           font-size: 14px;
           line-height: 36px;
+          a {
+            transition: .9s;
+          }
+          a:hover {
+            text-decoration: none;
+            color: deepskyblue;
+            transition: .9s
+          }
         }
         .logo-my{
           margin-right: 10px;
