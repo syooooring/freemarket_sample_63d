@@ -29,7 +29,7 @@
       .progress-bar1{
         position: relative;
         z-index: 1;
-        .progress-bar1__0{
+        &__0{
           font-weight: 600;
           font-size: 12px;
           position: relative;
@@ -159,8 +159,7 @@
         z-index: 1;
         color: gray;
         left: 145px;
-
-        .progress-bar5__0{
+        &__0{
           position: relative;
           left: 36px;
         }

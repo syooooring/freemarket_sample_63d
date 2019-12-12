@@ -31,6 +31,10 @@ Rails.application.routes.draw do
     member do
       get :details
       get :address
+      get :buy
+      get :confimation
+      post :confimation
+      post :buy1
     end
   end    
   resources :pays, only: [:new]

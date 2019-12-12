@@ -82,6 +82,9 @@ a {
   bottom: 32px;
   right: 32px;
   position: fixed;
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 .red-circle {

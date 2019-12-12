@@ -117,12 +117,12 @@
             送料込み
         %ul.item-btn
           %li.item-btn-in
-            = link_to "購入画面に進む", "https://www.yahoo.co.jp/"
+            = link_to "購入画面に進む", buy_item_path(@item)
           
 
         .item-description
           .item-description__in
-            .p
+            %p
               = @item.text
             
         .item-btn-box
@@ -176,7 +176,7 @@
     .another-item
       .another-item-in
         = "#{@item.user.nickname}さんのその他の出品"
-    .another-image
+    .another-image.clearfix
       .another-image-box
         .another-image-box-in
           - @items.each do |item|

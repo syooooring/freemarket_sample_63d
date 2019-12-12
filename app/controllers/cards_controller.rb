@@ -13,21 +13,17 @@ class CardsController < ApplicationController
 
   # 登録画面で入力した情報をDBに保存
   def create
-    
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     if params['payjp-token'].blank?
-      render 'mypages/create_card'
+      render 'cards/index'
     else
-      customer = Payjp::Customer.create( # ここで先ほど生成したトークンを顧客情報と紐付け、PAY.JP管理サイトに送信
-        email: current_user.email,
-        card: params['payjp-token'],
-        metadata: {user_id: current_user.id} # 記述しなくても大丈夫です
-      )
+      customer = Payjp::Customer.create(card: params['payjp-token'])
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+    
       if @card.save
         redirect_to cards_path
       else
-        render 'mypages/create_card'
+        redirect_to route_patu
       end
     end
   end
@@ -36,18 +32,19 @@ class CardsController < ApplicationController
   def destroy
   end
 
-  # def show
-  #   # @card
-  #   # if card.blank?
-  #   #   redirect_to action: "new" 
-  #   # else
-  #   #   Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-  #   #   customer = Payjp::Customer.retrieve(card.customer_id)
-  #   #   @customer_card = customer.cards.retrieve(card.card_id)
-  #   # end
-  # end
+  def show
+    @card
+    if card.blank?
+      redirect_to action: "new" 
+    else
+      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @customer_card = customer.cards.retrieve(card.card_id)
+    end
+  end
   def buy
-    @item = Item.find(2) #.find(params[id])後にしようします。
+    
+    @item = Item.find(2)
     @price = "¥ #{@item.price.to_s(:delimited)}"
   end
 
@@ -56,7 +53,7 @@ class CardsController < ApplicationController
       redirect_to action: "new"
       flash[:alert] = '購入にはクレジットカード登録が必要です'
     else
-      @item = Item.find(2) #.find(params[id])後にしようします。
+      @item = Item.find(3) #.find(params[id])後にしようします。
      # 購入した際の情報を元に引っ張ってくる
       card = Card.find(1) #.find(params[id])後にしようします。
      # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる
