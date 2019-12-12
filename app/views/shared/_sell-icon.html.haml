@@ -1,5 +1,7 @@
-.sell-icon
-  = link_to new_item_path do
-    .red-circle
-      %p.text 出品
-      = fa_icon 'camera', class: "camera"
+- if user_signed_in?
+  .sell-icon
+    = link_to new_item_path do
+      .red-circle
+        %p.text 出品
+        = fa_icon 'camera', class: "camera"
+- else

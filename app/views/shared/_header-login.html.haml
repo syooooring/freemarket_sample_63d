@@ -2,7 +2,8 @@
   .main
     .main__top
       .main__top__left
-        = image_tag "fmarket_logo_red.svg", class: "merukari-logo"
+        = link_to root_path do
+          = image_tag "fmarket_logo_red.svg", class: "merukari-logo"
       .main__top__right
         %input.search-form__input{name: "keyword", placeholder: "何かお探しですか？", type: "text", value: ""}
         %i.icon-search
@@ -25,13 +26,12 @@
         .main__bottom__right  
           .main__bottom__right__nice
             .logo-heart
-              = fa_icon  "heart lg",class: 'icon2'
+     
             .nice-word
               %ul
                 %li いいね！一覧
           .main__bottom__right__information
             .logo-bell
-              = fa_icon  "bell lg",class: 'icon2'
             .information-word
               %ul
                 %li お知らせ

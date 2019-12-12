@@ -218,7 +218,19 @@ describe User do
       expect(user).to be_valid
     end
 
-    it "phone_numberが半角アルファベットだと登録されない" do
+    it "phone_numberが9文字だと登録されない" do
+      user = build(:user, phone_number: "000000000")
+      user.valid?
+      expect(user.errors[:phone_number]).to include("は不正な値です")
+    end
+
+    it "phone_numberが12文字だと登録されない" do
+      user = build(:user, phone_number: "000000000000")
+      user.valid?
+      expect(user.errors[:phone_number]).to include("は不正な値です")
+    end
+
+    it "phone_numberが数字以外だと登録されない" do
       user = build(:user, phone_number: "aaaaaaaaaa")
       user.valid?
       expect(user.errors[:phone_number]).to include("は不正な値です")

@@ -8,7 +8,7 @@
     .top-ber__box2
       %i= fa_icon "chevron-right", class:"arrow"
     .top-ber__box3
-      currant_user.name
+      = current_user.nickname
 
 .zoom
   .zoom__right
@@ -43,18 +43,15 @@
     .zoom__sns
       .zoom__sns__icon
         .zoom__sns__icon--fb
-          = image_tag "/assets/f_logo_RGB-Blue_1024.png", class: "zoom__fb"
+          = image_tag "f_logo_RGB-Blue_1024.png", class: "zoom__fb"
         .zoom__sns__icon--tw
-          = image_tag "/assets/Twitter_Logo_WhiteOnBlue.png", class: "zoom__tw"
+          = image_tag "Twitter_Logo_WhiteOnBlue.png", class: "zoom__tw"
         .zoom__sns__icon--line
-          = image_tag "/assets/LINE_APP.png", class: "zoom--line"
+          = image_tag "LINE_APP.png", class: "zoom--line"
 
 .sell-icon
-  = link_to "" do
-    .red-circle
-      %p.text 出品
-      = fa_icon 'camera', class: "camera"
+  = render "/shared/sell-icon"
+  
 
-.content.clearfix
 .zoom__bottom
   = render "shared/footer"

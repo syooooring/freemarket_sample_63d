@@ -42,10 +42,14 @@ Rails.application.routes.draw do
     member do
       get :identification
       get :logout
+      get :profile
+      post :profile
       get :selling
       get :saling
       get :sold
       get :selling_items
+      get :card_info
+      get :zoom
     end
   end
   resources :signup, only: [:create] do
@@ -63,9 +67,6 @@ Rails.application.routes.draw do
     end
     member do
       get :identification
-      get :profile
-      get :card_info
-      get :zoom
       get :saling
       get :selling
       get :sold
