@@ -23,14 +23,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items, only: [:index, :new, :create, :edit, :update, :show] do
-    collection do
-      get :buy
-      get :buy1
-    end
+  resources :items do
     member do
       get :details
       get :address
+      get :buy
+      get :confimation
+      post :confimation
+      post :buy1
     end
   end    
   resources :pays, only: [:new]

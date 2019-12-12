@@ -12,7 +12,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook google_oauth2]
   has_many :sns_credentials, dependent: :destroy
-  has_one :cards
+  has_one :card
   
 
   has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
