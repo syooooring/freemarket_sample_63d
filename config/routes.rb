@@ -72,11 +72,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cards, only: [:index, :create,:new, :show] do
-    collection do  
+  resources :cards, only: [:index, :create, :new] do
+    member do 
+      get :buy
       get :confimation
       post :confimation
       get :completed
+      # post 'confimation/:id'=> 'cards#confimation', as: 'confimation' #httpメソッドはpostなので注意
+      # get  'completed'=>  'cards#completed', as: 'completed'
     end
   end
 end

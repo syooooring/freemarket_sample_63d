@@ -36,15 +36,19 @@ class CardsController < ApplicationController
   def destroy
   end
 
-  def show
-    @card
-    if card.blank?
-      redirect_to action: "new" 
-    else
-      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @customer_card = customer.cards.retrieve(card.card_id)
-    end
+  # def show
+  #   # @card
+  #   # if card.blank?
+  #   #   redirect_to action: "new" 
+  #   # else
+  #   #   Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+  #   #   customer = Payjp::Customer.retrieve(card.customer_id)
+  #   #   @customer_card = customer.cards.retrieve(card.card_id)
+  #   # end
+  # end
+  def buy
+    @item = Item.find(2) #.find(params[id])後にしようします。
+    @price = "¥ #{@item.price.to_s(:delimited)}"
   end
 
   def confimation
@@ -53,9 +57,8 @@ class CardsController < ApplicationController
       flash[:alert] = '購入にはクレジットカード登録が必要です'
     else
       @item = Item.find(2) #.find(params[id])後にしようします。
-      @price = "¥ #{@item.price.to_s(:delimited)}"
      # 購入した際の情報を元に引っ張ってくる
-      card = Card.find(1)
+      card = Card.find(1) #.find(params[id])後にしようします。
      # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる
       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
      # キーをセットする(環境変数においても良い)
@@ -69,10 +72,10 @@ class CardsController < ApplicationController
         
         flash[:notice] = '購入しました。'
         # render template: "cards/completed" 
-        # redirect_to controller: "cards", action: 'completed'
+        redirect_to controller: "cards", action: 'completed'
       else
         flash[:alert] = '購入に失敗しました。'
-        redirect_to controller: "items", action: 'show'
+        # redirect_to controller: "items", action: 'show'
       end
      #↑この辺はこちら側のテーブル設計どうりに色々しています
      
