@@ -33,7 +33,10 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(item_params) 
+    item = Item.first
+    # item.thumbnails.images = MiniMagick::Image.read(open(URI.encode(item.thumbnails.images), &:read))
+    # item.save!
+    if @item.update!(item_params) 
       redirect_to root_path
     else
       redirect_to edit_item_path
@@ -101,7 +104,7 @@ private
 
 
   def item_params
-    params.require(:item).permit(:name, :size, :state_id, :delivery_id, :estimated_shipping_date_id, :price, :text, :prefecture_id,  thumbnails_attributes: [:images]).merge(user_id: current_user.id, saler_id: current_user.id)
+    params.require(:item).permit(:name, :size, :state_id, :delivery_id, :estimated_shipping_date_id, :price, :text, :prefecture_id,  thumbnails_attributes: [:images, :id, :_destroy]).merge(user_id: current_user.id, saler_id: current_user.id)
   end
   
   def set_item

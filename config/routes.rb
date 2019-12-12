@@ -24,6 +24,10 @@ Rails.application.routes.draw do
   end
 
   resources :items do
+    collection do
+      get :buy
+      get :buy1
+    end
     member do
       get :details
       get :address
