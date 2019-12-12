@@ -527,18 +527,38 @@
           width: 620px;
           height: 60px;
           margin: 16px 0 0 ;
-          
           background-color: #EA352D;
           .item-btn-in{
             font-size: 25px;
             font-weight: bold;
             text-align: center;
-            padding-top: 10px;
             a{
               color: #fff;
+              display: block;
+              width: 620px;
+              line-height: 60px;
+              text-decoration: none;
             }
           }
-        }
+        }  
+        .item-btn1{
+          width: 620px;
+          height: 60px;
+          margin: 16px 0 0 ;
+          background-color: #aaa;
+          .item-btn-in{
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            a{
+              color: #fff;
+              display: block;
+              width: 620px;
+              line-height: 60px;
+              text-decoration: none;
+            }
+          }
+        }  
         .item-description{
           width: 620px;
           height: 540px;
