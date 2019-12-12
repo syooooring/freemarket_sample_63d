@@ -13,10 +13,9 @@ class CardsController < ApplicationController
 
   # 登録画面で入力した情報をDBに保存
   def create
-    
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     if params['payjp-token'].blank?
-      render 'mypages/create_card'
+      render 'cards/index'
     else
       customer = Payjp::Customer.create( # ここで先ほど生成したトークンを顧客情報と紐付け、PAY.JP管理サイトに送信
         email: current_user.email,
