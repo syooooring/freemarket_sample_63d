@@ -1,8 +1,8 @@
 FactoryBot.define do
 
   factory :thumbnail do
-    images   {"https://www.illust-box.jp/db_img/sozai/00010/104595/watermark.jpg"}
-    item nil
+    images   {Rack::Test::UploadedFile.new(File.join(Rails.root, "spec/fixtures/gettyimages-890147976-612x612.jpg"))}
+    item
   end
 
 end
