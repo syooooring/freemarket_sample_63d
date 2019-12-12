@@ -11,20 +11,21 @@
   .content.clearfix
     = render "shared/sidebar"
     .right
-      .right__up
-        .right__up__profil
-          .right__up__profil--user
-            //= image_tag current_user.image, class: "user--image"
-          .right__up__profil--name
-            name
-            //= current_user.name, class: "user--name"
-          .right__up__profil__box
-            .right__up__profil__box--goods
-              評価
-              //= current_user.goods, class: "user--goods"
-            .right__up__profil__box--items
-              出品数
-              //= current_user.items, class: "user--items"
+      = link_to zoom_user_path(current_user.id) do
+        .right__up
+          .right__up__profil
+            .right__up__profil--user
+              //= image_tag current_user.image, class: "user--image"
+            .right__up__profil--name
+              name
+              //= current_user.name, class: "user--name"
+            .right__up__profil__box
+              .right__up__profil__box--goods
+                評価
+                //= current_user.goods, class: "user--goods"
+              .right__up__profil__box--items
+                出品数
+                //= current_user.items, class: "user--items"
       .right__middle
         %ul.tab
           %li.tab__info.active

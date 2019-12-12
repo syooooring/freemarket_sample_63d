@@ -37,6 +37,7 @@ class UsersController < ApplicationController
   end
 
   def zoom
+    
   end
   
   def registration
@@ -67,6 +68,10 @@ class UsersController < ApplicationController
 
   def sold
     @items = current_user.sold_items
+  end
+
+  def selling_items
+    @items = Item.where(saler_id: current_user.id)
   end
 
   private
