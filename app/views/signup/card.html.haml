@@ -4,24 +4,24 @@
       .fmarket__box
         = link_to root_path do
           = image_tag "fmarket_logo_red.svg",class: "logo"
-    .clearfix_b
-      .progress-bar1b
-        .a
+    .clearfix_c
+      .progress-bar1c
+        .progress-bar1c__0
           会員情報
-        .progress-bar1b__x
-      .progress-bar2b
+        .progress-bar1c__x
+      .progress-bar2c
         電話番号認証
-        .progress-bar2b__x
-      .progress-bar3b
+        .progress-bar2c__x
+      .progress-bar3c
         お届け先住所入力
-        .progress-bar3b__x
-      .progress-bar4b
+        .progress-bar3c__x
+      .progress-bar4c
         支払い方法
-        .progress-bar4b__x
-      .progress-bar5b
-        .bbb
+        .progress-bar4c__x
+      .progress-bar5c
+        .progress-bar5c__0
           完了
-        .progress-bar5b__x
+        .progress-bar5c__x
   .single
   = form_for @user,url: signup_index_path , method: :post, html:{class: 'single'} do |f|
     = f.fields_for :pay do |c|
