@@ -13,8 +13,7 @@
           .item-phot-low
             .item-phot-low-in
               .thumbnail
-                - @item.thumbnails.each do |thumbnail|
-                  = image_tag "#{thumbnail.images}"
+                = image_tag "#{@item.thumbnails.last.images}"
 
         .item-detail-table
           .item-detail-table-box
