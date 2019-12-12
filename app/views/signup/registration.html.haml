@@ -28,7 +28,8 @@
       %h1
         会員情報入力
     .single-box
-      = @user.errors.full_messages
+      - if @user.errors.full_messages != []
+        = @user.errors.full_messages
       .single-box2
         %li
           ニックネーム
@@ -94,7 +95,7 @@
         %a{href: "/jp/tos_list/", target: "_blank"}> 利用規約
         に同意したものとみなします
       .button_box
-        = f.submit "次へ進む",　class: "btn-default btn-red"
+        = f.submit "次へ進む", class: "btn-default btn-red"
       .last_text
         %p
           %a{href: "/jp/help_center/article/423/", target: "_blank"}> 本人情報の登録について
