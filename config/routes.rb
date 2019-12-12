@@ -23,8 +23,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items, only: [:index, :new, :create, :edit, :update, :show] do
-  
+  resources :items do
     member do
       get :details
       get :address
