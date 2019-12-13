@@ -18,6 +18,7 @@
           %h2.img-text-up 最大10枚までアップロードできます
         = f.fields_for :thumbnails do |image|
           .sell__inner__upload__img-file
+            = image_tag "#{@item.thumbnails.last.images}"
             .sell__inner__upload__img-file__container
               %label
                 = image.file_field :images, class: 'hidden', style: "display: none;"
