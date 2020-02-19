@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    
     @item = Item.new(item_params)
     respond_to do |format|
      
@@ -51,7 +50,11 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    @price = "¥#{@item.price.to_s(:delimited)}"
+    if @item.saler.id == current_user.id
+       redirect_to root_path
+    else
+      @price = "¥#{@item.price.to_s(:delimited)}"
+    end
   end
 
   def confimation
